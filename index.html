@@ -1,0 +1,171 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oxlate - Modern web development, automation, ERP solutions, and AI services. Coming soon.">
+    <title>Oxlate - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- SVG Definitions for Pencil Textures and Plant Elements -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <!-- Pencil texture pattern -->
+            <pattern id="pencilTexture" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M0,50 Q25,48 50,50 T100,50" stroke="#1f2933" stroke-width="0.3" fill="none" opacity="0.1"/>
+                <path d="M0,20 Q25,22 50,20 T100,20" stroke="#1f2933" stroke-width="0.3" fill="none" opacity="0.08"/>
+                <path d="M0,80 Q25,78 50,80 T100,80" stroke="#1f2933" stroke-width="0.3" fill="none" opacity="0.08"/>
+            </pattern>
+            
+            <!-- Pencil sketch border -->
+            <filter id="sketch">
+                <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Background decorative elements -->
+    <div class="background-texture"></div>
+    
+    <!-- Decorative leaf elements - Change position/rotation as needed -->
+    <svg class="leaf-decoration leaf-top-left" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10 Q45 30 40 50 Q35 70 40 90 Q45 95 50 90 Q55 70 60 50 Q65 70 70 90 Q75 95 80 90 Q85 70 80 50 Q75 30 60 10 Z" fill="#2E7D32" opacity="0.15"/>
+        <path d="M60 10 Q50 35 50 60 M60 10 Q70 35 70 60" stroke="#2E7D32" stroke-width="1.5" opacity="0.3"/>
+    </svg>
+    
+    <svg class="leaf-decoration leaf-bottom-right" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 5 Q35 20 30 35 Q25 50 30 65 Q35 70 40 65 Q45 50 50 35 Q55 50 60 65 Q65 70 70 65 Q75 50 70 35 Q65 20 50 5 Z" fill="#2E7D32" opacity="0.12"/>
+        <path d="M50 5 Q42 25 42 45 M50 5 Q58 25 58 45" stroke="#2E7D32" stroke-width="1.2" opacity="0.25"/>
+    </svg>
+
+    <main class="container">
+        <!-- Pencil stroke header decoration -->
+        <svg class="pencil-stroke" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 4 Q50 2 100 4 T198 4" stroke="#1f2933" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+
+        <!-- Logo/Title - Change company name here -->
+        <h1 class="logo">Oxlate</h1>
+        
+        <!-- Tagline - Change tagline here -->
+        <p class="tagline">Strongly Modern</p>
+
+        <!-- Main Card Container -->
+        <div class="card">
+            <!-- Small plant accent inside card -->
+            <svg class="card-plant" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 5 Q22 15 20 25 Q18 35 20 45 Q23 48 26 45 Q28 35 30 25 Q32 35 34 45 Q37 48 40 45 Q42 35 40 25 Q38 15 30 5 Z" fill="#2E7D32" opacity="0.1"/>
+            </svg>
+
+            <h2 class="coming-soon">Coming Soon</h2>
+            
+            <!-- Description - Change service description here -->
+            <p class="description">
+                We're crafting innovative solutions in web development, App development, Software Systems. Stay tuned for our launch!
+            </p>
+
+            <!-- Services List - Update services here -->
+            <ul class="services-list">
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="8" stroke="#2E7D32" stroke-width="1.5"/>
+                        <path d="M6 10 L9 13 L14 7" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Custom Web Applications
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="8" stroke="#2E7D32" stroke-width="1.5"/>
+                        <path d="M6 10 L9 13 L14 7" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Custom Mobile Apps
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="8" stroke="#2E7D32" stroke-width="1.5"/>
+                        <path d="M6 10 L9 13 L14 7" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    ERP & Automation Systems
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="8" stroke="#2E7D32" stroke-width="1.5"/>
+                        <path d="M6 10 L9 13 L14 7" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Digital Transformation
+                </li>
+            </ul>
+
+            <!-- CTA Buttons - Update email address here: oxlate.official@gmail.com -->
+            <div class="cta-container">
+                <a href="mailto:oxlateofficial@gmail.com?subject=Inquiry%20from%20Oxlate%20Website" class="cta-button primary">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Email Notify Form - Email goes to: oxlate.official@gmail.com -->
+            <div class="notify-form">
+                <p class="notify-label">Stay updated on our launch</p>
+                <form id="notifyForm" onsubmit="handleNotify(event)">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        required 
+                        aria-label="Email address for notifications"
+                        class="email-input"
+                    >
+                    <button type="submit" class="cta-button secondary">Notify Me</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer - Update social links here -->
+        <footer class="footer">
+            <p class="copyright">&copy; 2024 Oxlate. All rights reserved.</p>
+            <div class="social-links">
+                <!-- Replace # with actual social media URLs -->
+                <a href="https://www.instagram.com/oxlateofficial/" aria-label="Instagram" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/oxlateofficial/" aria-label="LinkedIn" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M6 9v9M6 6v.5M10 9v9M10 13c0-2 1-3 3-3s3 1 3 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/OxlateOfficial" aria-label="X (Twitter)" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4l7 9-7 7h2l6-7 5 7h5l-8-10 7-6h-2l-5 6-4-6H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Handle notify form submission - sends email to oxlate.official@gmail.com
+        function handleNotify(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            const subject = encodeURIComponent('Notify Me - Oxlate Launch');
+            const body = encodeURIComponent(`Please notify me at ${email} when Oxlate launches.`);
+            window.location.href = `mailto:oxlate.official@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Fade in animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
