@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@fontsource/orbitron": "^5.2.8",
-    "@next/font": "^14.2.15",
+    "next/font": "^14.2.15",
     "next": "16.0.7",
     "react": "19.2.0",
     "react-dom": "19.2.0"
