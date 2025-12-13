@@ -1,11 +1,12 @@
 import fs from "fs";
 import path from "path";
 
-export function loadServiceContent(serviceId: string) {
+export function loadServiceFull(serviceId: string) {
   const filePath = path.join(
     process.cwd(),
     "content/services",
-    `${serviceId}.json`
+    serviceId,
+    "full.json"
   );
 
   const raw = fs.readFileSync(filePath, "utf-8");
