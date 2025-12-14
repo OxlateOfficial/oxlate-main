@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/Footer/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
@@ -38,9 +39,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${OrbitronFont.variable} antialiased`}
+        className={`${OrbitronFont.variable} antialiased bg-white text-black scroll-smooth`}
       >
         {children}
+        <Footer/>
       </body>
     </html>
   );

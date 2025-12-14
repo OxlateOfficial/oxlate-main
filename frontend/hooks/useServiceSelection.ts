@@ -1,39 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
-import { SERVICES } from "@/lib/constants/services";
-
-const DEFAULT_SERVICE = "web-development";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 
 export function useServiceSelection() {
   const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
+  
+  const [service, setServiceState] = useState<string>(
+    searchParams.get("service") || "web-development"
+  );
 
-  const [service, setService] = useState<string>(DEFAULT_SERVICE);
-
-  // On first load
   useEffect(() => {
-    const urlService = searchParams.get("service");
-    const storedService = localStorage.getItem("oxlate-service");
+    const currentService = searchParams.get("service") || "web-development";
+    setServiceState(currentService);
+  }, [searchParams]);
 
-    const validService = SERVICES.find(
-      (s) => s.id === urlService || s.id === storedService
-    );
+  const setService = useCallback(
+    (newService: string) => {
+      setServiceState(newService);
+      const params = new URLSearchParams(searchParams.toString());
+      params.set("service", newService);
+      router.push(`${pathname}?${params.toString()}`, { scroll: false });
+    },
+    [pathname, router, searchParams]
+  );
 
-    if (validService) {
-      setService(validService.id);
-    }
-  }, []);
-
-  // When service changes
-  useEffect(() => {
-    // localStorage.setItem("oxlate-service", service);
-    router.replace(`/?service=${service}`, { scroll: false });
-  }, [service]);
-
-  return {
-    service,
-    setService,
-  };
+  return { service, setService };
 }

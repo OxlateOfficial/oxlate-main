@@ -1,0 +1,14 @@
+{
+  "soft": {
+    "title": "Have a project in mind?",
+    "subtitle": "Tell us what you want to build and we’ll guide you with the best approach.",
+    "primaryButton": "Get a Quote",
+    "secondaryButton": "Chat on WhatsApp"
+  },
+  "final": {
+    "title": "Ready to build something powerful?",
+    "subtitle": "Let’s turn your idea into a real, working product.",
+    "primaryButton": "Start My Project",
+    "secondaryButton": "WhatsApp Us"
+  }
+}

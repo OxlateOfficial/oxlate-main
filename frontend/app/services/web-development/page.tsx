@@ -1,16 +1,16 @@
 import { loadServiceFull } from "@/lib/cms/loadServiceFull";
 import { generateServiceMetadata } from "@/lib/seo/metadata";
 
-import WhatIsSection from "@/components/core/DynamicContent/WhatIsSection";
-import WhyChooseSection from "@/components/core/DynamicContent/WhyChooseSection";
-import ProcessSection from "@/components/core/DynamicContent/ProcessSection";
-import FAQSection from "@/components/core/DynamicContent/FAQSection";
-import CTASection from "@/components/shared/CTASection";
-
+import WhatIsSection from "@/components/sections/DynamicContent/WhatIsSection";
+import WhyChooseSection from "@/components/sections/DynamicContent/WhyChooseSection";
+import ProcessSection from "@/components/sections/DynamicContent/ProcessSection";
+import FAQSection from "@/components/sections/DynamicContent/FAQSection";
+import CTASection from "@/components/sections/CTA/CTASection";
+import ServicePortfolioSection from "@/components/services/portfolio/ServicePortfolioSection";
 import { getServiceSchema } from "@/lib/seo/schema/service";
 import { getFAQSchema } from "@/lib/seo/schema/faq";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/breadcrumb";
-
+import WhyTrustUsSection from "@/components/sections/DynamicContent/WhyTrustSection";
 export async function generateMetadata() {
   const content = loadServiceFull("web-development");
 
@@ -77,6 +77,9 @@ export default function WebDevelopmentPage() {
 
       <FAQSection faqs={content.faqs} />
 
+      <ServicePortfolioSection service="web-development" />
+
+        <WhyTrustUsSection />
       <CTASection service={content.id} />
 
     </main>

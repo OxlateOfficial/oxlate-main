@@ -8,5 +8,5 @@ type Props = {
 export default function ServiceCardSection({ service }: Props) {
   const card = loadServiceCard(service);
 
-  return <ServiceCardClient card={card} />;
+  return <ServiceCardClient service={card} />;
 }

@@ -1,30 +1,40 @@
+"use client";
+
 type Props = {
   price: string;
   time: string;
   ctaText: string;
-  onCtaClick?: () => void;
 };
 
-export default function ServicePricingCard({
-  price,
-  time,
-  ctaText,
-  onCtaClick,
-}: Props) {
+export default function ServicePricingCard({ price, time, ctaText }: Props) {
   return (
-    <div className="rounded-3xl border bg-gray-50 p-6 text-center">
-      <p className="text-sm text-gray-600">Starting at</p>
+    <div className="bg-black rounded-2xl p-6 sm:p-8 shadow-md text-white flex flex-col justify-between">
+      <div className="space-y-6">
+        <div>
+          <p className="text-xs sm:text-sm uppercase tracking-widest text-gray-400 mb-2">
+            Starting From
+          </p>
+          <p 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold"
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
+          >
+            {price}
+          </p>
+        </div>
 
-      <p className="mt-2 text-3xl font-semibold">{price}</p>
+        <div>
+          <p className="text-xs sm:text-sm uppercase tracking-widest text-gray-400 mb-2">
+            Delivery Time
+          </p>
+          <p className="text-xl sm:text-2xl font-semibold">
+            {time}
+          </p>
+        </div>
+      </div>
 
-      <p className="mt-1 text-sm text-gray-600">
-        Delivery in {time}
-      </p>
-
-      <button
-        // onMouseEnter={prefetch}
-        onClick={onCtaClick}
-        className="mt-6 w-full rounded-xl bg-black px-6 py-3 text-white font-medium"
+      <button 
+        className="mt-6 w-full bg-white text-black py-3 sm:py-4 px-6 rounded-xl font-semibold text-sm sm:text-base hover:bg-gray-100 transition-colors duration-200 tracking-wide"
+        style={{ fontFamily: "'Orbitron', sans-serif" }}
       >
         {ctaText}
       </button>

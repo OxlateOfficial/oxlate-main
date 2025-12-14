@@ -1,10 +1,17 @@
-import HeroSection from "@/components/core/HeroSection/HeroSection";
-import ServiceSelector from "@/components/core/ServiceSelector/SelectionState";
-import ServiceCardSection from "@/components/core/ServiceSelector/ServiceCardSection";
-import ServiceLandingPreview from "@/components/sections/ServiceLandingPreview";
-import { getOrganizationSchema } from "@/lib/seo/schema/organization";
-import { getWebsiteSchema } from "@/lib/seo/schema/website";
+import HeroSection from "@/components/sections/HeroSection/HeroSection";
+import ServiceSelector from "@/components/layout/Header/SelectionState";
+import ServiceCardSection from "@/components/services/cards/ServiceCardSection";
+import ServiceLandingPreview from "@/components/services/landing/ServiceLandingPreview";
+import ServicePortfolioSection from "@/components/services/portfolio/ServicePortfolioSection";
+import WhyTrustUsSection from "@/components/sections/DynamicContent/WhyTrustSection";
+import CTASection from "@/components/sections/CTA/CTASection";
+
+
 import LazySection from "@/components/performance/LazySection";
+import { getWebsiteSchema } from "@/lib/seo/schema/website";
+import { getOrganizationSchema } from "@/lib/seo/schema/organization";
+
+
 type Props = {
   searchParams: Promise<{
     service?: string;
@@ -41,6 +48,10 @@ export default async function Home({ searchParams }: Props) {
       <LazySection>
         <ServiceLandingPreview service={service} />
       </LazySection>
+        <CTASection variant="soft" service={service} />
+      <ServicePortfolioSection service={service} />
+      <WhyTrustUsSection />
+        <CTASection variant="final" service={service} />
     </main>
   );
 }

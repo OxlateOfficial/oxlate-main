@@ -1,27 +1,80 @@
 export const SERVICES = [
-  {
-    id: "web-development",
-    label: "Web Development",
-    route: "/services/web-development",
-  },
-  {
-    id: "app-development",
-    label: "App Development",
-    route: "/services/app-development",
-  },
-  {
-    id: "automation",
-    label: "Automation",
-    route: "/services/automation",
-  },
-  {
-    id: "erp",
-    label: "ERP / Billing",
-    route: "/services/erp",
-  },
-  {
-    id: "custom-software",
-    label: "Custom Software",
-    route: "/services/custom-software",
-  },
+  { id: "web-development", label: "Web Dev" },
+  { id: "app-development", label: "App Dev" },
+  { id: "ui-ux-design", label: "UI/UX" },
+  { id: "branding", label: "Branding" },
+  { id: "seo-marketing", label: "SEO" },
 ] as const;
+
+export const SERVICE_DATA = {
+  "web-development": {
+    title: "Web Development",
+    subtitle: "Modern, fast & business-ready websites",
+    features: [
+      "Custom design (no templates)",
+      "Mobile-first & responsive",
+      "SEO-friendly structure",
+      "Fast loading performance",
+      "Easy future scalability",
+    ],
+    startingPrice: "₹15,000",
+    deliveryTime: "5–10 days",
+    ctaText: "Explore Web Development",
+  },
+  "app-development": {
+    title: "App Development",
+    subtitle: "Native & cross-platform mobile applications",
+    features: [
+      "iOS & Android support",
+      "Smooth user experience",
+      "Secure backend integration",
+      "Push notifications & analytics",
+      "App store deployment",
+    ],
+    startingPrice: "₹50,000",
+    deliveryTime: "15–30 days",
+    ctaText: "Explore App Development",
+  },
+  "ui-ux-design": {
+    title: "UI/UX Design",
+    subtitle: "Beautiful & intuitive user interfaces",
+    features: [
+      "User research & personas",
+      "Wireframes & prototypes",
+      "High-fidelity mockups",
+      "Interaction design",
+      "Design system & style guide",
+    ],
+    startingPrice: "₹12,000",
+    deliveryTime: "7–14 days",
+    ctaText: "Explore UI/UX Design",
+  },
+  "branding": {
+    title: "Branding",
+    subtitle: "Complete brand identity & visual systems",
+    features: [
+      "Logo design & variations",
+      "Color palette & typography",
+      "Brand guidelines document",
+      "Business card & stationery",
+      "Social media templates",
+    ],
+    startingPrice: "₹20,000",
+    deliveryTime: "10–15 days",
+    ctaText: "Explore Branding",
+  },
+  "seo-marketing": {
+    title: "SEO & Marketing",
+    subtitle: "Drive traffic & grow your online presence",
+    features: [
+      "Keyword research & strategy",
+      "On-page SEO optimization",
+      "Content marketing plan",
+      "Analytics & reporting",
+      "Social media management",
+    ],
+    startingPrice: "₹10,000",
+    deliveryTime: "Ongoing",
+    ctaText: "Explore SEO & Marketing",
+  },
+} as const;

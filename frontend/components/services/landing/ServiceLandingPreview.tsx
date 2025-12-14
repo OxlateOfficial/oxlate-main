@@ -1,5 +1,5 @@
 import { loadServiceLanding } from "@/lib/cms/loadServiceLanding";
-import ServiceLandingClient from "@/components/core/ServiceSelector/ServiceLandingClient";
+import ServiceLandingClient from "@/components/services/landing/ServiceLandingClient";
 
 type Props = {
   service: string;
