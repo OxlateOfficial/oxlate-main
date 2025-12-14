@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
   experimental: {
-    appDir: true,
+    // appDir: true,
     optimizeCss: true,
     scrollRestoration: true,
   },
