@@ -1,7 +1,7 @@
 "use client";
 
 type Props = {
-  features: string[];
+  features: readonly string[];
 };
 
 export default function ServiceFeaturesCard({ features }: Props) {
