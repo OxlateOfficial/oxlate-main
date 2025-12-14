@@ -1,35 +1,37 @@
 {
-  "version": 2,
-  "name": "oxlate",
-  "builds": [
-    { "src": "package.json", "use": "@vercel/next" }
-  ],
-  "routes": [
-    { "src": "/_next/static/(.*)", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
-    { "src": "/static/(.*)", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
+  "framework": "nextjs",
 
-    { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/old-path", "status": 301, "headers": { "location": "/new-path" } },
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
 
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/$1" }
-  ],
+  "cleanUrls": true,
+
+  "trailingSlash": false,
+
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-XSS-Protection", "value": "0" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ],
-  "functions": {
-    "api/**/*.js": {
-      "memory": 1024,
-      "maxDuration": 10
+
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
-  }
+  ]
 }
