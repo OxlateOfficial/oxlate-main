@@ -76,7 +76,7 @@ export default function ServiceLandingClient({ landing }: Props) {
           ))}
         </div>
       </div>
-
+      
       {/* FAQ */}
       <div>
         <h3 className="text-xl font-semibold mb-6">

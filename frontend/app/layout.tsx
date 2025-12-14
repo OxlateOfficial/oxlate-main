@@ -9,27 +9,34 @@ const OrbitronFont = Orbitron({
   weight: ["400", "700", "900"],
 });
 
-
 export const metadata: Metadata = {
-  title: "Oxlate — Strongly Modern Digital Solutions",
-  description:
-    "Oxlate builds modern websites, automations, ERP systems, and custom software tailored to your business.",
-  keywords: [
-    "Web Development",
-    "Automation",
-    "ERP Software",
-    "Custom Software",
-    "Oxlate",
-  ],
-  openGraph: {
-    title: "Oxlate",
-    description: "Strongly Modern Digital Solutions",
-    url: "https://oxlate.in",
-    siteName: "Oxlate",
-    type: "website",
+  title: {
+    default: "Oxlate | Web Development, Automation & Custom Software",
+    template: "%s | Oxlate"
   },
+  description:
+    "Oxlate is a modern web development and automation company providing fast, mobile-first websites, ERP systems, and custom software solutions for businesses in India.",
+  keywords: [
+    "Oxlate",
+    "Web Development Company",
+    "Website Development India",
+    "Automation Services",
+    "Custom Software Development",
+    "ERP Development",
+    "Mobile-first websites"
+  ],
+  alternates: {
+    canonical: "https://www.oxlate.com"
+  },
+  openGraph: {
+    title: "Oxlate | Strongly Modern Digital Solutions",
+    description:
+      "Modern web development, automation, ERP and custom software solutions built for performance and scalability.",
+    url: "https://www.oxlate.com",
+    siteName: "Oxlate",
+    type: "website"
+  }
 };
-
 
 export default function RootLayout({
   children,
