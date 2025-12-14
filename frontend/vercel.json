@@ -5,7 +5,6 @@
   "outputDirectory": ".next",
 
   "cleanUrls": true,
-
   "trailingSlash": false,
 
   "headers": [
@@ -25,13 +24,6 @@
           "value": "strict-origin-when-cross-origin"
         }
       ]
-    }
-  ],
-
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
     }
   ]
 }
