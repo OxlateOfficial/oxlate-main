@@ -1,6 +1,6 @@
 "use client";
 
-import { SERVICE_DATA } from "@/lib/constants/services";
+
 import ServiceFeaturesCard from "@/components/ui/cards/ServiceFeaturesCard";
 import ServicePricingCard from "@/components/ui/cards/ServicePricingCard";
 type Props = {
@@ -15,8 +15,7 @@ type Props = {
   // };
 };
 
-export default function ServiceCardClient( {service}:Props) {
-  const card = SERVICE_DATA[service as keyof typeof SERVICE_DATA] || SERVICE_DATA["web-development"];
+export default function ServiceCardClient( {card}:{card : any}) {
   return (
 <section className="relative w-full px-4 py-8 sm:py-12">
       <div className="mx-auto max-w-6xl">

@@ -1,0 +1,13 @@
+{
+  "id": "mentor-krish",
+  "slug": "mentor-krish",
+  "title": "MentorKrish Coaching Website",
+  "services": ["web-development"],
+  "shortDescription": "A professional website built to establish credibility.",
+  "problem": "Client needed a strong online presence.",
+  "solution": "Designed and built a clean SEO-ready website.",
+  "outcome": "Improved trust and online visibility.",
+  "image": "/images/portfolio/mentor-krish.webp",
+  "tech": ["Next.js", "Tailwind"],
+  "liveUrl": "https://mentorkrish.com"
+}

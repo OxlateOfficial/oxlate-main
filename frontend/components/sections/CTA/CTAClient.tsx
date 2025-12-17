@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-
+import { trackEvent } from "@/lib/analytics/events";
 type Props = {
   data: {
     title: string;
@@ -16,14 +16,19 @@ export default function CTAClient({ data, service }: Props) {
   const router = useRouter();
 
   const handlePrimary = () => {
+    trackEvent("cta_primary_click", { service: service ?? null });
     router.push(
       service ? `/contact?service=${service}` : "/contact"
     );
   };
 
   const handleWhatsApp = () => {
+    const text = service
+      ? `Hi Oxlate, I want to discuss a ${service} project`
+      : "Hi Oxlate, I want to discuss a project";
+    trackEvent("cta_whatsapp_click", { service: service ?? null });
     window.open(
-      "https://wa.me/917508317625?text=Hi%20Oxlate,%20I%20want%20to%20discuss%20a%20project",
+      `https://wa.me/917508317625?text=${encodeURIComponent(text)}`,
       "_blank"
     );
   };

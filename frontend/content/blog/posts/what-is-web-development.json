@@ -1,0 +1,28 @@
+{
+  "id": "what-is-web-development",
+  "slug": "what-is-web-development",
+  "title": "What Is Web Development? A Simple Explanation",
+  "excerpt": "A beginner-friendly explanation of web development, how it works, and why businesses need it.",
+  "category": "web-development",
+  "publishedAt": "2025-01-20",
+  "readingTime": "5 min",
+  "seo": {
+    "title": "What Is Web Development? (Simple Guide for Businesses)",
+    "description": "Learn what web development is, how it works, and why it matters for businesses in India."
+  },
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Web development refers to the process of building and maintaining websites."
+    },
+    {
+      "type": "heading",
+      "text": "Why Web Development Matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "For businesses, a website is often the first point of contact."
+    }
+  ],
+  "relatedServices": ["web-development"]
+}

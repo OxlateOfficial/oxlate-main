@@ -1,0 +1,28 @@
+{
+"id": "automation-for-business",
+  "slug": "automation-for-business",
+  "title": "Automation for Business: A Complete Guide",
+  "excerpt": "Learn how automation can transform your business operations and increase efficiency.",
+  "category": "automation",
+  "publishedAt": "2025-01-20",
+  "readingTime": "5 min",
+  "seo": {
+    "title": "Automation for Business: A Complete Guide",
+    "description": "Learn how automation can transform your business operations and increase efficiency."
+  },
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Web development refers to the process of building and maintaining websites."
+    },
+    {
+      "type": "heading",
+      "text": "Why Web Development Matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "For businesses, a website is often the first point of contact."
+    }
+  ],
+  "relatedServices": ["automation"]
+}

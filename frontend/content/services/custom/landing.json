@@ -1,0 +1,48 @@
+{
+  "id": "custom",
+  "title": "Custom Development Services",
+  "whatIs": "Custom development is the process of creating fast, modern, and user-friendly applications that represent your business online and generate leads.",
+  "why": [
+    "Creates strong first impressions",
+    "Builds trust and credibility",
+    "Works 24/7 for your business",
+    "Mobile-friendly for all users"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Understand Requirements",
+      "desc": "We understand your business goals and audience."
+    },
+    {
+      "step": 2,
+      "title": "Design & Layout",
+      "desc": "We design a clean, modern layout tailored to your brand."
+    },
+    {
+      "step": 3,
+      "title": "Development",
+      "desc": "We build fast, SEO-ready, scalable code."
+    },
+    {
+      "step": 4,
+      "title": "Launch & Support",
+      "desc": "We deploy and provide post-launch support."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does website development take?",
+      "a": "Usually between 5–10 days depending on requirements."
+    },
+    {
+      "q": "Will the website be mobile-friendly?",
+      "a": "Yes, all websites are fully responsive and mobile-first."
+    },
+    {
+      "q": "Do you provide support after launch?",
+      "a": "Yes, we provide post-launch support and guidance."
+    }
+  ],
+  "ctaText": "View Full Web Development Page"
+}

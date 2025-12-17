@@ -1,0 +1,28 @@
+{
+"id": "website-cost-india",
+  "slug": "website-cost-india",
+  "title": "How Much Does a Website Cost in India? A Complete Guide",
+  "excerpt": "Learn about the factors affecting website costs in India and get an estimate for your project.",
+  "category": "web-development",
+  "publishedAt": "2025-01-20",
+  "readingTime": "5 min",
+  "seo": {
+    "title": "How Much Does a Website Cost in India? A Complete Guide",
+    "description": "Learn what web development is, how it works, and why it matters for businesses in India."
+  },
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Web development refers to the process of building and maintaining websites."
+    },
+    {
+      "type": "heading",
+      "text": "Why Web Development Matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "For businesses, a website is often the first point of contact."
+    }
+  ],
+  "relatedServices": ["web-development"]
+}

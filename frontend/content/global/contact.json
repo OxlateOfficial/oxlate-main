@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": "Contact Oxlate",
+    "subtitle": "Tell us what you want to build. We’ll guide you clearly."
+  },
+
+  "form": {
+    "title": "Get a Quote",
+    "fields": [
+      "name",
+      "phone",
+      "requirement"
+    ]
+  },
+
+  "methods": {
+    "whatsapp": {
+      "label": "Chat on WhatsApp",
+      "number": "917508317625"
+    },
+    "email": {
+      "label": "Email Us",
+      "address": "hello@oxlate.in"
+    }
+  },
+
+  "location": {
+    "city": "India",
+    "note": "Serving clients across India remotely"
+  }
+}

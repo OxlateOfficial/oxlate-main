@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "title": "About Oxlate",
+    "subtitle": "Strongly modern. Calmly reliable."
+  },
+
+  "whoWeAre": {
+    "title": "Who we are",
+    "points": [
+      "Oxlate is a modern digital solutions studio focused on clarity, performance, and long-term reliability.",
+      "We work with businesses, startups, and individuals who value clean execution over noise."
+    ]
+  },
+
+  "standFor": {
+    "title": "What Oxlate stands for",
+    "points": [
+      "Clear communication, no hidden assumptions",
+      "Practical solutions over overengineering",
+      "Performance-first, mobile-first mindset",
+      "Honest timelines and transparent scope"
+    ]
+  },
+
+  "howWeWork": {
+    "title": "How we work",
+    "points": [
+      "Understand the problem before writing code",
+      "Design with real users in mind",
+      "Build only what adds value",
+      "Deliver, then support responsibly"
+    ]
+  },
+
+  "founderNote": {
+    "title": "Founder’s note",
+    "text": "Oxlate was built with a simple belief — technology should feel calm, dependable, and purposeful. Every project we take on is approached with responsibility, not rush."
+  },
+
+  "vision": {
+    "title": "Vision",
+    "text": "To build digital products that remain relevant, reliable, and easy to maintain — even years after launch."
+  }
+}

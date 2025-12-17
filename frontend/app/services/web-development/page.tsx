@@ -1,16 +1,16 @@
 import { loadServiceFull } from "@/lib/cms/loadServiceFull";
 import { generateServiceMetadata } from "@/lib/seo/metadata";
 
-import WhatIsSection from "@/components/sections/DynamicContent/WhatIsSection";
-import WhyChooseSection from "@/components/sections/DynamicContent/WhyChooseSection";
-import ProcessSection from "@/components/sections/DynamicContent/ProcessSection";
-import FAQSection from "@/components/sections/DynamicContent/FAQSection";
+import WhatIsSection from "@/components/sections/home/WhatIsSection";
+import WhyChooseSection from "@/components/sections/home/WhyChooseSection";
+import ProcessSection from "@/components/sections/home/ProcessSection";
+import FAQSection from "@/components/sections/home/FAQSection";
 import CTASection from "@/components/sections/CTA/CTASection";
 import ServicePortfolioSection from "@/components/services/portfolio/ServicePortfolioSection";
 import { getServiceSchema } from "@/lib/seo/schema/service";
 import { getFAQSchema } from "@/lib/seo/schema/faq";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/breadcrumb";
-import WhyTrustUsSection from "@/components/sections/DynamicContent/WhyTrustSection";
+import WhyTrustUsSection from "@/components/sections/home/WhyTrustSection";
 export async function generateMetadata() {
   const content = loadServiceFull("web-development");
 

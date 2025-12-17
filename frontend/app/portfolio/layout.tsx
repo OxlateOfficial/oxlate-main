@@ -1,9 +1,11 @@
-import React from 'react'
-
-const layout = () => {
+export default function PortfolioLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <div>layout</div>
-  )
+    <main className="min-h-screen">
+      {children}
+    </main>
+  );
 }
-
-export default layout

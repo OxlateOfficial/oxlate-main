@@ -1,12 +1,17 @@
 import { loadServiceCard } from "@/lib/cms/loadServiceCard";
 import ServiceCardClient from "./ServiceCardClient";
+import { ServiceId } from "@/lib/constants/services";
 
 type Props = {
-  service: string;
+  service: ServiceId;
 };
 
 export default function ServiceCardSection({ service }: Props) {
-  const card = loadServiceCard(service);
+  // 🔒 SAFETY FALLBACK
+  const safeService: ServiceId =
+    service ?? "web-development";
 
-  return <ServiceCardClient service={service} />;
+  const card = loadServiceCard(safeService);
+
+  return <ServiceCardClient card={card} />;
 }

@@ -1,13 +1,13 @@
 "use client";
-
+import Link from "next/link"
 import Image from "next/image";
 
 type Project = {
   id: string;
+  slug: string;
   title: string;
-  description: string;
+  shortDescription: string;
   image: string;
-  link: string;
 };
 
 type Props = {
@@ -23,10 +23,9 @@ export default function ServicePortfolioClient({ projects }: Props) {
 
       <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project) => (
-          <a
+          <Link
             key={project.id}
-            href={project.link}
-            target="_blank"
+            href={`/portfolio/${project.slug}`}
             className="rounded-2xl border overflow-hidden bg-white"
           >
             <Image
@@ -40,10 +39,10 @@ export default function ServicePortfolioClient({ projects }: Props) {
             <div className="p-4">
               <h4 className="font-medium">{project.title}</h4>
               <p className="text-sm text-gray-600 mt-1">
-                {project.description}
+                {project.shortDescription}
               </p>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

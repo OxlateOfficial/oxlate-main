@@ -1,0 +1,14 @@
+[
+  {
+    "id": "web-development",
+    "label": "Web Development"
+  },
+  {
+    "id": "automation",
+    "label": "Automation"
+  },
+  {
+    "id": "software",
+    "label": "Software"
+  }
+]
