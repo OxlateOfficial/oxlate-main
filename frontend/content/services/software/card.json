@@ -1,15 +1,15 @@
 {
   "id": "Software",
   "title": "Software",
-  "subtitle": "Modern, fast & business-ready websites",
+ "subtitle": "Purpose-built software designed around real business needs",
   "features": [
-    "Custom design (no templates)",
-    "Mobile-first & responsive",
-    "SEO-friendly structure",
-    "Fast loading performance",
-    "Easy future scalability"
+    "Custom-built solutions, not off-the-shelf software",
+    "Designed for reliability, security, and performance",
+    "Built to fit your workflows and operations",
+    "Scalable architecture for long-term use",
+    "Maintainable and future-ready systems"
   ],
   "startingPrice": "₹15,000",
   "deliveryTime": "5–10 days",
-  "ctaText": "Explore Web Development"
+"ctaText": "Explore Software Development"
 }
