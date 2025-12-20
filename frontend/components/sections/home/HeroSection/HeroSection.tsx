@@ -36,7 +36,7 @@ export default function HomeSection() {
         </p>
         
         <p className="max-w-xl mx-auto text-sm sm:text-base leading-relaxed text-gray-700 tracking-wide px-4">
-          A technology-driven platform focused on clean design, performance, and simplicity — built for the future with a strong foundation.
+         We design and build secure, modern digital solutions that are simple to use, tailored to your business, and built to last.
         </p>
       </div>
     </section>
