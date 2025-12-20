@@ -3,50 +3,62 @@
   "title": "Software Development Services",
   "metaTitle": "Software Development Company in India | Oxlate",
   "metaDescription": "Oxlate provides modern, fast, and SEO-friendly software development services for businesses, startups, and professionals.",
-  "intro": "We build modern websites that help businesses grow, convert visitors, and establish trust online.",
-  "whatIs": "Web development involves designing and building websites that are fast, responsive, secure, and optimized for search engines.",
+{
+  "intro": "We build custom software that helps businesses operate efficiently, securely, and with confidence.",
+  "whatIs": "Software development is the process of designing and building systems that are reliable, secure, and aligned with real business operations.",
   "why": [
-    "First impression for your brand",
-    "24/7 online presence",
-    "Lead generation and conversions",
-    "Mobile-first user experience",
-    "Search engine visibility"
+    "Addresses specific business challenges",
+    "Improves operational efficiency",
+    "Reduces dependency on manual processes",
+    "Built for stability, security, and scale",
+    "Supports long-term business growth"
   ],
   "process": [
     {
       "step": 1,
-      "title": "Requirement Analysis",
-      "desc": "We understand your business goals, audience, and expectations."
+      "title": "Understanding your business",
+      "desc": "We begin by understanding your workflows, pain points, and long-term objectives."
     },
     {
       "step": 2,
-      "title": "UI/UX Design",
-      "desc": "We design a clean and modern layout focused on usability."
+      "title": "Requirement alignment",
+      "desc": "We define and confirm requirements to ensure the solution is practical and achievable."
     },
     {
       "step": 3,
-      "title": "Development",
-      "desc": "We develop fast, scalable, and SEO-ready code."
+      "title": "Purpose-driven design",
+      "desc": "We design system architecture and interfaces focused on clarity, security, and usability."
     },
     {
       "step": 4,
-      "title": "Testing & Launch",
-      "desc": "We test across devices and deploy the website."
+      "title": "Secure development",
+      "desc": "We build the software using stable, secure, and maintainable development practices."
+    },
+    {
+      "step": 5,
+      "title": "Testing and deployment",
+      "desc": "We test thoroughly and deploy with care to ensure reliability from day one."
+    },
+    {
+      "step": 6,
+      "title": "Post-launch support",
+      "desc": "We continue to support, improve, and guide you after the software is live."
     }
   ],
   "faqs": [
     {
-      "q": "How long does a website take to build?",
-      "a": "Most websites are completed within 5–10 days."
+      "q": "How long does custom software development take?",
+      "a": "Each project is different. Timelines depend on scope, but we always define phases and milestones clearly."
     },
     {
-      "q": "Will my website be SEO-friendly?",
-      "a": "Yes, we follow SEO best practices from day one."
+      "q": "Is security considered during development?",
+      "a": "Yes. Security and data protection are treated as core requirements throughout the project."
     },
     {
-      "q": "Do you offer maintenance?",
-      "a": "Yes, we offer post-launch support and maintenance."
+      "q": "Can the software be expanded in the future?",
+      "a": "Yes. All systems are designed with future updates and scalability in mind."
     }
   ],
-  "ctaText": "Get a Web Development Quote"
+  "ctaText": "Start the conversation"
 }
+
