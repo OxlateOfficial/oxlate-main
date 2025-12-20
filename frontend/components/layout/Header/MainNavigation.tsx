@@ -17,7 +17,7 @@ export default function MainNavigation() {
   const pathname = usePathname();
 
   return (
-    <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <div className="sticky top-0 z-50  ">
       <nav className="mx-auto max-w-6xl px-4 py-4 flex justify-center gap-6">
         {NAV_ITEMS.map((item) => {
           const isActive = pathname === item.href;
