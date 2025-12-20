@@ -1,10 +1,11 @@
 import HeroSection from "@/components/sections/home/HeroSection/HeroSection";
-import ServiceSelector from "@/components/layout/Header/SelectionState";
+// import ServiceSelector from "@/components/layout/Header/SelectionState";
 import ServiceCardSection from "@/components/services/cards/ServiceCardSection";
 import ServiceLandingPreview from "@/components/services/landing/ServiceLandingPreview";
 import ServicePortfolioSection from "@/components/services/portfolio/ServicePortfolioSection";
 import WhyTrustUsSection from "@/components/sections/home/WhyTrustSection";
 import CTASection from "@/components/sections/CTA/CTASection";
+import HomeStickyBar from "@/components/sections/home/HomeStickyBar";
 
 
 import LazySection from "@/components/performance/LazySection";
@@ -52,7 +53,7 @@ export default async function Home({ searchParams }: Props) {
 
 
       <HeroSection />
-      <ServiceSelector />
+      <HomeStickyBar />
       <ServiceCardSection service={service} />
       <LazySection>
         <ServiceLandingPreview service={service} />

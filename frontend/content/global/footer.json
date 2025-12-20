@@ -12,7 +12,7 @@
       { "label": "ERP & Billing", "href": "/services/erp" }
     ],
     "company": [
-      { "label": "About Us", "href": "/about" },
+      { "label": "About Us", "href": "/about-oxlate" },
       { "label": "Portfolio", "href": "/portfolio" },
       { "label": "Contact", "href": "/contact" }
     ],

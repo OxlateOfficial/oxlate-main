@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
 import Analytics from "@/components/performance/GoogleAnalytics";
+import HeaderClient from "@/components/layout/Header/HeaderClient";
 
 const OrbitronFont = Orbitron({
   variable: "--font-orbitron",
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body
         className={`${OrbitronFont.variable} antialiased bg-white text-black scroll-smooth`}
       >
+        <HeaderClient/>
         {children}
         <Analytics />
         <Footer/>
