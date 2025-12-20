@@ -1,48 +1,49 @@
 {
   "id": "software",
+ {
   "title": "Software Development",
-  "whatIs": "Software development is the process of creating fast, modern, and user-friendly applications that represent your business online and generate leads.",
+  "whatIs": "Software development is the process of building reliable, secure, and business-focused systems that solve specific operational challenges.",
   "why": [
-    "Creates strong first impressions",
-    "Builds trust and credibility",
-    "Works 24/7 for your business",
-    "Mobile-friendly for all users"
+    "Solves real business and operational problems",
+    "Improves efficiency and internal workflows",
+    "Reduces manual effort and errors",
+    "Built to support long-term growth"
   ],
   "process": [
     {
       "step": 1,
-      "title": "Understand Requirements",
-      "desc": "We understand your business goals and audience."
+      "title": "Understand the business",
+      "desc": "We study your processes, challenges, and goals before proposing any solution."
     },
     {
       "step": 2,
-      "title": "Design & Layout",
-      "desc": "We design a clean, modern layout tailored to your brand."
+      "title": "Align requirements",
+      "desc": "We define scope, validate requirements, and ensure complete clarity before development begins."
     },
     {
       "step": 3,
-      "title": "Development",
-      "desc": "We build fast, SEO-ready, scalable code."
+      "title": "Design and develop",
+      "desc": "We build secure, reliable software designed around usability and performance."
     },
     {
       "step": 4,
-      "title": "Launch & Support",
-      "desc": "We deploy and provide post-launch support."
+      "title": "Launch and support",
+      "desc": "We deploy carefully and remain available for post-launch guidance and support."
     }
   ],
   "faqs": [
     {
-      "q": "How long does website development take?",
-      "a": "Usually between 5–10 days depending on requirements."
+      "q": "How long does software development take?",
+      "a": "Timelines depend on scope and complexity, but most projects are delivered in clearly defined phases."
     },
     {
-      "q": "Will the website be mobile-friendly?",
-      "a": "Yes, all websites are fully responsive and mobile-first."
+      "q": "Is the software built specifically for my business?",
+      "a": "Yes. All software is custom-built to match your workflows and requirements."
     },
     {
       "q": "Do you provide support after launch?",
-      "a": "Yes, we provide post-launch support and guidance."
+      "a": "Yes, we offer post-launch support and long-term assistance if required."
     }
   ],
-  "ctaText": "View Full Web Development Page"
+  "ctaText": "View full software development details"
 }
