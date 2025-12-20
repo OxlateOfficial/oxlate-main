@@ -3,50 +3,61 @@
   "title": "App Development Services",
   "metaTitle": "Web Development Company in India | Oxlate",
   "metaDescription": "Oxlate provides modern, fast, and SEO-friendly web development services for businesses, startups, and professionals.",
-  "intro": "We build modern websites that help businesses grow, convert visitors, and establish trust online.",
-  "whatIs": "Web development involves designing and building websites that are fast, responsive, secure, and optimized for search engines.",
+  "intro": "We build mobile applications that help businesses connect with users, streamline operations, and deliver consistent experiences.",
+  "whatIs": "App development is the process of designing and building secure, reliable mobile applications aligned with real business use cases.",
   "why": [
-    "First impression for your brand",
-    "24/7 online presence",
-    "Lead generation and conversions",
-    "Mobile-first user experience",
-    "Search engine visibility"
+    "Enhances customer engagement",
+    "Supports business operations on mobile",
+    "Improves accessibility for users",
+    "Built for performance and stability",
+    "Designed to grow with your business"
   ],
   "process": [
     {
       "step": 1,
-      "title": "Requirement Analysis",
-      "desc": "We understand your business goals, audience, and expectations."
+      "title": "Understanding your requirements",
+      "desc": "We begin by understanding your business model, users, and the purpose of the app."
     },
     {
       "step": 2,
-      "title": "UI/UX Design",
-      "desc": "We design a clean and modern layout focused on usability."
+      "title": "Requirement alignment",
+      "desc": "We clearly define features, scope, and technical expectations."
     },
     {
       "step": 3,
-      "title": "Development",
-      "desc": "We develop fast, scalable, and SEO-ready code."
+      "title": "Purpose-driven design",
+      "desc": "We design interfaces focused on clarity, usability, and user experience."
     },
     {
       "step": 4,
-      "title": "Testing & Launch",
-      "desc": "We test across devices and deploy the website."
+      "title": "Secure development",
+      "desc": "We build the application using secure and maintainable development practices."
+    },
+    {
+      "step": 5,
+      "title": "Testing and deployment",
+      "desc": "We test the application thoroughly before releasing it to users."
+    },
+    {
+      "step": 6,
+      "title": "Post-launch support",
+      "desc": "We continue to support and improve the application after launch."
     }
   ],
   "faqs": [
     {
-      "q": "How long does a website take to build?",
-      "a": "Most websites are completed within 5–10 days."
+      "q": "How long does custom app development take?",
+      "a": "Each app is different. Timelines depend on scope and features, which are defined upfront."
     },
     {
-      "q": "Will my website be SEO-friendly?",
-      "a": "Yes, we follow SEO best practices from day one."
+      "q": "Is the app secure?",
+      "a": "Yes. Security and data protection are treated as core requirements throughout development."
     },
     {
-      "q": "Do you offer maintenance?",
-      "a": "Yes, we offer post-launch support and maintenance."
+      "q": "Can the app be updated in the future?",
+      "a": "Yes. All apps are built to support updates and future enhancements."
     }
   ],
-  "ctaText": "Get a Web Development Quote"
+  "ctaText": "Start the conversation"
 }
+
