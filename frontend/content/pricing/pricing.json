@@ -1,0 +1,55 @@
+{
+  "philosophy": {
+    "title": "Transparent, Value-Based Pricing",
+    "description": "Every project is different. We price based on value, scope, and long-term impact — not generic templates."
+  },
+  "services": [
+    {
+      "id": "web-development",
+      "title": "Website Development",
+      "range": "₹15,000 – ₹25,000",
+      "timeline": "5–10 days",
+      "includes": [
+        "Custom design",
+        "Responsive layout",
+        "SEO-friendly structure",
+        "Fast performance"
+      ]
+    },
+    {
+      "id": "app-development",
+      "title": "App Development",
+      "range": "₹75,000 – ₹1,50,000",
+      "timeline": "20–40 days",
+      "includes": [
+        "UI/UX design",
+        "API integration",
+        "Performance optimization",
+        "Deployment support"
+      ]
+    },
+    {
+      "id": "automation",
+      "title": "Business Automation",
+      "range": "₹5,000 – ₹20,000",
+      "timeline": "3–7 days",
+      "includes": [
+        "Workflow automation",
+        "API connections",
+        "Error handling",
+        "Monitoring setup"
+      ]
+    }
+  ],
+  "factors": [
+    "Project scope & features",
+    "Design complexity",
+    "Integrations & APIs",
+    "Timeline & urgency",
+    "Post-launch support"
+  ],
+  "cta": {
+    "title": "Get Your Personalised Quote",
+    "description": "Tell us your requirements and we’ll suggest the best plan for your business."
+  }
+}

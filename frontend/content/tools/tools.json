@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "title": "Free Tools & Resources",
+    "description": "Practical tools to help you plan, evaluate, and improve your digital presence."
+  },
+  "tools": [
+    {
+      "id": "website-checklist",
+      "title": "Website Launch Checklist",
+      "description": "A simple checklist to make sure your website is ready before launch.",
+      "cta": "View Checklist",
+      "href": "/tools/website-checklist",
+      "type": "content"
+    },
+    {
+      "id": "project-estimator",
+      "title": "Project Cost Estimator",
+      "description": "Get a rough estimate based on your project requirements.",
+      "cta": "Estimate Cost",
+      "href": "/tools/project-estimator",
+      "type": "interactive"
+    },
+    {
+      "id": "website-audit",
+      "title": "Free Website Audit",
+      "description": "Check your website for performance, SEO, and usability issues.",
+      "cta": "Run Audit",
+      "href": "/contact",
+      "type": "lead"
+    }
+  ]
+}
