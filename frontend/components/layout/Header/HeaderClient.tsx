@@ -6,14 +6,11 @@ import MainNavigation from "./MainNavigation";
 export default function HeaderClient() {
   const pathname = usePathname();
 
-  // Home page (including ?service=...)
-  if (pathname === "/") {
-    return null;
-  }
+  // Home page: no global header
+  if (pathname === "/") return null;
 
-  // All other pages
   return (
-    <header className="w-full">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200">
       <MainNavigation />
     </header>
   );

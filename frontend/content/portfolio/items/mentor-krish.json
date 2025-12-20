@@ -7,7 +7,7 @@
   "problem": "The client needed a professional digital presence that could clearly present their services and establish credibility with prospective clients.",
   "solution": "We designed and developed a modern, easy-to-navigate website focused on clarity, performance, and search visibility.",
   "outcome": "The website strengthened brand credibility, improved online visibility, and provided a clear platform for client engagement.",
-  "image": "/images/portfolio/mentor-krish.webp",
+  "image": "/images/portfolio/mentor-krish.png",
   "tech": ["Next.js", "Tailwind"],
   "liveUrl": "https://mentorkrish.in"
 }
