@@ -1,8 +1,8 @@
 {
   "brand": {
     "name": "Oxlate",
-    "tagline": "Strongly Modern Digital Solutions",
-    "description": "Oxlate builds modern websites, automations, ERP systems, and custom software focused on performance, scalability, and real business needs."
+    "tagline": "Strongly Modern",
+    "description": "Secure, practical, and thoughtfully designed technology built for long-term value."
   },
   "links": {
     "services": [
@@ -24,7 +24,7 @@
   "contact": {
     "email": "hello@oxlate.in",
     "phone": "+91 75083 17625",
-    "whatsapp": "917508317625"
+    "Chat on WhatsApp": "917508317625"
   },
   "copyright": "© 2025 Oxlate. All rights reserved."
 }
