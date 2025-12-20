@@ -1,15 +1,16 @@
 {
   "id": "App-development",
   "title": "App Development",
-  "subtitle": "Modern, fast & business-ready websites",
+   "subtitle": "Business-focused mobile apps designed for reliability and usability",
   "features": [
-    "Custom design (no templates)",
-    "Mobile-first & responsive",
-    "SEO-friendly structure",
-    "Fast loading performance",
-    "Easy future scalability"
+    "Custom-built mobile applications for your business",
+    "Designed for usability and performance",
+    "Secure and stable architecture",
+    "Works smoothly across supported devices",
+    "Built to scale with future requirements"
+  ],
   ],
   "startingPrice": "₹15,000",
   "deliveryTime": "5–10 days",
-  "ctaText": "Explore Web Development"
+  "ctaText": "Explore App Development"
 }
