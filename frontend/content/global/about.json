@@ -1,44 +1,47 @@
 {
   "hero": {
     "title": "About Oxlate",
-    "subtitle": "Strongly modern. Calmly reliable."
+    "subtitle": 
   },
 
   "whoWeAre": {
     "title": "Who we are",
     "points": [
-      "Oxlate is a modern digital solutions studio focused on clarity, performance, and long-term reliability.",
-      "We work with businesses, startups, and individuals who value clean execution over noise."
+      "Our work is defined by clarity, security, and long-term reliability. Each solution is shaped through careful planning, secure engineering, and a commitment to longevity. To us, modern design is not about attention, it’s about intention. Thoughtful. Functional. Honest.",
     ]
   },
 
   "standFor": {
     "title": "What Oxlate stands for",
     "points": [
-      "Clear communication, no hidden assumptions",
-      "Practical solutions over overengineering",
-      "Performance-first, mobile-first mindset",
-      "Honest timelines and transparent scope"
+      "We create digital solutions that are simple to use, accessible, and built for real people.",
+      "Every product is designed with a clear understanding of your goals and challenges.",
+      "Safety, data protection, and system stability are part of the foundation, not an afterthought.",
+      "Clean, functional, and memorable design that lasts beyond trends.",
+      "Transparent communication, realistic commitments, and accountable delivery."
     ]
   },
 
   "howWeWork": {
     "title": "How we work",
     "points": [
-      "Understand the problem before writing code",
-      "Design with real users in mind",
-      "Build only what adds value",
-      "Deliver, then support responsibly"
+      "We start by listening carefully to your goals, challenges, and constraints before any technical decisions are made.",
+      "We validate requirements, clarify scope, and ensure complete alignment so there are no surprises later.",
+      "Your priorities guide our decisions, timelines, and execution from start to finish.",
+      "We focus on purposeful development, avoiding unnecessary complexity.",
+      "Every product is designed with real users and business outcomes in mind.",
+      "We commit to realistic timelines and provide dependable post delivery support."
+      
     ]
   },
 
   "founderNote": {
     "title": "Founder’s note",
-    "text": "Oxlate was built with a simple belief — technology should feel calm, dependable, and purposeful. Every project we take on is approached with responsibility, not rush."
+    "text": "We noticed that modern technology often feels complicated and out of reach for everyday business owners due to unnecessary complexity and high costs. Oxlate exists to change that by making technology simple, reliable, and accessible to everyone."
   },
 
   "vision": {
     "title": "Vision",
-    "text": "To build digital products that remain relevant, reliable, and easy to maintain — even years after launch."
+    "text": "Oxlate envisions a future where technology is simple, secure, and accessible to everyone. Our goal is to build digital solutions that are shaped by real business needs, grounded in clarity, and designed to last. We aim to set a standard where modern design is thoughtful rather than loud, systems are reliable rather than over engineered, and trust is earned through honest work and long term commitment. As Oxlate grows, we strive to create meaningful impact not only through the products we build, but also through the responsibility we take toward people and the world around us."
   }
 }
