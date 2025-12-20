@@ -17,7 +17,7 @@ export default function ServiceFeaturesCard({ features }: Props) {
       <ul className="space-y-4">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
-            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-black flex items-center justify-center mt-0.5">
+            <span className="shrink-0 w-5 h-5 rounded-full bg-black flex items-center justify-center mt-0.5">
               <svg 
                 className="w-3 h-3 text-white" 
                 fill="none" 

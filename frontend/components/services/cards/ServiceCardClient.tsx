@@ -20,7 +20,7 @@ export default function ServiceCardClient( {card}:{card : any}) {
 <section className="relative w-full px-4 py-8 sm:py-12">
       <div className="mx-auto max-w-6xl">
         <div 
-          className="relative    bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl border border-gray-200"
+          className="relative  bg-linear-to-br from-gray-50 to-gray-100 rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl border border-gray-200"
         >
           {/* Header */}
           <div className="text-center mb-8 sm:mb-12">
