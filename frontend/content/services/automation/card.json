@@ -1,15 +1,15 @@
 {
   "id": "automation",
   "title": "Automation",
-  "subtitle": "Automate your business processes with our intelligent solutions",
+    "subtitle": "Intelligent automation designed to reduce effort and improve efficiency",
   "features": [
-    "Custom design (no templates)",
-    "Mobile-first & responsive",
-    "SEO-friendly structure",
-    "Fast loading performance",
-    "Easy future scalability"
+    "Custom automation built around your workflows",
+    "Reduces manual work and operational errors",
+    "Secure and reliable process automation",
+    "Integrates with existing tools and systems",
+    "Designed for long-term scalability"
   ],
   "startingPrice": "₹15,000",
   "deliveryTime": "5–10 days",
-  "ctaText": "Explore Web Development"
+  "ctaText": "Explore Automation Services"
 }
