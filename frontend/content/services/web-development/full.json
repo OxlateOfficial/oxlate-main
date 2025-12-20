@@ -3,50 +3,62 @@
   "title": "Web Development Services",
   "metaTitle": "Web Development Company in India | Oxlate",
   "metaDescription": "Oxlate provides modern, fast, and SEO-friendly web development services for businesses, startups, and professionals.",
-  "intro": "We build modern websites that help businesses grow, convert visitors, and establish trust online.",
-  "whatIs": "Web development involves designing and building websites that are fast, responsive, secure, and optimized for search engines.",
+{
+  "intro": "We build websites that help businesses communicate clearly, build trust, and operate confidently in the digital space.",
+  "whatIs": "Web development is the process of designing and building websites that are reliable, secure, easy to use, and aligned with real business objectives.",
   "why": [
-    "First impression for your brand",
-    "24/7 online presence",
-    "Lead generation and conversions",
-    "Mobile-first user experience",
-    "Search engine visibility"
+    "Creates a strong and trustworthy first impression",
+    "Gives your business a consistent online presence",
+    "Helps customers understand your services clearly",
+    "Designed for real users across all devices",
+    "Supports long-term visibility and growth"
   ],
   "process": [
     {
       "step": 1,
-      "title": "Requirement Analysis",
-      "desc": "We understand your business goals, audience, and expectations."
+      "title": "Understanding your business",
+      "desc": "We begin by learning about your business, your audience, and what you want to achieve before making any technical decisions."
     },
     {
       "step": 2,
-      "title": "UI/UX Design",
-      "desc": "We design a clean and modern layout focused on usability."
+      "title": "Requirement alignment",
+      "desc": "We validate requirements, clarify scope, and ensure everything is aligned so expectations are clear on both sides."
     },
     {
       "step": 3,
-      "title": "Development",
-      "desc": "We develop fast, scalable, and SEO-ready code."
+      "title": "Design with purpose",
+      "desc": "We design clean, modern interfaces with your target audience and business goals in mind."
     },
     {
       "step": 4,
-      "title": "Testing & Launch",
-      "desc": "We test across devices and deploy the website."
+      "title": "Secure development",
+      "desc": "We build the website using reliable, secure, and scalable practices focused on performance and stability."
+    },
+    {
+      "step": 5,
+      "title": "Testing and launch",
+      "desc": "We test across devices and environments before deploying the website with care and precision."
+    },
+    {
+      "step": 6,
+      "title": "Post-launch support",
+      "desc": "We remain available after launch to support, guide, and make necessary refinements."
     }
   ],
   "faqs": [
     {
-      "q": "How long does a website take to build?",
-      "a": "Most websites are completed within 5–10 days."
+      "q": "How long does it take to build a website?",
+      "a": "Timelines depend on scope and requirements, but most standard business websites are completed within one to two weeks."
     },
     {
-      "q": "Will my website be SEO-friendly?",
-      "a": "Yes, we follow SEO best practices from day one."
+      "q": "Will the website be secure and reliable?",
+      "a": "Yes. Security and stability are treated as core requirements from the beginning of every project."
     },
     {
-      "q": "Do you offer maintenance?",
-      "a": "Yes, we offer post-launch support and maintenance."
+      "q": "Can the website be updated or scaled later?",
+      "a": "Absolutely. We build websites with future updates and growth in mind."
     }
   ],
-  "ctaText": "Get a Web Development Quote"
+  "ctaText": "Start the conversation"
 }
+
