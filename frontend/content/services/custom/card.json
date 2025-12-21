@@ -1,15 +1,15 @@
 {
-  "id": "Custom",
+  "id": "custom",
   "title": "Custom Solutions",
   "subtitle": "Tailored software and systems for your unique needs",
   "features": [
-    "Custom design (no templates)",
-    "Mobile-first & responsive",
-    "SEO-friendly structure",
-    "Fast loading performance",
-    "Easy future scalability"
+    "Bespoke software development to fit your business",
+    "Designed for your specific workflows and requirements",
+    "Scalable and maintainable architecture",
+    "Focused on performance, security, and usability",
+    "Built to evolve with your business"
   ],
-  "startingPrice": "₹15,000",
-  "deliveryTime": "5–10 days",
-  "ctaText": "Explore Web Development"
+  "startingPrice": "Based on requirements",
+  "deliveryTime": "--",
+  "ctaText": "Explore Custom Solutions"
 }

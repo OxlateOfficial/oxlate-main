@@ -1,5 +1,5 @@
 {
-  "id": "Software",
+  "id": "software",
   "title": "Software",
  "subtitle": "Purpose-built software designed around real business needs",
   "features": [
@@ -9,7 +9,7 @@
     "Scalable architecture for long-term use",
     "Maintainable and future-ready systems"
   ],
-  "startingPrice": "₹15,000",
-  "deliveryTime": "5–10 days",
+  "startingPrice": "₹40,000",
+  "deliveryTime": "3-6 weeks",
 "ctaText": "Explore Software Development"
 }

@@ -1,12 +1,22 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 type Props = {
   price: string;
   time: string;
   ctaText: string;
+  serviceId: string;
 };
 
-export default function ServicePricingCard({ price, time, ctaText }: Props) {
+export default function ServicePricingCard({ price, time, ctaText, serviceId }: Props) {
+  const router = useRouter();
+
+  const handleClick = () => {
+    // Navigate to the service page based on the content id
+    router.push(`/services/${serviceId}`);
+  };
+
   return (
     <div className="bg-black rounded-2xl p-6 sm:p-8 shadow-md text-white flex flex-col justify-between">
       <div className="space-y-6">
@@ -14,7 +24,7 @@ export default function ServicePricingCard({ price, time, ctaText }: Props) {
           <p className="text-xs sm:text-sm uppercase tracking-widest text-gray-400 mb-2">
             Starting From
           </p>
-          <p 
+          <p
             className="text-3xl sm:text-4xl md:text-5xl font-bold"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           >
@@ -26,13 +36,12 @@ export default function ServicePricingCard({ price, time, ctaText }: Props) {
           <p className="text-xs sm:text-sm uppercase tracking-widest text-gray-400 mb-2">
             Delivery Time
           </p>
-          <p className="text-xl sm:text-2xl font-semibold">
-            {time}
-          </p>
+          <p className="text-xl sm:text-2xl font-semibold">{time}</p>
         </div>
       </div>
 
-      <button 
+      <button
+        onClick={handleClick}
         className="mt-6 w-full bg-white text-black py-3 sm:py-4 px-6 rounded-xl font-semibold text-sm sm:text-base hover:bg-gray-100 transition-colors duration-200 tracking-wide"
         style={{ fontFamily: "'Orbitron', sans-serif" }}
       >

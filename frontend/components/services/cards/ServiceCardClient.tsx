@@ -42,6 +42,7 @@ export default function ServiceCardClient( {card}:{card : any}) {
               price={card.startingPrice}
               time={card.deliveryTime}
               ctaText={card.ctaText}
+              serviceId={card.id}
             />
           </div>
         </div>

@@ -1,5 +1,5 @@
 {
-  "id": "App-development",
+  "id": "app-development",
   "title": "App Development",
    "subtitle": "Business-focused mobile apps designed for reliability and usability",
   "features": [
@@ -9,7 +9,7 @@
     "Works smoothly across supported devices",
     "Built to scale with future requirements"
   ],
-  "startingPrice": "₹15,000",
-  "deliveryTime": "5–10 days",
+  "startingPrice": "₹25,000",
+  "deliveryTime": "10–15 days",
   "ctaText": "Explore App Development"
 }

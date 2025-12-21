@@ -1,55 +1,99 @@
 {
   "philosophy": {
-    "title": "Transparent, Value-Based Pricing",
-    "description": "Every project is different. We price based on value, scope, and long-term impact — not generic templates."
+    "title": "Clear, Practical Pricing",
+    "description": "We believe in transparent pricing based on scope, effort, and real business value. No hidden costs. No unnecessary features."
   },
+
   "services": [
     {
-      "id": "web-development",
-      "title": "Website Development",
-      "range": "₹15,000 – ₹25,000",
-      "timeline": "5–10 days",
+      "id": "basic-website",
+      "title": "Basic Business Website",
+      "range": "₹15,000 – ₹20,000",
+      "timeline": "7–10 days",
       "includes": [
-        "Custom design",
-        "Responsive layout",
-        "SEO-friendly structure",
-        "Fast performance"
+        "Up to 5 pages (Home, About, Services, Contact, Legal)",
+        "Mobile-first responsive design",
+        "Clean and simple UI",
+        "Contact form with email or WhatsApp",
+        "Basic SEO setup (meta tags, sitemap)",
+        "Fast performance setup",
+        "Deployment on Vercel or shared hosting",
+        "1 revision round"
       ]
     },
+
     {
-      "id": "app-development",
-      "title": "App Development",
-      "range": "₹75,000 – ₹1,50,000",
-      "timeline": "20–40 days",
+      "id": "advanced-website",
+      "title": "Advanced Website",
+      "range": "₹25,000 – ₹40,000",
+      "timeline": "14–21 days",
       "includes": [
-        "UI/UX design",
-        "API integration",
-        "Performance optimization",
-        "Deployment support"
+        "8–12 pages",
+        "Advanced enquiry forms",
+        "Basic admin panel / CMS",
+        "Blog or updates section",
+        "Google Analytics setup",
+        "Improved SEO structure",
+        "Image optimization",
+        "2–3 revision rounds"
       ]
     },
+
+    {
+      "id": "landing-page",
+      "title": "Landing Page",
+      "range": "₹8,000 – ₹12,000",
+      "timeline": "5–7 days",
+      "includes": [
+        "Single long-scroll landing page",
+        "Clear call-to-action layout",
+        "WhatsApp and call integration",
+        "Mobile-optimized design",
+        "Ideal for promotions or ads"
+      ]
+    },
+
     {
       "id": "automation",
       "title": "Business Automation",
-      "range": "₹5,000 – ₹20,000",
-      "timeline": "3–7 days",
+      "range": "₹10,000 – ₹70,000",
+      "timeline": "3–14 days",
       "includes": [
-        "Workflow automation",
-        "API connections",
-        "Error handling",
-        "Monitoring setup"
+        "WhatsApp or form automation",
+        "Lead capture and tracking",
+        "Invoice or follow-up automation",
+        "Workflow setup based on business needs",
+        "Basic monitoring and support"
+      ]
+    },
+
+    {
+      "id": "software",
+      "title": "Business Software Systems",
+      "range": "₹40,000 – ₹1,00,000+",
+      "timeline": "3–6 weeks",
+      "includes": [
+        "Billing or management system",
+        "User login and roles",
+        "Admin dashboard",
+        "Database setup",
+        "Deployment and testing",
+        "1 month post-launch support"
       ]
     }
   ],
+
   "factors": [
-    "Project scope & features",
+    "Number of pages or features",
     "Design complexity",
-    "Integrations & APIs",
-    "Timeline & urgency",
-    "Post-launch support"
+    "Forms, workflows, or automation needs",
+    "Third-party integrations",
+    "Timeline and urgency",
+    "Post-launch support requirements"
   ],
+
   "cta": {
-    "title": "Get Your Personalised Quote",
-    "description": "Tell us your requirements and we’ll suggest the best plan for your business."
+    "title": "Get a Custom Quote",
+    "description": "Tell us about your business and we’ll suggest the most suitable solution with clear pricing."
   }
 }
