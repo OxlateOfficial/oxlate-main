@@ -1,0 +1,20 @@
+{
+  "id": "super-60-community",
+  "slug": "super-60-community",
+  "title": "Super 60 Community Platform – Student Management & ERP System",
+  "services": ["software", "custom"],
+  "shortDescription": "A powerful community and ERP platform built for the Super 60 batch to manage students, profiles, activities, and academic collaboration.",
+  "problem": "The Super 60 batch at SVIET needed a centralized digital platform to manage student data, profiles, activities, and communication within the special program.",
+  "solution": "We designed and developed a full-featured community and ERP-style web platform using modern technologies. The system includes student management, detailed profiles, internal dashboards, and structured information flow for coordinators and students.",
+  "outcome": "The platform improved organization, transparency, and engagement within the Super 60 batch, providing a strong digital identity and efficient management system for the program.",
+  "image": "/images/portfolio/super-60.png",
+  "tech": [
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Tailwind CSS"
+  ],
+  "liveUrl": "https://super-60.vercel.app/"
+}

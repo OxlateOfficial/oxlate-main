@@ -17,6 +17,7 @@ const FILTERS = [
   { id: "all", label: "All" },
   { id: "web-development", label: "Web Development" },
   { id: "app-development", label: "App Development" },
+  { id: "software", label: "ERP / Software" },
   { id: "automation", label: "Automation" },
 ];
 
