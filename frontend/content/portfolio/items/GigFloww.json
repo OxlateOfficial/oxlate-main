@@ -1,0 +1,13 @@
+{
+  "id": "gigfloww",
+  "slug": "gigfloww",
+  "title": "GigFloww – Startup Landing Page",
+  "services": ["web-development"],
+  "shortDescription": "A modern startup landing page designed to clearly explain the product and attract early users.",
+  "problem": "The startup needed a professional landing page to communicate their idea clearly and build trust with visitors.",
+  "solution": "We built a clean and responsive landing page using React and Next.js, focusing on clear messaging, smooth layout, and fast loading performance.",
+  "outcome": "The landing page helped present the startup idea professionally and provided a solid foundation for marketing and user engagement.",
+  "image": "/images/portfolio/gigfloww.png",
+  "tech": ["React", "Next.js", "Tailwind CSS"],
+  "liveUrl": "https://landing-page-wheat-nu-85.vercel.app/"
+}

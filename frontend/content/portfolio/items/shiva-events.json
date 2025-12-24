@@ -2,12 +2,12 @@
   "id": "shiva-events",
   "slug": "shiva-events",
   "title": "Shiva Events – Event Management Website",
-  "services": ["web-development", "ui-design"],
-  "shortDescription": "A static event management website showcasing services, events, and client testimonials.",
-  "problem": "The client needed a professional online presence to showcase their event services and past work.",
-  "solution": "Designed and developed a responsive static website with smooth navigation, event galleries, and a contact form.",
-  "outcome": "Improved brand visibility and provided an easy way for potential clients to explore services and get in touch.",
+  "services": ["web-development"],
+  "shortDescription": "A professional event management website showcasing services, past events, and client trust.",
+  "problem": "The event business needed an online platform to showcase their work, services, and attract new clients.",
+  "solution": "We created a responsive and visually clean website that highlights services, event galleries, and contact options in a simple way.",
+  "outcome": "The website improved brand presence and made it easier for potential clients to explore services and reach out for event bookings.",
   "image": "/images/portfolio/shiva-event.png",
-  "tech": ["JavaScript","Next.js", "Tailwind"],
+  "tech": ["React", "Next.js", "Tailwind CSS"],
   "liveUrl": "https://shivaevents.in/"
 }

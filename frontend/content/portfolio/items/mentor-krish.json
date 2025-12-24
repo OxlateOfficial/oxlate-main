@@ -1,13 +1,13 @@
 {
   "id": "mentor-krish",
   "slug": "mentor-krish",
-  "title": "MentorKrish Coaching Website",
+  "title": "MentorKrish – Coaching & Mentorship Website",
   "services": ["web-development"],
-  "shortDescription": "A clean, purpose-built website designed to build trust and communicate expertise clearly.",
-  "problem": "The client needed a professional digital presence that could clearly present their services and establish credibility with prospective clients.",
-  "solution": "We designed and developed a modern, easy-to-navigate website focused on clarity, performance, and search visibility.",
-  "outcome": "The website strengthened brand credibility, improved online visibility, and provided a clear platform for client engagement.",
+  "shortDescription": "A professional coaching website designed to build trust and clearly communicate mentorship services.",
+  "problem": "The coaching platform needed a credible digital presence to explain services, attract students, and build confidence among parents and learners.",
+  "solution": "We designed and developed a modern, SEO-friendly website with a clear structure, easy navigation, and strong focus on performance and readability.",
+  "outcome": "The website improved online visibility, strengthened brand trust, and provided a clear way for students to understand and connect with the coaching service.",
   "image": "/images/portfolio/mentor-krish.png",
-  "tech": ["Next.js", "Tailwind"],
+  "tech": ["React", "Next.js", "Tailwind CSS"],
   "liveUrl": "https://mentorkrish.in"
 }

@@ -1,0 +1,13 @@
+{
+  "id": "shreeramcottage",
+  "slug": "shreeramcottage",
+  "title": "Shreeram Cottage – Business Landing Page",
+  "services": ["web-development"],
+  "shortDescription": "A simple and elegant business website designed to present accommodation details and contact information clearly.",
+  "problem": "The business required a clean online presence to showcase their property and provide easy contact access to customers.",
+  "solution": "We built a lightweight and responsive landing page using modern web technologies, focusing on clarity, speed, and user-friendly design.",
+  "outcome": "The website helped improve visibility, made information easily accessible, and supported customer inquiries effectively.",
+  "image": "/images/portfolio/shreeramcottage.png",
+  "tech": ["React", "Next.js", "Tailwind CSS"],
+  "liveUrl": "https://shreeramcottage.vercel.app/"
+}

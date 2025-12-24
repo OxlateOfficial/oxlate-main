@@ -1,0 +1,13 @@
+{
+  "id": "abhishek-portfolio",
+  "slug": "abhishek-portfolio",
+  "title": "Abhishek Portfolio – Personal Portfolio Website",
+  "services": ["web-development"],
+  "shortDescription": "A clean and modern personal portfolio website built to showcase skills, projects, and professional work.",
+  "problem": "The requirement was to create a strong online presence that clearly presents skills, experience, and projects in a simple and professional way.",
+  "solution": "We designed and developed a fast, responsive portfolio website using modern web technologies, focusing on clarity, smooth navigation, and clean visuals.",
+  "outcome": "The website provides a professional identity, helps showcase work effectively, and makes it easy for recruiters and clients to connect.",
+  "image": "/images/portfolio/abhishek-portfolio.png",
+  "tech": ["React", "Next.js", "Tailwind CSS"],
+  "liveUrl": "https://portfolio-site-tan-delta.vercel.app/"
+}
