@@ -44,3 +44,13 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
+
+main,
+header,
+footer,
+section {
+  position: relative;
+  z-index: 10;
+}

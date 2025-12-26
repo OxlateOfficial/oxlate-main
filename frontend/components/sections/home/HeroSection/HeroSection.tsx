@@ -14,7 +14,7 @@ export default function HomeSection() {
       </section>
 
             {/* HERO SECTION */}
-    <section className="relative w-full min-h-[50vh] flex items-center justify-center px-4 py-16 bg-white">
+    <section className="relative w-full min-h-[50vh] flex items-center justify-center px-4 py-16 ">
       <div className="max-w-3xl mx-auto text-center space-y-6">
         <div className="flex justify-center">
           <Image
