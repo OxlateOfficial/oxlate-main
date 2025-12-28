@@ -8,7 +8,6 @@ import OrbitHeroBackground from "./Floatingbg/Orbitherobackground";
 import HeroTechCardBackground from "./cardbg/cardbg";
 export default function HeroSection() {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
 
   return (
     <main className="relative w-full font-[Orbitron] bg-white/70  sm:min-h-[50vh]">
@@ -58,9 +57,8 @@ export default function HeroSection() {
           <div className="flex justify-center">
             <Image
               src={
-                isDark
-                  ? "/images/icons/Oxlate_wht.svg"
-                  : "/images/icons/Oxlate_blk.svg"
+                
+                  "/images/icons/Oxlate_blk.svg"
               }
               alt="Oxlate Logo"
               width={120}
@@ -82,7 +80,7 @@ export default function HeroSection() {
               uppercase tracking-[0.28em]
               font-medium
               -mt-4
-              ${isDark ? "text-gray-300" : "text-gray-500"}
+              text-gray-500
             `}
           >
             STRONGLY MODERN
@@ -99,7 +97,7 @@ export default function HeroSection() {
               tracking-wide
               
               px-2 sm:px-4
-              ${isDark ? "text-gray-200" : "text-gray-700"}
+             text-gray-700
             `}
           >
             We design and build secure, modern digital solutions that are simple to use,
