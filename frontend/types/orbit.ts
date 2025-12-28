@@ -4,7 +4,7 @@ export type TechType =
   | 'html'
   | 'github'
   | 'vercel'
-  | 'railway'
+  | 'vite'
   | 'nextjs';
 
 export interface OrbitVisualConfig {

@@ -6,7 +6,7 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
   enableAnimation: true,
   mobileMaxOrbits: 2,
 
-  techOrder: ['python', 'java', 'html', 'github', 'vercel', 'railway', 'nextjs'],
+  techOrder: ['python', 'java', 'html', 'github', 'vercel', 'vite', 'nextjs'],
 
   orbits: [
     {
