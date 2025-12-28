@@ -164,7 +164,7 @@ export default function WireframeGlobeHero() {
           }}
           style={{
             position: "absolute",
-            top: "-10%",
+            top: "30%",
             left: "50%",
             transform: "translateX(-50%)",
             width: "100vw",
