@@ -154,13 +154,13 @@ function Globe() {
 
 export default function WireframeGlobeHero() {
   return (
-    <div className="absolute w-full h-screen overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+    <div className="absolute w-full h-[130%] overflow-hidden bg-gradient-to-b from-gray-50 to-white">
       {/* 3D Globe Canvas - Positioned as background */}
       <div className="absolute inset-0 z-0">
         <Canvas
           camera={{
-            position: [0, 0, 6],
-            fov: 45,
+            position: [1, 3, 5],
+            fov: 55,
           }}
           style={{
             position: "absolute",
@@ -168,7 +168,7 @@ export default function WireframeGlobeHero() {
             left: "50%",
             transform: "translateX(-50%)",
             width: "100vw",
-            height: "100vh",
+            height: "120vh",
           }}
         >
           <ambientLight intensity={0.5} />

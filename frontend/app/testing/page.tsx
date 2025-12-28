@@ -1,9 +1,9 @@
-import HeroGlobeBackground from "@/components/sections/home/HeroSection/globe/Heroglobebackground";
-
+import OrbitHeroBackground from "@/components/sections/home/HeroSection/bg/Orbitherobackground";
+import HeroMapBackground from "@/components/sections/home/HeroSection/globe/HeroMapBackground";
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-white">
-      <HeroGlobeBackground />
+      <OrbitHeroBackground />
     </main>
   );
 }
