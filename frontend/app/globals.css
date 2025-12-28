@@ -6,6 +6,25 @@
   --foreground: #171717;
 }
 
+/* 🌙 Dark theme override */
+html[data-theme="dark"] {
+  --background: #0b0b0b;
+  --foreground: #f5f5f5;
+}
+
+/* ☀️ Light theme override */
+html[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* System fallback (only if no manual theme) */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --background: #0b0b0b;
+    --foreground: #f5f5f5;
+  }
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -53,4 +72,160 @@ footer,
 section {
   position: relative;
   z-index: 10;
+}
+
+
+/**
+ * InfiniteServiceSlider.module.css
+ * 
+ * Optional CSS module for additional styling and animations
+ * Use this if you want more control over animations or need custom effects
+ */
+
+/* Hide scrollbar but keep functionality */
+.scrollbarHide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbarHide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom cursor for drag state */
+.grabbable {
+  cursor: grab;
+}
+
+.grabbable:active {
+  cursor: grabbing;
+}
+
+/* Smooth card appearance animation on mount */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cardEnter {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card hover effect (only on center card) */
+.cardCenter:hover {
+  transition: transform 0.3s ease;
+}
+
+/* Subtle shadow animation */
+.cardShadow {
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+.cardShadow:hover {
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 12px 24px -8px rgba(0, 0, 0, 0.08);
+}
+
+/* Dots indicator animation */
+@keyframes dotPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.dotActive {
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+/* Touch feedback for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .cardCenter:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Prevent text selection during drag */
+.noSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth transitions for all card transforms */
+.cardTransition {
+  transition: 
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.5s ease,
+    filter 0.3s ease;
+  will-change: transform, opacity;
+}
+
+/* Dragging state - disable transitions */
+.cardDragging {
+  transition: none !important;
+}
+
+/* Blur effect for side cards (optional) */
+.cardSide {
+  filter: blur(1px);
+}
+
+.cardCenter {
+  filter: blur(0);
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .cardContainer {
+    padding: 1rem;
+  }
+  
+  .cardSide {
+    filter: blur(0.5px);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cardTransition {
+    transition: 
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+  
+  .cardEnter {
+    animation: none;
+  }
+  
+  .dotActive {
+    animation: none;
+  }
+}
+
+/* Focus states for keyboard navigation */
+.navButton:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.navDot:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+  border-radius: 50%;
 }

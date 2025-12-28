@@ -1,9 +1,20 @@
-import React from 'react'
-import Image from 'next/image';
-export default function HomeSection() {
+"use client";
+
+import Image from "next/image";
+import dynamic from "next/dynamic";
+import { useTheme } from "@/components/layout/Providers";
+// import HeroGlobeBackground from './globe/HeroGlobeBackground';
+import HeroGlobeBackground from "./globe/Heroglobebackground"
+
+export default function HeroSection() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
-    <main className="relative w-full font-['Orbitron']">
-      {/* Accessible hidden content for SEO / screen readers */}
+    <main className="relative w-full font-[Orbitron] bg-emerald-400/50">
+      {/* <HeroGlobeBackground /> */}
+      <HeroGlobeBackground />
+      {/* SEO TEXT (unchanged) */}
       <section className="sr-only">
         <h1>Oxlate Web Development Company</h1>
         <p>
@@ -13,33 +24,80 @@ export default function HomeSection() {
         </p>
       </section>
 
-            {/* HERO SECTION */}
-    <section className="relative w-full min-h-[50vh] flex items-center justify-center px-4 py-16 ">
-      <div className="max-w-3xl mx-auto text-center space-y-6">
-        <div className="flex justify-center">
-          <Image
-            src="/images/icons/Oxlate_blk.svg"
-            alt="Oxlate Logo"
-            width={120}
-            height={120}
-            priority
-            className="select-none opacity-90 hover:opacity-100 transition-opacity duration-300
-            w-68 sm:w-68 md:w-92 h-auto
-            "
-          />
-        </div>
-        <p 
-          className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 font-medium -mt-5"
-          style={{ fontFamily: "'Orbitron', sans-serif" }}
+      {/* HERO */}
+      <section
+        className="
+          relative w-full
+          min-h-[55vh]
+          sm:min-h-[60vh]
+          flex items-center justify-center
+          px-4
+          py-14 sm:py-20
+        "
+      >
+        <div
+          className="
+            max-w-xl
+            sm:max-w-2xl
+            mx-auto
+            text-center
+            space-y-5 sm:space-y-6
+          "
         >
-          STRONGLY MODERN
-        </p>
-        
-        <p className="max-w-xl mx-auto text-sm sm:text-base leading-relaxed text-gray-700 tracking-wide px-4">
-         We design and build secure, modern digital solutions that are simple to use, tailored to your business, and built to last.
-        </p>
-      </div>
-    </section>
+
+          {/* LOGO */}
+          <div className="flex justify-center">
+            <Image
+              src={
+                isDark
+                  ? "/images/icons/Oxlate_wht.svg"
+                  : "/images/icons/Oxlate_blk.svg"
+              }
+              alt="Oxlate Logo"
+              width={120}
+              height={120}
+              priority
+              className="
+                select-none
+                transition-opacity duration-300
+                w-54 sm:w-72 md:w-94
+                h-auto
+              "
+            />
+          </div>
+
+          {/* TAGLINE */}
+          <p
+            className={`
+              text-[10px] sm:text-xs
+              uppercase tracking-[0.28em]
+              font-medium
+              -mt-4
+              ${isDark ? "text-gray-300" : "text-gray-500"}
+            `}
+          >
+            STRONGLY MODERN
+          </p>
+
+          {/* DESCRIPTION */}
+          <p
+            className={`
+              max-w-md
+              sm:max-w-xl
+              mx-auto
+              text-sm sm:text-base
+              leading-relaxed
+              tracking-wide
+              
+              px-2 sm:px-4
+              ${isDark ? "text-gray-200" : "text-gray-700"}
+            `}
+          >
+            We design and build secure, modern digital solutions that are simple to use,
+            tailored to your business, and built to last.
+          </p>
+        </div>
+      </section>
     </main>
   );
 }

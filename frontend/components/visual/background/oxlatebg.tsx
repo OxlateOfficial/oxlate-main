@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Logo from "@/public/images/icons/Oxlate_blk.svg";
 
 export default function OxlateBackground() {
   const [offset, setOffset] = useState(0);
@@ -32,9 +34,12 @@ export default function OxlateBackground() {
     };
   }, []);
 
-  // ✅ Move UP as page scrolls DOWN (slow pace)
+  // Vertical parallax (gentle on mobile)
   const translateY = isMobile ? -offset * 0.06 : -offset * 0.45;
 
+  // Horizontal offset (keep to right)
+  const translateX = isMobile ? "translateX(50%)" : "translateX(48%)";
+  const baseTranslateY = isMobile ? "translateY(-10%)" : "translateY(40%)";
   return (
     <div
       aria-hidden
@@ -43,30 +48,29 @@ export default function OxlateBackground() {
       <div
         className="absolute top-1/2 right-0"
         style={{
-          transform: `translateY(-10%) translateY(${translateY}px)`,
+          transform: `
+            ${baseTranslateY}
+            translateY(${translateY}px)
+            ${translateX}
+            rotate(90deg)
+          `,
+          transformOrigin: "center",
           willChange: "transform",
         }}
       >
-        <span
+        <Image
+          src={Logo}
+          alt=""
           className="
-            text-[34vh]
-            md:text-[42vh]
-            lg:text-[60vh]
-            font-extrabold
-            tracking-tight
-            text-black/[0.10]
+            opacity-[0.08]
+            w-[100vh]
+            sm:w-[140vh]
+            md:w-[180vh]
+            lg:w-[210vh]
+            max-w-none
             select-none
-            whitespace-nowrap
           "
-          style={{
-            fontFamily: "Orbitron, sans-serif",
-            writingMode: "vertical-rl",
-            textOrientation: "mixed",
-            transform: "translateX(35%) ,",
-          }}
-        >
-          OXLATE
-        </span>
+        />
       </div>
     </div>
   );

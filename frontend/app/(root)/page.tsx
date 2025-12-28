@@ -1,67 +1,61 @@
+// oxlate-main/frontend/app/(root)/page.tsx
 import HeroSection from "@/components/sections/home/HeroSection/HeroSection";
-// import ServiceSelector from "@/components/layout/Header/SelectionState";
-import ServiceCardSection from "@/components/services/cards/ServiceCardSection";
+import HomeStickyBar from "@/components/sections/home/HomeStickyBar";
+import InfiniteServiceSlider from "@/components/services/cards/InfiniteServiceSlider";
 import ServiceLandingPreview from "@/components/services/landing/ServiceLandingPreview";
+import CTASection from "@/components/sections/CTA/CTASection";
 import ServicePortfolioSection from "@/components/services/portfolio/ServicePortfolioSection";
 import WhyTrustUsSection from "@/components/sections/home/WhyTrustSection";
-import CTASection from "@/components/sections/CTA/CTASection";
-import HomeStickyBar from "@/components/sections/home/HomeStickyBar";
-
+import InitService from "@/components/services/InitService";
 
 import LazySection from "@/components/performance/LazySection";
-import { getWebsiteSchema } from "@/lib/seo/schema/website";
-import { getOrganizationSchema } from "@/lib/seo/schema/organization";
-import { SERVICES , ServiceId } from "@/lib/constants/services";
-
-
-const SERVICE_IDS = SERVICES.map(s => s.id);
-
-
+import { loadServiceLanding } from "@/lib/cms/loadServiceLanding";
+import { SERVICES, ServiceId } from "@/lib/constants/services";
 
 type Props = {
   searchParams: Promise<{ service?: string }>;
 };
 
-
 export default async function Home({ searchParams }: Props) {
-  const orgSchema = getOrganizationSchema();
-  const websiteSchema = getWebsiteSchema();
-
   const params = await searchParams;
   const serviceParam = params.service;
 
-  const service: ServiceId = SERVICE_IDS.includes(serviceParam as ServiceId)
-    ? (serviceParam as ServiceId)
-    : "web-development";
+  const service: ServiceId =
+    SERVICES.some(s => s.id === serviceParam)
+      ? (serviceParam as ServiceId)
+      : "web-development";
 
+  // Preload ALL service landings to avoid API calls
+  const allLandings = SERVICES.reduce((acc, s) => {
+    try {
+      acc[s.id] = loadServiceLanding(s.id);
+    } catch (error) {
+      console.error(`Failed to load landing for ${s.id}:`, error);
+    }
+    return acc;
+  }, {} as Record<string, any>);
+
+  const initialLanding = allLandings[service] || loadServiceLanding("web-development");
 
   return (
-    <main className="relative w-full font-[Orbitron] leading-loose tracking-widest">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(orgSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteSchema),
-        }}
-      />
-
-
-
+    <main className="relative w-full font-[Orbitron]">
+      <InitService service={service} />
       <HeroSection />
       <HomeStickyBar />
-      <ServiceCardSection service={service} />
+      <InfiniteServiceSlider />
+
       <LazySection>
-        <ServiceLandingPreview service={service} />
+        {/* Pass all landings to avoid API calls */}
+        <ServiceLandingPreview 
+          allLandings={allLandings}
+          initialLanding={initialLanding} 
+        />
       </LazySection>
-        <CTASection variant="soft" service={service} />
+
+      <CTASection variant="soft" service={service} />
       <ServicePortfolioSection service={service} />
       <WhyTrustUsSection />
-        <CTASection variant="final" service={service} />
+      <CTASection variant="final" service={service} />
     </main>
   );
 }

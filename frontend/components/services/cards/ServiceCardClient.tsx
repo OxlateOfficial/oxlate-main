@@ -18,7 +18,7 @@ type Props = {
 export default function ServiceCardClient( {card}:{card : any}) {
   return (
 <section className="relative w-full px-4 py-8 sm:py-12">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <div 
           className="relative  bg-linear-to-br from-gray-50 to-gray-100 rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl border border-gray-200"
         >

@@ -12,7 +12,7 @@ export default function HomeStickyBar() {
       {/* Sentinel lives ABOVE the bar */}
       <div ref={sentinelRef} className="h-px" />
 
-      <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+      <div className="sticky top-0 z-50 ">
         <nav className="mx-auto  h-[64] max-w-6xl px-4 py-4 relative ">
 
           {/* Service selector */}

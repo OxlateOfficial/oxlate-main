@@ -1,18 +1,17 @@
 import fs from "fs";
 import path from "path";
 
-export function loadServiceLanding(serviceId: string) {
-  if (!serviceId) {
-    throw new Error("loadServiceLanding: serviceId is undefined");
-  }
-
+export function loadServiceLanding(service: string) {
   const filePath = path.join(
     process.cwd(),
     "content/services",
-    serviceId,
+    service,
     "landing.json"
   );
 
-  const raw = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(raw);
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`Landing not found for ${service}`);
+  }
+
+  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }

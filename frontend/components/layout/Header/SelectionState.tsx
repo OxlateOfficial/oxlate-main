@@ -3,27 +3,40 @@
 import { useServiceSelection } from "@/hooks/useServiceSelection";
 import { SERVICES } from "@/lib/constants/services";
 import { trackEvent } from "@/lib/analytics/events";
+import { useRouter } from "next/navigation";
+
+/**
+ * ServiceSelector - Pill button navigation
+ * 
+ * Syncs with InfiniteServiceSlider through shared useServiceSelection hook
+ * Clicking a pill updates the global service state, which triggers slider movement
+ */
+
 export default function ServiceSelector() {
   const { service, setService } = useServiceSelection();
+  const router = useRouter();
+
 
   return (
-    <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
+    <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300 rounded-3xl">
       <nav className="mx-auto max-w-6xl px-4 py-4">
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 overflow-x-auto scrollbar-hide">
           {SERVICES.map((item) => {
             const isActive = service === item.id;
-
+            
             return (
               <button
                 key={item.id}
-                onClick={() => {
-                  setService(item.id);
-                  trackEvent("service_select", { service: item.id });
-                }}
+                  onClick={() => {
+                    setService(item.id);
+                    router.push(`/?service=${item.id}`, { scroll: false });
+                    trackEvent("service_select", { service: item.id });
+                  }}
                 className={`
-                  relative px-4 sm:px-6 py-2.5 sm:py-3
-                  text-xs sm:text-sm font-medium rounded-full
-                  transition-all duration-200 whitespace-nowrap
+                  relative px-4 sm:px-6 py-2.5 sm:py-3 
+                  text-xs sm:text-sm font-medium 
+                  rounded-full transition-all duration-200 
+                  whitespace-nowrap
                   ${
                     isActive
                       ? "text-black border-2 border-black bg-white"

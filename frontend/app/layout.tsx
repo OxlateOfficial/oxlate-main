@@ -5,6 +5,8 @@ import { Orbitron } from "next/font/google";
 import Analytics from "@/components/performance/GoogleAnalytics";
 import HeaderClient from "@/components/layout/Header/HeaderClient";
 import Oxlatebg from "@/components/visual/background/oxlatebg"
+import { Providers } from "@/components/layout/Providers";
+
 const OrbitronFont = Orbitron({
   variable: "--font-orbitron",
   subsets: ["latin"],
@@ -48,13 +50,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${OrbitronFont.variable} antialiased bg-white text-black scroll-smooth`}
+        className={`${OrbitronFont.variable} antialiased bg-white text-black scroll-smooth `}
       >
-        <Oxlatebg/>
-        <HeaderClient/>
-        {children}
-        <Analytics />
-        <Footer/>
+        <Providers>
+          <Oxlatebg/>
+          <HeaderClient/>
+          {children}
+          <Analytics />
+          <Footer/>
+        </Providers>
       </body>
     </html>
   );
