@@ -167,8 +167,8 @@ export default function WireframeGlobeHero() {
             top: "-10%",
             left: "50%",
             transform: "translateX(-50%)",
-            width: "190vw",
-            height: "190vh",
+            width: "100vw",
+            height: "100vh",
           }}
         >
           <ambientLight intensity={0.5} />
