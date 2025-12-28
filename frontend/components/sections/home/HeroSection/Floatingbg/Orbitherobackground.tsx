@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useId, useState } from 'react';
 import { OrbitSystemConfig } from '@/types/orbit';
 import { DEFAULT_ORBIT_CONFIG } from '@/config/orbitConfig';
 import { renderTechLogo } from '../renderTechLogo';
-import './orbit.css';
 
 interface Props {
   config?: OrbitSystemConfig;
@@ -13,150 +12,188 @@ interface Props {
 export default function OrbitHeroBackground({
   config = DEFAULT_ORBIT_CONFIG,
 }: Props) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const baseId = useId();
+
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(true);
+  const [reduceMotion, setReduceMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>(() =>
+    typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+  );
+
+  // color progression per orbit (inner -> outer)
+const ORBIT_TINTS = [
+  '#FFFFFF',
+  '#F4F5F3',
+  '#E4E6E2',
+  '#CFD2CD',
+  '#B9BDB8',
+  '#9FA49E',
+];
 
 
-  /* ─────────────────────────────────────────────
-     1️⃣ Pause when hero leaves viewport
-  ───────────────────────────────────────────── */
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.15 }
-    );
 
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
-  /* ─────────────────────────────────────────────
-     2️⃣ Pause during scroll (resume after idle)
-  ───────────────────────────────────────────── */
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    const onScroll = () => {
-      setIsScrolling(true);
-      clearTimeout(timeout);
-      timeout = setTimeout(() => setIsScrolling(false), 180);
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      clearTimeout(timeout);
-    };
-  }, []);
+  // Intersection observer + prefers-reduced-motion + resize + scroll throttling + visibility
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReduceMotion(media.matches);
+    const mediaListener = () => setReduceMotion(media.matches);
+    media.addEventListener('change', mediaListener);
 
-    const listener = () => setReduceMotion(media.matches);
-    media.addEventListener('change', listener);
+    const el = wrapperRef.current;
+    const obs = el
+      ? new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), {
+          threshold: 0.15,
+        })
+      : null;
+    if (el && obs) obs.observe(el);
 
-    return () => media.removeEventListener('change', listener);
-    }, []);
+    let scrollTimer: number | undefined;
+    const onScroll = () => {
+      setIsScrolling(true);
+      window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(() => setIsScrolling(false), 180);
+    };
 
-  const shouldAnimate =
-    config.enableAnimation &&
-    isVisible &&
-    !isScrolling &&
-    !reduceMotion;
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+
+    const onVisibility = () => {
+      if (document.visibilityState !== 'visible') {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    document.addEventListener('visibilitychange', onVisibility);
+
+    return () => {
+      media.removeEventListener('change', mediaListener);
+      if (obs && el) obs.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+      document.removeEventListener('visibilitychange', onVisibility);
+      if (scrollTimer) window.clearTimeout(scrollTimer);
+    };
+  }, []);
+
+  // Apply CSS rotation to each orbit group and control play state
+  useEffect(() => {
+    if (!svgRef.current) return;
+
+    const prefersReduced = reduceMotion;
+    // we will only render a subset on mobile for performance
+    const visibleOrbits = isMobile
+      ? config.orbits.slice(0, config.mobileMaxOrbits)
+      : config.orbits;
+
+    visibleOrbits.forEach((orbit, i) => {
+      const group = svgRef.current!.querySelector(`#orbit-group-${i}`) as
+        | SVGGElement
+        | null;
+      if (!group) return;
+
+      const rotationDuration = Math.max(1, 6 / Math.max(orbit.speed, 0.0003)); // seconds/rev
+      const direction = orbit.direction === -1 ? 'reverse' : 'normal';
+      const shouldPlay =
+        config.enableAnimation &&
+        !prefersReduced &&
+        isVisible &&
+        !isScrolling &&
+        document.visibilityState === 'visible';
+
+      group.style.animation = `orbit-rotate ${rotationDuration}s linear infinite ${direction}`;
+      group.style.transformOrigin = '0 0';
+      group.style.animationPlayState = shouldPlay ? 'running' : 'paused';
+    });
+  }, [config, isVisible, isScrolling, reduceMotion, isMobile]);
+
+  // Determine visible orbits (respect mobileMaxOrbits)
+  const visibleOrbits = isMobile
+    ? config.orbits.slice(0, config.mobileMaxOrbits)
+    : config.orbits;
 
   return (
     <div
-      ref={containerRef}
+      ref={wrapperRef}
       className="absolute inset-0 pointer-events-none overflow-hidden"
       aria-hidden="true"
     >
-      <svg
-        viewBox="-800 -600 1600 1000"
-        className="w-full h-full"
-        style={{ minHeight: '80vh' }}
-      >
-        {/* BACKGROUND */}
-        {/* <defs>
-          <radialGradient id="orbit-bg" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-            <stop offset="100%" stopColor="#E5E7EB" stopOpacity="0.35" />
-          </radialGradient>
-        </defs> */}
-{/* 
-        <circle
-          cx="0"
-          cy="0"
-          r={config.backgroundRadius}
-          fill="url(#orbit-bg)"
-        /> */}
+      <style>{`
+        @keyframes orbit-rotate {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
 
-        {/* ORBITS */}
-        {config.orbits.map((orbit, i) => {
-          const directionClass =
-            orbit.direction === 1
-              ? 'orbit-animate-cw'
-              : 'orbit-animate-ccw';
+        @media (prefers-reduced-motion: reduce) {
+          [id^="orbit-group-"] { animation: none !important; }
+        }
+      `}</style>
+
+      <svg
+        ref={svgRef}
+        viewBox="-800 -600 1600 1000"
+        preserveAspectRatio="xMidYMid slice"
+        width="100%"
+        height="100%"
+        className="w-full h-full"
+        style={{ minHeight: '90vh' }}
+      >
+        {/* NOTE: removed heavy background gradient & circle to reduce paint cost on mobile */}
+
+        {[...visibleOrbits].reverse().map((orbit, revIndex) => {
+          const i = visibleOrbits.length - 1 - revIndex;
+          const effectiveIconSize = isMobile
+            ? Math.max(18, Math.round(orbit.iconSize * 0.8))
+            : orbit.iconSize;
+
+          const tint = ORBIT_TINTS[i] ?? orbit.primaryColor;
+
+          // dimming progression: inner -> subtle, outer -> brighter
+          const iconOpacity = isMobile
+            ? Math.min(0.6, orbit.iconOpacity)
+            : Math.max(
+                0,
+                Math.min(1, orbit.iconOpacity * (0.85 - i * 0.08))
+              );
 
           return (
-            <g key={i}>
-              {/* STATIC RING */}
-              <circle
-                cx="0"
-                cy="0"
-                r={orbit.radius}
-                fill={orbit.fillColor}
-                opacity={orbit.fillOpacity}
-              />
-              {/* <circle
-                cx="0"
-                cy="0"
-                r={orbit.radius}
-                fill="none"
-                stroke={orbit.rimColor}
-                strokeWidth={orbit.strokeWidth}
-                strokeOpacity={orbit.strokeOpacity}
-                strokeDasharray={orbit.dashArray}
-              /> */}
+            <g key={i} transform={`translate(0 ${orbit.depthOffset})`}>
+              <g transform={`translate(0 ${orbit.lift})`}>
+                {/* minimal base ring (transparent) to keep layout but avoid heavy fills */}
+                <circle cx="0" cy="0" r={orbit.radius} fill={tint} />
+              </g>
 
-              {/* ICON GROUP (ONLY THIS ROTATES) */}
-              <g
-                className={`
-                  ${shouldAnimate ? directionClass : 'orbit-paused'}
-                `}
-                style={{
-                  animationDuration: `${120 / orbit.speed}s`,
-                }}
-              >
+              <g id={`orbit-group-${i}`}>
                 {Array.from({ length: orbit.elementCount }).map((_, index) => {
                   const angle = (360 / orbit.elementCount) * index;
                   const rad = (angle * Math.PI) / 180;
                   const x = Math.cos(rad) * orbit.radius;
                   const y = Math.sin(rad) * orbit.radius;
 
-                  const tech =
-                    config.techOrder[index % config.techOrder.length];
+                  const tech = config.techOrder[index % config.techOrder.length];
+                  const logoId = `${baseId}-orbit-${i}-el-${index}`;
 
                   return (
                     <g
-                      key={index}
+                      key={logoId}
                       transform={`translate(${x}, ${y})`}
-                      opacity={orbit.iconOpacity}
+                      opacity={iconOpacity}
                     >
                       <g
-                        transform={`translate(${
-                          -orbit.iconSize / 2
-                        }, ${-orbit.iconSize / 2})`}
+                        transform={`translate(${ -effectiveIconSize / 2 }, ${ -effectiveIconSize / 2 })`}
                       >
                         {renderTechLogo(
                           tech,
-                          orbit.iconSize,
-                          orbit.primaryColor,
-                          `orbit-${i}-${index}`
+                          effectiveIconSize,
+                          tint,
+                          logoId
                         )}
                       </g>
                     </g>
@@ -167,13 +204,7 @@ export default function OrbitHeroBackground({
           );
         })}
 
-        {/* CENTER CLEAR */}
-        {/* <circle
-          cx="0"
-          cy="0"
-          r={config.centerClearRadius}
-          fill="white"
-        /> */}
+        <circle cx="0" cy="0" r={config.centerClearRadius} fill="white" />
       </svg>
     </div>
   );

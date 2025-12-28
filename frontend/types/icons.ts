@@ -4,26 +4,20 @@ export type TechType =
   | 'html'
   | 'github'
   | 'vercel'
-  | 'railway'
+//   | 'railway'
   | 'nextjs';
 
-export interface OrbitVisualConfig {
+export interface FloatingLayerConfig {
   radius: number;
-  speed: number;
+  speed: number;          // degrees per second
   direction: 1 | -1;
   elementCount: number;
   iconSize: number;
-  primaryColor: string;
-  secondaryColor: string;
   iconOpacity: number;
-  hideOnMobile?: boolean;
 }
 
-export interface OrbitSystemConfig {
-  centerClearRadius: number;
-  backgroundRadius: number;
+export interface FloatingIconConfig {
   enableAnimation: boolean;
-  mobileMaxOrbits: number;
-  orbits: OrbitVisualConfig[];
   techOrder: TechType[];
+  layers: FloatingLayerConfig[];
 }

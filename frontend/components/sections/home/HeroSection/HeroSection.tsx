@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { useTheme } from "@/components/layout/Providers";
 import FloatingIconsBackground from "./Iconbg/FloatingIconsBackground";
 import OrbitHeroBackground from "./Floatingbg/Orbitherobackground";
-
+import HeroTechCardBackground from "./cardbg/cardbg";
 export default function HeroSection() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
@@ -14,8 +14,14 @@ export default function HeroSection() {
     <main className="relative w-full font-[Orbitron] bg-white/70  sm:min-h-[50vh]">
       {/* <HeroGlobeBackground /> */}
       {/* <FloatingIconsBackground/> */}
+      <div className="will-change-transform absolute inset-0 pointer-events-none overflow-hidden">
+        <OrbitHeroBackground />
+      </div>
+
       {/* <OrbitHeroBackground /> */}
-      <FloatingIconsBackground />
+      {/* <FloatingIconsBackground /> */}
+      {/* <HeroTechCardBackground/> */}
+
       {/* SEO TEXT (unchanged) */}
       <section className="sr-only">
         <h1>Oxlate Web Development Company</h1>

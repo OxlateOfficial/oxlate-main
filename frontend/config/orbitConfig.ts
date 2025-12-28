@@ -4,16 +4,22 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
   centerClearRadius: 240,
   backgroundRadius: 0,
   enableAnimation: true,
-  mobileMaxOrbits: 2,
+  mobileMaxOrbits: 4,
 
   techOrder: [
-    'python',
-    'java',
-    'html',
-    'github',
-    'vercel',
-    'railway',
-    'nextjs',
+   "python"
+  , "java"
+  , "html"
+  , "css"
+  , "tailwind"
+  , "github"
+  , "vercel"
+  , "vite"
+  , "nextjs"
+  , "mysql"
+  , "tensorflow"
+  , "react"
+  , "node"
   ],
 
   orbits: [
@@ -31,12 +37,12 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
       primaryColor: '#3B82F6',
       secondaryColor: '#93C5FD',
 
-      fillColor: '#FFFFFF',
+      fillColor: '#9CA3AF',
       fillOpacity: 0.95,
       rimColor: '#E5E7EB',
       shadowColor: '#000000',
 
-      iconOpacity: 0.1,
+      iconOpacity: 1,
       depthOffset: 0,
       lift: 0,
       shadowBlur: 20,
@@ -57,7 +63,7 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
       primaryColor: '#10B981',
       secondaryColor: '#6EE7B7',
 
-      fillColor: '#F9FAFB',
+      fillColor: '#60A5FA',
       fillOpacity: 0.85,
       rimColor: '#D1D5DB',
       shadowColor: '#000000',
@@ -83,7 +89,7 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
       primaryColor: '#8B5CF6',
       secondaryColor: '#C4B5FD',
 
-      fillColor: '#F3F4F6',
+      fillColor: '#34D399',
       fillOpacity: 0.7,
       rimColor: '#E5E7EB',
       shadowColor: '#000000',
@@ -109,7 +115,7 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
       primaryColor: '#F59E0B',
       secondaryColor: '#FCD34D',
 
-      fillColor: '#FFFAF0',
+      fillColor: '#FBBF24',
       fillOpacity: 0.55,
       rimColor: '#FDE68A',
       shadowColor: '#000000',
@@ -137,12 +143,12 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
       primaryColor: '#64748B',
       secondaryColor: '#CBD5E1',
 
-      fillColor: '#FFFFFF',
+      fillColor: '#A78BFA',
       fillOpacity: 0.4,
       rimColor: '#E5E7EB',
       shadowColor: '#000000',
 
-      iconOpacity: 4,
+      iconOpacity: 0.65,
       depthOffset: 46,
       lift: 40,
       shadowBlur: 42,
@@ -153,7 +159,7 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
 
     // ───────────────── STAGE 6 (ATMOSPHERE) ─────────────────
     {
-      radius: 1080, // +200
+      radius: 1080, // +200 // +200
       speed: 0.006,
       direction: -1,
       strokeWidth: 0.8,
@@ -165,12 +171,12 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
       primaryColor: '#94A3B8',
       secondaryColor: '#E2E8F0',
 
-      fillColor: '#FFFFFF',
+      fillColor: '#F472B6',
       fillOpacity: 0.25,
       rimColor: '#E5E7EB',
       shadowColor: '#000000',
 
-      iconOpacity: 1,
+      iconOpacity: 0.5,
       depthOffset: 60,
       lift: 52,
       shadowBlur: 50,

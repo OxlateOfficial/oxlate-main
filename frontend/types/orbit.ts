@@ -1,11 +1,17 @@
 export type TechType =
-  | 'python'
-  | 'java'
-  | 'html'
-  | 'github'
-  | 'vercel'
-  | 'vite'
-  | 'nextjs';
+  | "python"
+  | "java"
+  | "html"
+  | "css"
+  | "tailwind"
+  | "github"
+  | "vercel"
+  | "vite"
+  | "nextjs"
+  | "mysql"
+  | "tensorflow"
+  | "react"
+  | "node";
 
 export interface OrbitVisualConfig {
   radius: number;

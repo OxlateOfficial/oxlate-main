@@ -1,54 +1,22 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { OrbitSystemConfig } from '@/types/icons';
+import { FloatingIconConfig } from '@/types/icons';
 import { DEFAULT_ORBIT_CONFIG } from '@/config/floatingIconConfig';
 import { renderTechLogo } from '../renderTechLogo';
 import './floating-icons.css';
 
 interface Props {
-  config?: OrbitSystemConfig;
+  config?: FloatingIconConfig;
 }
 
 export default function OrbitHeroBackground({
   config = DEFAULT_ORBIT_CONFIG,
 }: Props) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(true);
-  const [isScrolling, setIsScrolling] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(true);
   const [reduceMotion, setReduceMotion] = useState(false);
 
-  // pause when hero leaves viewport
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  // pause during scroll
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    const onScroll = () => {
-      setIsScrolling(true);
-      clearTimeout(timeout);
-      timeout = setTimeout(() => setIsScrolling(false), 180);
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      clearTimeout(timeout);
-    };
-  }, []);
-
-  // respect prefers-reduced-motion
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReduceMotion(media.matches);
@@ -57,63 +25,76 @@ export default function OrbitHeroBackground({
     return () => media.removeEventListener('change', listener);
   }, []);
 
-  const shouldAnimate =
-    config.enableAnimation && isVisible && !isScrolling && !reduceMotion;
+  useEffect(() => {
+    if (!ref.current) return;
+    const obs = new IntersectionObserver(
+      ([e]) => setActive(e.isIntersecting),
+      { threshold: 0.15 }
+    );
+    obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+
+  const shouldAnimate = config.enableAnimation && active && !reduceMotion;
 
   return (
     <div
-      ref={containerRef}
+      ref={ref}
       className="absolute inset-0 pointer-events-none overflow-hidden"
-      aria-hidden="true"
+      aria-hidden
     >
-      <svg
-        viewBox="-600 -450 1200 700"
-        preserveAspectRatio="xMidYMid meet"
-        className="w-full h-full md:h-[110%] lg:h-full"
+        <svg
+        viewBox="-400 -300 800 600" // centered viewBox
+        className="w-full h-full"
         >
-        {config.orbits.map((orbit, i) => {
-            const directionClass =
-            orbit.direction === 1 ? 'orbit-animate-cw' : 'orbit-animate-ccw';
+        {config.layers.map((layer, i) => {
+          const dirClass =
+            layer.direction === 1
+              ? 'orbit-animate-cw'
+              : 'orbit-animate-ccw';
 
-            return (
-            <g key={i}>
-                <g
-                className={shouldAnimate ? directionClass : 'orbit-paused'}
-                style={{ animationDuration: `${40/ orbit.speed}s` }}
-                >
-                {Array.from({ length: orbit.elementCount }).map((_, index) => {
-                    const angle = (360 / orbit.elementCount) * index;
-                    const rad = (angle * Math.PI) / 180;
-                    const x = Math.cos(rad) * orbit.radius;
-                    const y = Math.sin(rad) * orbit.radius;
-                    const tech = config.techOrder[index % config.techOrder.length];
+          return (
+            <g
+              key={i}
+              className={shouldAnimate ? dirClass : 'orbit-paused'}
+              style={{
+                animationDuration: `${180 / layer.speed}s`,
+              }}
+            >
+              {Array.from({ length: layer.elementCount }).map((_, index) => {
+                const angle = (360 / layer.elementCount) * index;
+                const rad = (angle * Math.PI) / 180;
+                const x = Math.cos(rad) * layer.radius;
+                const y = Math.sin(rad) * layer.radius;
 
-                    return (
+                const tech =
+                  config.techOrder[index % config.techOrder.length];
+
+                return (
+                  <g
+                    key={index}
+                    transform={`translate(${x}, ${y})`}
+                    opacity={layer.iconOpacity}
+                  >
                     <g
-                        key={index}
-                        transform={`translate(${x}, ${y})`}
-                        opacity={orbit.iconOpacity}
+                      transform={`translate(${
+                        -layer.iconSize / 2
+                      }, ${-layer.iconSize / 2})`}
                     >
-                        <g
-                        transform={`translate(${
-                            -orbit.iconSize / 2
-                        }, ${-orbit.iconSize / 2})`}
-                        >
-                        {renderTechLogo(
-                            tech,
-                            orbit.iconSize,
-                            orbit.primaryColor,
-                            `orbit-${i}-${index}`,
-                        )}
-                        </g>
+                      {renderTechLogo(
+                        tech,
+                        layer.iconSize,
+                        '#9CA3AF',
+                        `orbit-${i}-${index}`
+                      )}
                     </g>
-                    );
-                })}
-                </g>
+                  </g>
+                );
+              })}
             </g>
-            );
+          );
         })}
-        </svg>
+      </svg>
     </div>
   );
 }
