@@ -4,7 +4,8 @@ export type TechType =
   | 'html'
   | 'github'
   | 'vercel'
-  | 'railway';
+  | 'railway'
+  | 'nextjs';
 
 export interface OrbitVisualConfig {
   radius: number;

@@ -33,8 +33,9 @@ export default function OxlateOrbitBackground({
         rotations.current[i] += orbit.speed * orbit.direction;
         group.setAttribute(
           'transform',
-          `rotate(${rotations.current[i]} 0 0)`
+          `rotate(${rotations.current[i]})`
         );
+
       });
 
       animationRef.current = requestAnimationFrame(animate);
@@ -81,8 +82,8 @@ export default function OxlateOrbitBackground({
                 cx="0"
                 cy="0"
                 r={orbit.radius}
-                fill="gray"
-                opacity={orbit.fillOpacity}
+                fill="#9CA3AF"
+                opacity={orbit.fillOpacity * 0.6}
               />
 
               {/* STRAP RING */}
