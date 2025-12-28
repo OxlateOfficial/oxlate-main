@@ -1,4 +1,4 @@
-import OrbitHeroBackground from "@/components/sections/home/HeroSection/bg/Orbitherobackground";
+import OrbitHeroBackground from "@/components/sections/home/HeroSection/Floatingbg/Orbitherobackground";
 import HeroMapBackground from "@/components/sections/home/HeroSection/globe/HeroMapBackground";
 export default function ServicesPage() {
   return (

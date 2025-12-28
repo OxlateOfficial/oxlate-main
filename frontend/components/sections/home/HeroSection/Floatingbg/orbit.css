@@ -1,0 +1,33 @@
+@keyframes orbit-rotate-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-rotate-ccw {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Applied only when animation is enabled */
+.orbit-animate-cw {
+  animation: orbit-rotate-cw linear infinite;
+  transform-origin: center;
+}
+
+.orbit-animate-ccw {
+  animation: orbit-rotate-ccw linear infinite;
+  transform-origin: center;
+}
+
+/* HARD STOP when paused */
+.orbit-paused {
+  animation-play-state: paused !important;
+}

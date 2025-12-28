@@ -3,17 +3,19 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useTheme } from "@/components/layout/Providers";
-// import HeroGlobeBackground from './globe/HeroGlobeBackground';
-import OrbitHeroBackground from './bg/Orbitherobackground';
+import FloatingIconsBackground from "./Iconbg/FloatingIconsBackground";
+import OrbitHeroBackground from "./Floatingbg/Orbitherobackground";
 
 export default function HeroSection() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
   return (
-    <main className="relative w-full font-[Orbitron]  bg-white/70">
+    <main className="relative w-full font-[Orbitron] bg-white/70  sm:min-h-[50vh]">
       {/* <HeroGlobeBackground /> */}
-      <OrbitHeroBackground />
+      {/* <FloatingIconsBackground/> */}
+      {/* <OrbitHeroBackground /> */}
+      <FloatingIconsBackground />
       {/* SEO TEXT (unchanged) */}
       <section className="sr-only">
         <h1>Oxlate Web Development Company</h1>

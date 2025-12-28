@@ -1,0 +1,38 @@
+@keyframes orbit-rotate-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-rotate-ccw {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Ensure rotation around SVG center for groups */
+.orbit-animate-cw,
+.orbit-animate-ccw {
+  transform-box: view-box;      /* key for <g> inside SVG */
+  transform-origin: 50% 50%;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.orbit-animate-cw {
+  animation-name: orbit-rotate-cw;
+}
+
+.orbit-animate-ccw {
+  animation-name: orbit-rotate-ccw;
+}
+
+.orbit-paused {
+  animation-play-state: paused !important;
+}

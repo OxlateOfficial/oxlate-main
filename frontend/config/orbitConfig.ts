@@ -6,150 +6,177 @@ export const DEFAULT_ORBIT_CONFIG: OrbitSystemConfig = {
   enableAnimation: true,
   mobileMaxOrbits: 2,
 
-  techOrder: ['python', 'java', 'html', 'github', 'vercel', 'vite', 'nextjs'],
+  techOrder: [
+    'python',
+    'java',
+    'html',
+    'github',
+    'vercel',
+    'railway',
+    'nextjs',
+  ],
 
   orbits: [
+    // ───────────────── INNER STAGE ─────────────────
     {
       radius: 420,
-      speed: 0.015,
+      speed: 0.016,
       direction: 1,
-      strokeWidth: 1.5,
-      strokeOpacity: 0.4,
+      strokeWidth: 1.6,
+      strokeOpacity: 0.45,
       dashArray: '4 4',
       elementCount: 8,
       iconSize: 36,
+
       primaryColor: '#3B82F6',
       secondaryColor: '#93C5FD',
-      fillOpacity: 0.95,
-      depthOffset: 0,
 
-      // new visual properties
-      iconOpacity: 1,
       fillColor: '#FFFFFF',
+      fillOpacity: 0.95,
       rimColor: '#E5E7EB',
       shadowColor: '#000000',
+
+      iconOpacity: 0.1,
+      depthOffset: 0,
       lift: 0,
       shadowBlur: 20,
       shadowOffset: 14,
     },
+
+    // ───────────────── STAGE 2 ─────────────────
     {
-      radius: 520,
-      speed: 0.012,
+      radius: 500, // +80
+      speed: 0.014,
       direction: -1,
-      strokeWidth: 1.2,
-      strokeOpacity: 0.35,
+      strokeWidth: 1.4,
+      strokeOpacity: 0.4,
       dashArray: '6 6',
-      elementCount: 12,
-      iconSize: 40,
+      elementCount: 10,
+      iconSize: 38,
+
       primaryColor: '#10B981',
       secondaryColor: '#6EE7B7',
-      fillOpacity: 0.75,
-      depthOffset: 12,
 
-      // new visual properties
-      iconOpacity: 0.9,
       fillColor: '#F9FAFB',
+      fillOpacity: 0.85,
       rimColor: '#D1D5DB',
       shadowColor: '#000000',
-      lift: 18,
-      shadowBlur: 26,
-      shadowOffset: 22,
+
+      iconOpacity: 0.92,
+      depthOffset: 10,
+      lift: 12,
+      shadowBlur: 24,
+      shadowOffset: 18,
     },
+
+    // ───────────────── STAGE 3 ─────────────────
     {
-      radius: 640,
-      speed: 0.008,
+      radius: 600, // +100
+      speed: 0.012,
       direction: 1,
-      strokeWidth: 1,
-      strokeOpacity: 0.22,
+      strokeWidth: 1.2,
+      strokeOpacity: 0.32,
       dashArray: '4 10',
-      elementCount: 16,
-      iconSize: 44,
+      elementCount: 12,
+      iconSize: 40,
+
       primaryColor: '#8B5CF6',
       secondaryColor: '#C4B5FD',
-      fillOpacity: 0.55,
-      depthOffset: 24,
-      hideOnMobile: true,
 
-      // new visual properties
-      iconOpacity: 0.8,
       fillColor: '#F3F4F6',
+      fillOpacity: 0.7,
       rimColor: '#E5E7EB',
       shadowColor: '#000000',
-      lift: 24,
-      shadowBlur: 32,
-      shadowOffset: 28,
+
+      iconOpacity: 0.84,
+      depthOffset: 20,
+      lift: 20,
+      shadowBlur: 30,
+      shadowOffset: 24,
     },
+
+    // ───────────────── STAGE 4 ─────────────────
     {
-      radius: 780,
+      radius: 720, // +120
+      speed: 0.01,
+      direction: -1,
+      strokeWidth: 1,
+      strokeOpacity: 0.26,
+      dashArray: '2 12',
+      elementCount: 14,
+      iconSize: 42,
+
+      primaryColor: '#F59E0B',
+      secondaryColor: '#FCD34D',
+
+      fillColor: '#FFFAF0',
+      fillOpacity: 0.55,
+      rimColor: '#FDE68A',
+      shadowColor: '#000000',
+
+      iconOpacity: 0.75,
+      depthOffset: 32,
+      lift: 30,
+      shadowBlur: 36,
+      shadowOffset: 30,
+
+      hideOnMobile: true,
+    },
+
+    // ───────────────── STAGE 5 ─────────────────
+    {
+      radius: 880, // +160
+      speed: 0.008,
+      direction: 1,
+      strokeWidth: 0.9,
+      strokeOpacity: 0.2,
+      dashArray: '4 12',
+      elementCount: 18,
+      iconSize: 46,
+
+      primaryColor: '#64748B',
+      secondaryColor: '#CBD5E1',
+
+      fillColor: '#FFFFFF',
+      fillOpacity: 0.4,
+      rimColor: '#E5E7EB',
+      shadowColor: '#000000',
+
+      iconOpacity: 4,
+      depthOffset: 46,
+      lift: 40,
+      shadowBlur: 42,
+      shadowOffset: 36,
+
+      hideOnMobile: true,
+    },
+
+    // ───────────────── STAGE 6 (ATMOSPHERE) ─────────────────
+    {
+      radius: 1080, // +200
       speed: 0.006,
       direction: -1,
-      strokeWidth: 1,
-      strokeOpacity: 0.18,
-      dashArray: '2 12',
-      elementCount: 20,
-      iconSize: 48,
-      primaryColor: '#F59E0B',
-      secondaryColor: '#FCD34D',
-      fillOpacity: 0.35,
-      depthOffset: 36,
-      hideOnMobile: true,
+      strokeWidth: 0.8,
+      strokeOpacity: 0.14,
+      dashArray: '2 14',
+      elementCount: 24,
+      iconSize: 50,
 
-      // new visual properties
-      iconOpacity: 0.7,
-      fillColor: '#FFFAF0',
-      rimColor: '#FDE68A',
-      shadowColor: '#000000',
-      lift: 36,
-      shadowBlur: 40,
-      shadowOffset: 34,
-    },
-    {
-      radius: 880,
-      speed: 0.009,
-      direction: 1,
-      strokeWidth: 1,
-      strokeOpacity: 0.18,
-      dashArray: '4 10',
-      elementCount: 20,
-      iconSize: 52,
-      primaryColor: '#F59E0B',
-      secondaryColor: '#FCD34D',
-      fillOpacity: 0.05,
-      depthOffset: 48,
-      hideOnMobile: true,
+      primaryColor: '#94A3B8',
+      secondaryColor: '#E2E8F0',
 
-      // new visual properties
-      iconOpacity: 0.6,
-      fillColor: '#FFFAF0',
-      rimColor: '#FDE68A',
+      fillColor: '#FFFFFF',
+      fillOpacity: 0.25,
+      rimColor: '#E5E7EB',
       shadowColor: '#000000',
-      lift: 48,
-      shadowBlur: 48,
-      shadowOffset: 40,
-    },
-    {
-      radius: 1080,
-      speed: 0.007,
-      direction: -1,
-      strokeWidth: 1,
-      strokeOpacity: 0.18,
-      dashArray: '2 12',
-      elementCount: 28,
-      iconSize: 56,
-      primaryColor: '#F59E0B',
-      secondaryColor: '#FCD34D',
-      fillOpacity: 0.04,
-      depthOffset: 48,
-      hideOnMobile: true,
 
-      // new visual properties
-      iconOpacity: 0.5,
-      fillColor: '#FFFAF0',
-      rimColor: '#FDE68A',
-      shadowColor: '#000000',
-      lift: 48,
-      shadowBlur: 48,
-      shadowOffset: 40,
+      iconOpacity: 1,
+      depthOffset: 60,
+      lift: 52,
+      shadowBlur: 50,
+      shadowOffset: 44,
+
+      hideOnMobile: true,
     },
   ],
 };
