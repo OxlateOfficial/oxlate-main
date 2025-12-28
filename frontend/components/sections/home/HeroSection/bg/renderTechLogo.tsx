@@ -111,12 +111,27 @@ export const renderTechLogo = (
         </g>
       );
 
-    case "html":
+    case "html": {
+      const normalizedScale = size / 128;
+
       return (
-        <g transform={`scale(${scale})`}>
-          <path d="M4 2l1.5 17L12 21l6.5-2L20 2H4z" fill={color} />
+        <g transform={`scale(${normalizedScale})`}>
+          <path
+            fill="#E44D26"
+            d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"
+          />
+          <path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z" />
+          <path
+            fill="#EBEBEB"
+            d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"
+          />
+          <path
+            fill="#fff"
+            d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"
+          />
         </g>
       );
+    }
 
     case "github":
       return (
@@ -148,12 +163,12 @@ export const renderTechLogo = (
       );
 
     case "nextjs": {
-  const normalizedScale = (size / 128) * 0.75;
+      const normalizedScale = (size / 128) * 0.75;
 
-  return (
-    <g transform={`scale(${normalizedScale}) translate(-64 -64)`}>
-      <path
-        d="M64 0
+      return (
+        <g transform={`scale(${normalizedScale}) translate(-64 -64)`}>
+          <path
+            d="M64 0
            C28.7 0 0 28.7 0 64
            s28.7 64 64 64
            c11.2 0 21.7-2.9 30.8-7.9
@@ -166,12 +181,11 @@ export const renderTechLogo = (
            zm22.1 84.6
            l-7.5-11.3
            V41.8h7.5v42.8z"
-        fill="#000000"
-      />
-    </g>
-  );
-}
-
+            fill="#000000"
+          />
+        </g>
+      );
+    }
 
     default:
       return null;
