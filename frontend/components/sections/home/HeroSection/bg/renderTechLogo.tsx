@@ -150,12 +150,18 @@ export const renderTechLogo = (
       );
     }
 
-    case "vercel":
+    case "vercel": {
+      const normalizedScale = size / 128;
+
       return (
-        <g transform={`scale(${scale})`}>
-          <path d="M12 2L2 22h20L12 2z" fill={color} />
+        <g transform={`scale(${normalizedScale})`}>
+          <path
+            style={{ fillRule: "nonzero", fill: "#000", fillOpacity: 1 }}
+            d="M63.984 17.184 127.964 128H0Zm0 0"
+          />
         </g>
       );
+    }
 
     case "railway":
       return (
