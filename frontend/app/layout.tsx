@@ -53,7 +53,7 @@ export default function RootLayout({
         className={`${OrbitronFont.variable} antialiased bg-white text-black scroll-smooth `}
       >
         <Providers>
-          <Oxlatebg/>
+          {/* <Oxlatebg/> */}
           <HeaderClient/>
           {children}
           <Analytics />

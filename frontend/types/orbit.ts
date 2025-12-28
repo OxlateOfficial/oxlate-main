@@ -24,8 +24,15 @@ export interface OrbitVisualConfig {
 
   /** NEW */
   fillOpacity: number;
+    iconOpacity: number;
   depthOffset: number; // visual stacking illusion
   hideOnMobile?: boolean;
+  fillColor: string;
+  rimColor: string;
+  shadowColor: string;
+  lift: number;
+  shadowBlur: number;
+  shadowOffset: number;
 }
 
 

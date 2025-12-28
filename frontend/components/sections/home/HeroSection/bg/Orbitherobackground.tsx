@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useId } from 'react';
 import { OrbitSystemConfig } from '@/types/orbit';
 import { DEFAULT_ORBIT_CONFIG } from '@/config/orbitConfig';
 import { renderTechLogo } from './renderTechLogo';
-import { useId } from 'react';
 
 interface Props {
   config?: OrbitSystemConfig;
@@ -16,7 +15,8 @@ export default function OxlateOrbitBackground({
   const svgRef = useRef<SVGSVGElement>(null);
   const animationRef = useRef<number | null>(null);
   const rotations = useRef<number[]>(config.orbits.map(() => 0));
- const baseId = useId(); 
+  const baseId = useId();
+
   useEffect(() => {
     if (!config.enableAnimation) return;
 
@@ -27,7 +27,10 @@ export default function OxlateOrbitBackground({
 
     const animate = () => {
       config.orbits.forEach((orbit, i) => {
-        const group = svgRef.current?.querySelector(`#orbit-group-${i}`);
+        const group = svgRef.current?.querySelector(
+          `#orbit-group-${i}`
+        ) as SVGGElement | null;
+
         if (!group) return;
 
         rotations.current[i] += orbit.speed * orbit.direction;
@@ -44,7 +47,9 @@ export default function OxlateOrbitBackground({
     animationRef.current = requestAnimationFrame(animate);
 
     return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
   }, [config]);
 
@@ -52,7 +57,7 @@ export default function OxlateOrbitBackground({
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       <svg
         ref={svgRef}
-        viewBox="-800 -500 1600 1000"
+        viewBox="-800 -600 1600 1000"
         className="w-full h-full"
         style={{ minHeight: '80vh' }}
       >
@@ -62,6 +67,11 @@ export default function OxlateOrbitBackground({
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
             <stop offset="100%" stopColor="#E5E7EB" stopOpacity="0.35" />
           </radialGradient>
+
+          {/* SHADOW FILTER */}
+          <filter id="orbit-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="12" />
+          </filter>
         </defs>
 
         <circle
@@ -71,32 +81,43 @@ export default function OxlateOrbitBackground({
           fill="url(#orbit-bg)"
         />
 
-        {/* STAGED ORBITS (render outer → inner) */}
-        {[...config.orbits].reverse().map((orbit, iRev) => {
-          const i = config.orbits.length - 1 - iRev;
+        {/* STAGED ORBITS (outer → inner) */}
+        {[...config.orbits].reverse().map((orbit, revIndex) => {
+          const i = config.orbits.length - 1 - revIndex;
 
           return (
             <g key={i} transform={`translate(0 ${orbit.depthOffset})`}>
-              {/* STAGE DISC */}
-              <circle
-                cx="0"
-                cy="0"
-                r={orbit.radius}
-                fill="#9CA3AF"
-                opacity={orbit.fillOpacity * 0.6}
-              />
+              <g transform={`translate(0 ${orbit.lift})`}>
+                {/* SHADOW */}
+                <circle
+                  cx="0"
+                  cy={orbit.shadowOffset}
+                  r={orbit.radius}
+                  fill={orbit.shadowColor}
+                  opacity="0.18"
+                  filter="url(#orbit-shadow)"
+                />
 
-              {/* STRAP RING */}
-              <circle
-                cx="0"
-                cy="0"
-                r={orbit.radius}
-                fill="none"
-                stroke={orbit.secondaryColor}
-                strokeWidth={orbit.strokeWidth}
-                strokeOpacity={orbit.strokeOpacity}
-                strokeDasharray={orbit.dashArray}
-              />
+                {/* BASE DISC */}
+                <circle
+                  cx="0"
+                  cy="0"
+                  r={orbit.radius}
+                  fill={orbit.fillColor}
+                />
+
+                {/* RIM */}
+                <circle
+                  cx="0"
+                  cy="0"
+                  r={orbit.radius}
+                  fill="none"
+                  stroke={orbit.rimColor}
+                  strokeWidth={orbit.strokeWidth}
+                  strokeOpacity={orbit.strokeOpacity}
+                  strokeDasharray={orbit.dashArray}
+                />
+              </g>
 
               {/* FLOATING ELEMENTS */}
               <g id={`orbit-group-${i}`}>
@@ -108,10 +129,14 @@ export default function OxlateOrbitBackground({
 
                   const tech =
                     config.techOrder[index % config.techOrder.length];
-                    const logoId = `${baseId}-orbit-${i}-el-${index}`;
+                  const logoId = `${baseId}-orbit-${i}-el-${index}`;
 
                   return (
-                    <g key={index} transform={`translate(${x}, ${y})`}>
+                        <g
+                        key={logoId}
+                        transform={`translate(${x}, ${y})`}
+                        opacity={orbit.iconOpacity}
+                        >
                       <g
                         transform={`translate(${
                           -orbit.iconSize / 2
@@ -132,13 +157,12 @@ export default function OxlateOrbitBackground({
           );
         })}
 
-        {/* CENTER CLEAR PLATFORM */}
+        {/* CENTER PLATFORM */}
         <circle
           cx="0"
           cy="0"
           r={config.centerClearRadius}
           fill="white"
-          opacity="0.97"
         />
         <circle
           cx="0"

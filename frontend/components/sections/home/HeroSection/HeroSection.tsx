@@ -11,7 +11,7 @@ export default function HeroSection() {
   const isDark = theme === "dark";
 
   return (
-    <main className="relative w-full font-[Orbitron] ">
+    <main className="relative w-full font-[Orbitron]  bg-white/70">
       {/* <HeroGlobeBackground /> */}
       <OrbitHeroBackground />
       {/* SEO TEXT (unchanged) */}
@@ -29,7 +29,7 @@ export default function HeroSection() {
         className="
           relative w-full
           min-h-[55vh]
-          sm:min-h-[60vh]
+          sm:min-h-[50vh]
           flex items-center justify-center
           px-4
           py-14 sm:py-20
@@ -41,6 +41,7 @@ export default function HeroSection() {
             sm:max-w-2xl
             mx-auto
             text-center
+            mt-[149]
             space-y-5 sm:space-y-6
           "
         >
