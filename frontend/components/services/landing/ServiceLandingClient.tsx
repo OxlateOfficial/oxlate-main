@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 type Props = {
   landing: {
@@ -53,7 +53,7 @@ export default function ServiceLandingClient({ landing }: Props) {
             </h2>
             <div className="h-1 w-12 sm:w-16 bg-blue-600 mt-2 sm:mt-3 rounded-full"></div>
           </div>
-          
+
           <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl">
             {landing.whatIs}
           </p>
@@ -112,11 +112,11 @@ export default function ServiceLandingClient({ landing }: Props) {
                       </span>
                       <div className="h-px flex-1 bg-gray-200"></div>
                     </div>
-                    
+
                     <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">
                       {step.title}
                     </h4>
-                    
+
                     <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                       {step.desc}
                     </p>
@@ -127,54 +127,85 @@ export default function ServiceLandingClient({ landing }: Props) {
           </div>
         </section>
 
-        {/* ==================== FAQ SECTION ==================== */}
-        <section className="space-y-6 sm:space-y-8">
-          <div className="inline-block">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              Frequently Asked Questions
-            </h3>
-            <div className="h-1 w-12 sm:w-16 bg-blue-600 mt-2 sm:mt-3 rounded-full"></div>
-          </div>
+  {/* ==================== FAQ SECTION ==================== */}
+<section className="space-y-6 sm:space-y-8">
+  <div className="inline-block">
+    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+      Frequently Asked Questions
+    </h3>
+    <div className="h-1 w-12 sm:w-16 bg-blue-600 mt-2 sm:mt-3 rounded-full"></div>
+  </div>
 
-          <div className="space-y-3 sm:space-y-4">
-            {landing.faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left"
-                >
-                  <span className="text-base sm:text-lg font-semibold text-gray-900 pr-3 sm:pr-4">
-                    {faq.q}
-                  </span>
-                  <div className="flex-shrink-0">
-                    <div
-                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold transition-transform duration-300 ${
-                        openFaqIndex === index ? 'rotate-45' : ''
-                      }`}
-                    >
-                      +
-                    </div>
-                  </div>
-                </button>
-                
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openFaqIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 pt-0">
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+  <div className="space-y-3 sm:space-y-4">
+    {landing.faqs.map((faq, index) => (
+      <div
+        key={index}
+        className={`relative rounded-xl border shadow-sm transition-all duration-300 overflow-hidden
+          ${
+            openFaqIndex === index
+              ? "bg-blue-50 border-blue-200"
+              : "bg-white border-gray-200 hover:shadow-md"
+          }`}
+      >
+        {/* Left accent border */}
+        <span className="absolute left-0 top-0 h-full w-1 bg-blue-600 rounded-l-xl"></span>
+
+        <button
+          onClick={() => toggleFaq(index)}
+          className="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left"
+        >
+          {/* Question */}
+          <span
+            className={`text-base sm:text-lg font-semibold pr-3 sm:pr-4 transition-opacity duration-300
+              ${
+                openFaqIndex === index
+                  ? "text-gray-900 opacity-100"
+                  : "text-gray-900 opacity-80"
+              }`}
+          >
+            {faq.q}
+          </span>
+
+          {/* Plus icon */}
+          <div className="flex-shrink-0">
+            <div
+              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-blue-600
+              flex items-center justify-center text-blue-600 text-xl font-bold
+              transition-transform duration-300 ${
+                openFaqIndex === index ? "rotate-45" : ""
+              }`}
+            >
+              +
+            </div>
           </div>
-        </section>
+        </button>
+
+        {/* Answer */}
+        <div
+          className={`overflow-hidden transition-all duration-300 ${
+            openFaqIndex === index
+              ? "max-h-96 opacity-100"
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 pt-0">
+            <p
+              className={`text-sm sm:text-base leading-relaxed transition-opacity duration-300
+                ${
+                  openFaqIndex === index
+                    ? "text-gray-700 opacity-70"
+                    : "text-gray-600 opacity-0"
+                }`}
+            >
+              {faq.a}
+            </p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
         {/* ==================== CTA SECTION ==================== */}
         <section className="text-center py-8 sm:py-10 md:py-12">
@@ -184,8 +215,18 @@ export default function ServiceLandingClient({ landing }: Props) {
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
             >
               {landing.ctaText}
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="w-4 h-4 sm:w-5 sm:h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </button>
           </div>
