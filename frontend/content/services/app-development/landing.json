@@ -1,48 +1,111 @@
 {
   "id": "app-development",
   "title": "App Development",
-  "whatIs": "App development is the process of building reliable and user-friendly mobile applications that support business operations and customer engagement.",
-  "why": [
-    "Provides direct access to your customers",
-    "Improves user engagement and retention",
-    "Supports business processes on the go",
-    "Designed for consistent performance"
-  ],
-  "process": [
+  "tagline": "Native mobile experiences built for performance and reliability",
+  
+  "hero": {
+    "subtitle": "Business-focused mobile applications designed to scale",
+    "stats": [
+      { "value": "10-15", "unit": "days", "label": "Average delivery" },
+      { "value": "100%", "unit": "", "label": "Client satisfaction" },
+      { "value": "24/7", "unit": "", "label": "Post-launch support" }
+    ]
+  },
+
+  "overview": {
+    "heading": "Mobile solutions that drive results",
+    "description": "We build custom mobile applications tailored to your business needs. From concept to deployment, we handle the entire development lifecycle with precision and care.",
+    "highlights": [
+      "Native iOS and Android development",
+      "Cross-platform solutions using React Native",
+      "Backend integration and API development",
+      "App Store optimization and deployment"
+    ]
+  },
+
+  "valueBlocks": [
     {
-      "step": 1,
-      "title": "Understand the business need",
-      "desc": "We understand your business goals, users, and the purpose of the application."
+      "icon": "performance",
+      "title": "Performance-First",
+      "description": "Optimized for speed and efficiency across all devices"
     },
     {
-      "step": 2,
-      "title": "Align requirements",
-      "desc": "We define features, scope, and expectations clearly before development begins."
+      "icon": "security",
+      "title": "Secure Architecture",
+      "description": "Built with enterprise-grade security from the ground up"
     },
     {
-      "step": 3,
-      "title": "Design and development",
-      "desc": "We design clean interfaces and build secure, reliable application logic."
+      "icon": "scalability",
+      "title": "Built to Scale",
+      "description": "Architecture designed to grow with your business needs"
     },
     {
-      "step": 4,
-      "title": "Launch and support",
-      "desc": "We publish the application and provide post-launch guidance and support."
+      "icon": "support",
+      "title": "Ongoing Support",
+      "description": "Continuous maintenance and feature enhancements"
     }
   ],
+
+  "workflow": {
+    "heading": "Our development process",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Discovery & Planning",
+        "description": "We analyze your requirements, define scope, and create a detailed roadmap",
+        "deliverable": "Project blueprint & timeline"
+      },
+      {
+        "number": 2,
+        "title": "Design & Prototyping",
+        "description": "UI/UX design with interactive prototypes for validation",
+        "deliverable": "Design mockups & clickable prototype"
+      },
+      {
+        "number": 3,
+        "title": "Development & Testing",
+        "description": "Agile development with continuous testing and quality assurance",
+        "deliverable": "Working beta version"
+      },
+      {
+        "number": 4,
+        "title": "Launch & Support",
+        "description": "Store deployment, monitoring, and ongoing maintenance",
+        "deliverable": "Live app + support plan"
+      }
+    ]
+  },
+
+  "guarantees": [
+    "Clean, maintainable code following industry standards",
+    "Comprehensive documentation and training",
+    "Post-launch support for 30 days included",
+    "Source code and full ownership rights"
+  ],
+
   "faqs": [
     {
+      "q": "What platforms do you develop for?",
+      "a": "We develop native apps for iOS and Android, as well as cross-platform solutions using React Native. The choice depends on your specific requirements, budget, and timeline."
+    },
+    {
       "q": "How long does app development take?",
-      "a": "Timelines depend on features and complexity, but we always define clear milestones."
+      "a": "A typical business app takes 10-15 days from start to launch. Complex applications with advanced features may require more time. We provide a detailed timeline during the planning phase."
     },
     {
-      "q": "Will the app work smoothly for users?",
-      "a": "Yes. Performance, usability, and stability are core priorities during development."
+      "q": "Do you provide ongoing maintenance?",
+      "a": "Yes, we offer post-launch support and maintenance packages. The first 30 days of support are included, and we provide flexible monthly plans for continued updates and improvements."
     },
     {
-      "q": "Do you provide support after launch?",
-      "a": "Yes. We provide post-launch support and can assist with future updates."
+      "q": "Can you help with App Store submission?",
+      "a": "Absolutely. We handle the entire submission process for both Apple App Store and Google Play Store, including optimization, compliance checks, and ongoing updates."
     }
   ],
-  "ctaText": "View full app development details"
+
+  "cta": {
+    "heading": "Ready to build your mobile app?",
+    "subheading": "Let's discuss your project and create something exceptional",
+    "buttonText": "Start Your Project",
+    "supportText": "or schedule a free consultation"
+  }
 }

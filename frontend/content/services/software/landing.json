@@ -1,48 +1,107 @@
 {
   "id": "software",
-  "title": "Software Development",
-  "whatIs": "Software development is the process of building reliable, secure, and business-focused systems that solve specific operational challenges.",
-  "why": [
-    "Solves real business and operational problems",
-    "Improves efficiency and internal workflows",
-    "Reduces manual effort and errors",
-    "Built to support long-term growth"
-  ],
-  "process": [
+  "title": "Enterprise Software",
+  "tagline": "Reliable systems that power business operations",
+
+  "hero": {
+    "subtitle": "ERP and internal software designed for clarity and control",
+    "stats": [
+      { "value": "Secure", "unit": "", "label": "Architecture" },
+      { "value": "Multi-user", "unit": "", "label": "Access control" },
+      { "value": "Scalable", "unit": "", "label": "Infrastructure" }
+    ]
+  },
+
+  "overview": {
+    "heading": "Software that supports real operations",
+    "description": "We build enterprise-grade software systems that improve internal workflows, provide visibility, and support long-term growth.",
+    "highlights": [
+      "ERP and internal tools",
+      "Role-based access systems",
+      "Data-driven dashboards",
+      "Secure deployment options"
+    ]
+  },
+
+  "valueBlocks": [
     {
-      "step": 1,
-      "title": "Understand the business",
-      "desc": "We study your processes, challenges, and goals before proposing any solution."
+      "icon": "control",
+      "title": "Operational Control",
+      "description": "Centralized systems for managing processes"
     },
     {
-      "step": 2,
-      "title": "Align requirements",
-      "desc": "We define scope, validate requirements, and ensure complete clarity before development begins."
+      "icon": "security",
+      "title": "Secure by Design",
+      "description": "Role-based access and data protection"
     },
     {
-      "step": 3,
-      "title": "Design and develop",
-      "desc": "We build secure, reliable software designed around usability and performance."
+      "icon": "scalability",
+      "title": "Scalable Systems",
+      "description": "Designed for growth and expansion"
     },
     {
-      "step": 4,
-      "title": "Launch and support",
-      "desc": "We deploy carefully and remain available for post-launch guidance and support."
+      "icon": "insights",
+      "title": "Actionable Insights",
+      "description": "Data visibility for better decisions"
     }
   ],
+
+  "workflow": {
+    "heading": "How we build enterprise software",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Business Analysis",
+        "description": "Understanding operations and challenges",
+        "deliverable": "Business process map"
+      },
+      {
+        "number": 2,
+        "title": "System Planning",
+        "description": "Define modules and data flow",
+        "deliverable": "ERP architecture"
+      },
+      {
+        "number": 3,
+        "title": "Development",
+        "description": "Secure and modular development",
+        "deliverable": "Functional ERP system"
+      },
+      {
+        "number": 4,
+        "title": "Deployment & Training",
+        "description": "Deployment with onboarding support",
+        "deliverable": "Live system + training"
+      }
+    ]
+  },
+
+  "guarantees": [
+    "Secure and role-based access control",
+    "Scalable modular architecture",
+    "Clear documentation",
+    "Post-launch support"
+  ],
+
   "faqs": [
     {
-      "q": "How long does software development take?",
-      "a": "Timelines depend on scope and complexity, but most projects are delivered in clearly defined phases."
+      "q": "Is this custom-built for my company?",
+      "a": "Yes. Every system is designed around your operations."
     },
     {
-      "q": "Is the software built specifically for my business?",
-      "a": "Yes. All software is custom-built to match your workflows and requirements."
+      "q": "Can modules be added later?",
+      "a": "Yes. The system is modular and expandable."
     },
     {
-      "q": "Do you provide support after launch?",
-      "a": "Yes, we offer post-launch support and long-term assistance if required."
+      "q": "Do you provide training?",
+      "a": "Yes. We provide onboarding and documentation."
     }
   ],
-  "ctaText": "View full software development details"
+
+  "cta": {
+    "heading": "Build software that runs your business",
+    "subheading": "Let’s design a system you can rely on",
+    "buttonText": "Start Software Project",
+    "supportText": "or request a system review"
+  }
 }

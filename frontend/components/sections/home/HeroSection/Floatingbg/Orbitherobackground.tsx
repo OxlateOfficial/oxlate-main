@@ -19,23 +19,18 @@ export default function OrbitHeroBackground({
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolling, setIsScrolling] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
-  const [isMobile, setIsMobile] = useState<boolean>(() =>
-    typeof window !== 'undefined' ? window.innerWidth <= 768 : false
-  );
+  // Important: initialize as false so server and first client render match (avoids hydration mismatches).
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   // color progression per orbit (inner -> outer)
-const ORBIT_TINTS = [
-  '#FFFFFF',
-  '#F4F5F3',
-  '#E4E6E2',
-  '#CFD2CD',
-  '#B9BDB8',
-  '#9FA49E',
-];
-
-
-
-
+  const ORBIT_TINTS = [
+    '#FFFFFF',
+    '#F4F5F3',
+    '#E4E6E2',
+    '#CFD2CD',
+    '#B9BDB8',
+    '#9FA49E',
+  ];
 
   // Intersection observer + prefers-reduced-motion + resize + scroll throttling + visibility
   useEffect(() => {
@@ -88,15 +83,16 @@ const ORBIT_TINTS = [
     if (!svgRef.current) return;
 
     const prefersReduced = reduceMotion;
-    // we will only render a subset on mobile for performance
-    const visibleOrbits = isMobile
-      ? config.orbits.slice(0, config.mobileMaxOrbits)
-      : config.orbits;
+    // Build a stable list (keep original indices) so ids don't shift between server/client
+    const orbitsWithIndex = config.orbits.map((orbit, idx) => ({ orbit, idx }));
+    const visibleOrbitsWithIndex = isMobile
+      ? orbitsWithIndex.filter(({ idx }) => idx < config.mobileMaxOrbits)
+      : orbitsWithIndex;
 
-    visibleOrbits.forEach((orbit, i) => {
-      const group = svgRef.current!.querySelector(`#orbit-group-${i}`) as
-        | SVGGElement
-        | null;
+    visibleOrbitsWithIndex.forEach(({ orbit, idx }, visibleIdx) => {
+      const group = svgRef.current!.querySelector(
+        `#orbit-group-${idx}`
+      ) as SVGGElement | null;
       if (!group) return;
 
       const rotationDuration = Math.max(1, 6 / Math.max(orbit.speed, 0.0003)); // seconds/rev
@@ -114,10 +110,11 @@ const ORBIT_TINTS = [
     });
   }, [config, isVisible, isScrolling, reduceMotion, isMobile]);
 
-  // Determine visible orbits (respect mobileMaxOrbits)
-  const visibleOrbits = isMobile
-    ? config.orbits.slice(0, config.mobileMaxOrbits)
-    : config.orbits;
+  // Determine visible orbits (respect mobileMaxOrbits). Keep original indices for stable ids.
+  const orbitsWithIndex = config.orbits.map((orbit, idx) => ({ orbit, idx }));
+  const visibleOrbitsWithIndex = isMobile
+    ? orbitsWithIndex.filter(({ idx }) => idx < config.mobileMaxOrbits)
+    : orbitsWithIndex;
 
   return (
     <div
@@ -147,8 +144,9 @@ const ORBIT_TINTS = [
       >
         {/* NOTE: removed heavy background gradient & circle to reduce paint cost on mobile */}
 
-        {[...visibleOrbits].reverse().map((orbit, revIndex) => {
-          const i = visibleOrbits.length - 1 - revIndex;
+        {[...visibleOrbitsWithIndex].reverse().map(({ orbit, idx }, revIndex) => {
+          const visibleLen = visibleOrbitsWithIndex.length;
+          const i = visibleLen - 1 - revIndex; // visible-order index for tint/opacity progression
           const effectiveIconSize = isMobile
             ? Math.max(18, Math.round(orbit.iconSize * 0.8))
             : orbit.iconSize;
@@ -164,13 +162,13 @@ const ORBIT_TINTS = [
               );
 
           return (
-            <g key={i} transform={`translate(0 ${orbit.depthOffset})`}>
+            <g key={idx} transform={`translate(0 ${orbit.depthOffset})`}>
               <g transform={`translate(0 ${orbit.lift})`}>
                 {/* minimal base ring (transparent) to keep layout but avoid heavy fills */}
                 <circle cx="0" cy="0" r={orbit.radius} fill={tint} />
               </g>
 
-              <g id={`orbit-group-${i}`}>
+              <g id={`orbit-group-${idx}`}>
                 {Array.from({ length: orbit.elementCount }).map((_, index) => {
                   const angle = (360 / orbit.elementCount) * index;
                   const rad = (angle * Math.PI) / 180;
@@ -178,7 +176,8 @@ const ORBIT_TINTS = [
                   const y = Math.sin(rad) * orbit.radius;
 
                   const tech = config.techOrder[index % config.techOrder.length];
-                  const logoId = `${baseId}-orbit-${i}-el-${index}`;
+                  // use original orbit idx in id so it's stable across renders
+                  const logoId = `${baseId}-orbit-${idx}-el-${index}`;
 
                   return (
                     <g

@@ -52,7 +52,7 @@ export default async function Home({ searchParams }: Props) {
         />
       </LazySection>
 
-      <CTASection variant="soft" service={service} />
+      {/* <CTASection variant="soft" service={service} /> */}
       <ServicePortfolioSection service={service} />
       <WhyTrustUsSection />
       <CTASection variant="final" service={service} />

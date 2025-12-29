@@ -1,48 +1,107 @@
 {
   "id": "automation",
   "title": "Automation Services",
-  "whatIs": "Automation services focus on streamlining repetitive and manual business processes using reliable technology to improve efficiency and accuracy.",
-  "why": [
-    "Reduces manual effort and repetitive tasks",
-    "Improves operational efficiency",
-    "Minimizes human errors",
-    "Saves time and operational costs"
-  ],
-  "process": [
+  "tagline": "Eliminate repetitive work and scale operations intelligently",
+
+  "hero": {
+    "subtitle": "Workflow automation built for accuracy, speed, and reliability",
+    "stats": [
+      { "value": "40%", "unit": "+", "label": "Time saved" },
+      { "value": "99.9%", "unit": "", "label": "Process accuracy" },
+      { "value": "24/7", "unit": "", "label": "System uptime" }
+    ]
+  },
+
+  "overview": {
+    "heading": "Automation that works quietly and reliably",
+    "description": "We design automation systems that remove manual effort, reduce errors, and integrate seamlessly into your existing tools without disrupting operations.",
+    "highlights": [
+      "Business workflow automation",
+      "API and system integrations",
+      "Scheduled and event-driven tasks",
+      "Monitoring and error handling"
+    ]
+  },
+
+  "valueBlocks": [
     {
-      "step": 1,
-      "title": "Understand the process",
-      "desc": "We study your existing workflows to identify inefficiencies and automation opportunities."
+      "icon": "workflow",
+      "title": "Process Optimization",
+      "description": "Identify and automate repetitive tasks across departments"
     },
     {
-      "step": 2,
-      "title": "Define automation scope",
-      "desc": "We align on what should be automated and how it fits into your business operations."
+      "icon": "integration",
+      "title": "Seamless Integration",
+      "description": "Works with your existing tools and software stack"
     },
     {
-      "step": 3,
-      "title": "Build and integrate",
-      "desc": "We develop secure automation solutions that integrate smoothly with your systems."
+      "icon": "reliability",
+      "title": "Reliable Execution",
+      "description": "Stable automations with logging and recovery mechanisms"
     },
     {
-      "step": 4,
-      "title": "Deploy and support",
-      "desc": "We deploy carefully and remain available for monitoring and support."
+      "icon": "scaling",
+      "title": "Scalable Systems",
+      "description": "Automation that grows with your operations"
     }
   ],
+
+  "workflow": {
+    "heading": "How we automate your workflows",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Process Analysis",
+        "description": "We analyze existing workflows to identify automation opportunities",
+        "deliverable": "Automation scope & flow diagram"
+      },
+      {
+        "number": 2,
+        "title": "Solution Design",
+        "description": "We design automation logic and integration architecture",
+        "deliverable": "Automation blueprint"
+      },
+      {
+        "number": 3,
+        "title": "Build & Integrate",
+        "description": "Development and integration with real-time testing",
+        "deliverable": "Working automation system"
+      },
+      {
+        "number": 4,
+        "title": "Deploy & Monitor",
+        "description": "Deployment with monitoring, alerts, and support",
+        "deliverable": "Live automation + monitoring"
+      }
+    ]
+  },
+
+  "guarantees": [
+    "Non-intrusive integration with existing systems",
+    "Secure execution and data handling",
+    "Clear documentation of automation logic",
+    "Post-deployment monitoring support"
+  ],
+
   "faqs": [
     {
-      "q": "What kind of processes can be automated?",
-      "a": "Any repetitive or rule-based process such as data entry, reporting, notifications, or system integrations."
+      "q": "What processes can be automated?",
+      "a": "Any rule-based or repetitive task such as reporting, data transfer, notifications, or system syncing."
     },
     {
-      "q": "Will automation affect my existing systems?",
-      "a": "No. Automation is designed to work alongside your existing tools without disruption."
+      "q": "Will automation disrupt current workflows?",
+      "a": "No. Automations are designed to run alongside your existing systems without interruption."
     },
     {
-      "q": "Do you provide support after deployment?",
-      "a": "Yes. We provide post-deployment support and assistance when required."
+      "q": "Can automations be modified later?",
+      "a": "Yes. All automations are built to be extendable and adjustable."
     }
   ],
-  "ctaText": "View full automation service details"
+
+  "cta": {
+    "heading": "Ready to automate your operations?",
+    "subheading": "Reduce manual work and improve efficiency",
+    "buttonText": "Start Automation",
+    "supportText": "or request a workflow audit"
+  }
 }
