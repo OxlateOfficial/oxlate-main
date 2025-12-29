@@ -1,5 +1,221 @@
 @import "tailwindcss";
 
+/* =========================================================
+   OXLATE DESIGN SYSTEM — COLOR PALETTE
+   Philosophy:
+   - Trust-first
+   - Minimal
+   - Business-focused
+   - Long-term usable
+   ========================================================= */
+
+/* ---------- ROOT COLOR TOKENS ---------- */
+:root {
+  /* =====================================================
+     BRAND COLORS
+     ===================================================== */
+
+  /* Primary Brand Color
+     Use for:
+     - Links
+     - Active states
+     - Highlights
+     - Pricing emphasis
+     - Icons
+  */
+  --color-primary: #324F7B; /* Oxlate Blue */
+
+  /* Dark Authority Color
+     Use for:
+     - Primary CTA buttons
+     - Header / footer backgrounds
+     - Important headings
+     - Dark sections
+  */
+  --color-dark: #0F1724;
+
+  /* =====================================================
+     BACKGROUND COLORS
+     ===================================================== */
+
+  /* Main background (never pure white)
+     Use for:
+     - Page background
+     - Main layout base
+  */
+  --color-bg: #FFFFFF;
+
+  /* Soft light background
+     Use for:
+     - Cards
+     - Pricing sections
+     - Alternating sections
+  */
+  --color-bg-soft: #F8F8F8;
+
+  /* Warm accent background (VERY LIMITED USE)
+     Use for:
+     - Testimonials
+     - "Why Trust Us" sections
+     - Soft emotional sections
+     DO NOT use for CTAs or pricing
+  */
+  --color-bg-warm: #E3C4AB;
+
+  /* =====================================================
+     TEXT COLORS
+     ===================================================== */
+
+  /* Primary text color
+     Use for:
+     - Headings
+     - Important text
+  */
+  --color-text-primary: #0F1724;
+
+  /* Secondary text color
+     Use for:
+     - Body text
+     - Descriptions
+     - Supporting content
+  */
+  --color-text-secondary: #6B7280;
+
+  /* Muted text color
+     Use for:
+     - Captions
+     - Meta info
+     - Hints
+  */
+  --color-text-muted: #9CA3AF;
+
+  /* =====================================================
+     BORDER & DIVIDER COLORS
+     ===================================================== */
+
+  /* Default border color
+     Use for:
+     - Card borders
+     - Dividers
+     - Input outlines
+  */
+  --color-border: #E5E7EB;
+
+  /* Active border color
+     Use for:
+     - Selected cards
+     - Active tabs
+  */
+  --color-border-active: #324F7B;
+
+  /* =====================================================
+     ACCENT COLORS (RESTRICTED)
+     ===================================================== */
+
+  /* Soft blue accent
+     Use for:
+     - Subtle highlights
+     - Decorative UI elements
+     - Underlines
+     DO NOT use as primary color
+  */
+  --color-accent-soft: #86A6DE;
+}
+
+/* =========================================================
+   GLOBAL BASE STYLES
+   ========================================================= */
+
+html,
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* =========================================================
+   TEXT UTILITIES
+   ========================================================= */
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-brand {
+  color: var(--color-primary);
+}
+
+/* =========================================================
+   BACKGROUND UTILITIES
+   ========================================================= */
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-dark {
+  background-color: var(--color-dark);
+}
+
+.bg-soft {
+  background-color: var(--color-bg-soft);
+}
+
+.bg-warm {
+  background-color: var(--color-bg-warm);
+}
+
+/* =========================================================
+   BUTTON STYLES
+   ========================================================= */
+
+.btn-primary {
+  background-color: var(--color-dark);
+  color: #ffffff;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 0.75rem;
+}
+
+/* =========================================================
+   CARD STYLES
+   ========================================================= */
+
+.card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+}
+
+.card-active {
+  border-color: var(--color-border-active);
+}
+
+
+
+
+
+
 
 :root {
   --background: #ffffff;

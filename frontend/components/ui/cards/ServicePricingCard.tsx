@@ -221,7 +221,7 @@ export default function ServicePricingCard({ price, time, ctaText, serviceId }: 
   };
 
   return (
-    <div className="relative bg-black rounded-2xl p-6 sm:p-8 shadow-2xl text-white flex flex-col justify-between overflow-hidden min-h-[280px] sm:min-h-[320px]">
+    <div className="relative bg-primary rounded-2xl p-6 sm:p-8 shadow-2xl text-white flex flex-col justify-between overflow-hidden min-h-[280px] sm:min-h-[320px]">
       {/* SVG Background Pattern - Service Specific */}
       <ServiceSVGPattern serviceId={serviceId} />
       

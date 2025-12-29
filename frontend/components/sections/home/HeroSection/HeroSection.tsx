@@ -33,7 +33,7 @@ export default function HeroSection() {
 
   return (
     <main
-      className="relative w-full font-[Orbitron] bg-white overflow-hidden"
+      className="relative w-full font-[Orbitron] bg-primary overflow-hidden"
       style={{
         opacity: sectionOpacity,
         transition: "opacity 0.15s linear",
@@ -88,7 +88,7 @@ export default function HeroSection() {
           {/* LOGO */}
           <div className="flex justify-center">
             <Image
-              src="/images/icons/Oxlate_blk.svg"
+              src="/images/icons/Oxlate_wht.svg"
               alt="Oxlate Logo"
               width={120}
               height={120}
@@ -102,12 +102,12 @@ export default function HeroSection() {
           </div>
 
           {/* TAGLINE */}
-          <p className="text-[10px] sm:text-xs uppercase tracking-[0.28em] font-medium -mt-4 text-gray-500">
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.28em] font-medium -mt-4 text-gray-200">
             STRONGLY MODERN
           </p>
 
           {/* DESCRIPTION */}
-          <p className="max-w-md sm:max-w-xl mx-auto text-xs sm:text-base leading-relaxed tracking-wide px-2 sm:px-4 text-gray-700">
+          <p className="max-w-md sm:max-w-xl mx-auto text-xs sm:text-base leading-relaxed tracking-wide px-2 sm:px-4 text-gray-100">
             We design and build secure, modern digital solutions that are simple
             to use, tailored to your business, and built to last.
           </p>

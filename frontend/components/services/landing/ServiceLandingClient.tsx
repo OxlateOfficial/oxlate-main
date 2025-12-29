@@ -49,23 +49,23 @@ type Props = {
 const ServiceVisualIdentity = ({ serviceId }: { serviceId: string }) => {
   const getThemeColor = () => {
     switch (serviceId) {
-      case 'app-development': return 'from-gray-900 to-gray-800';
-      case 'web-development': return 'from-slate-900 to-slate-800';
-      case 'automation': return 'from-neutral-900 to-neutral-800';
-      case 'erp-software': return 'from-zinc-900 to-zinc-800';
-      case 'custom-solution': return 'from-stone-900 to-stone-800';
-      default: return 'from-gray-900 to-gray-800';
+      case 'app-development': return 'bg-primary';
+      case 'web-development': return 'bg-primary';
+      case 'automation': return 'bg-primary';
+      case 'erp-software': return 'bg-primary';
+      case 'custom-solution': return 'bg-primary';
+      default: return 'bg-primary';
     }
   };
 
   const getAccentColor = () => {
     switch (serviceId) {
-      case 'app-development': return 'bg-gray-700';
-      case 'web-development': return 'bg-slate-700';
-      case 'automation': return 'bg-neutral-700';
-      case 'erp-software': return 'bg-zinc-700';
-      case 'custom-solution': return 'bg-stone-700';
-      default: return 'bg-gray-700';
+      case 'app-development': return 'bg-dark';
+      case 'web-development': return 'bg-dark';
+      case 'automation': return 'bg-dark';
+      case 'erp-software': return 'bg-dark';
+      case 'custom-solution': return 'bg-dark';
+      default: return 'bg-dark';
     }
   };
 
