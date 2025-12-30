@@ -45,7 +45,7 @@ export default function HeroSection() {
       }}
     >
 
-      <div className="absolute inset-0 pointer-events-none">
+      {/* <div className="absolute inset-0 pointer-events-none">
         <GridBg
           columns={16}
           rows={10}
@@ -54,7 +54,7 @@ export default function HeroSection() {
           strokeWidth={0.4}
           className="w-full h-full"
         />
-      </div>
+      </div> */}
       {/* SEO TEXT */}
       <section className="sr-only">
         <h1>Oxlate Web Development Company</h1>
