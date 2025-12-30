@@ -103,7 +103,7 @@ export default function CircleBg({
   return (
     <div className={`absolute inset-0 overflow-hidden ${colors.bg}`}>
       {/* Main gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-white/30 pointer-events-none" />
 
       {/* Floating circles */}
       <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">

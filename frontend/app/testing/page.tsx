@@ -1,4 +1,4 @@
-import OxlateHero from "@/components/sections/home/HeroSection/Wordbg/Wordbg";
+import OxlateHero from "@/components/sections/home/HeroSection/gridbg/GridBg";
 
 export default function ServicesPage() {
   return (

@@ -221,12 +221,12 @@ export default function ServicePricingCard({ price, time, ctaText, serviceId }: 
   };
 
   return (
-    <div className="relative bg-primary rounded-2xl p-6 sm:p-8 shadow-2xl text-white flex flex-col justify-between overflow-hidden min-h-[280px] sm:min-h-[320px]">
+    <div className="relative bg-primary rounded-2xl p-6 sm:p-8 shadow-2xl text-white flex flex-col justify-between overflow-hidden min-h-70 sm:min-h-80">
       {/* SVG Background Pattern - Service Specific */}
       <ServiceSVGPattern serviceId={serviceId} />
       
       {/* Subtle gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-gray-900/20 via-transparent to-transparent pointer-events-none" />
       
       {/* Content Layer */}
       <div className="relative z-10 space-y-5 sm:space-y-6">

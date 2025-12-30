@@ -126,7 +126,7 @@ const ServiceFloatingElements = ({ serviceId }: { serviceId: string }) => {
 
 export default function InfiniteServiceSlider() {
   const { service, setService } = useServiceSelection();
-  
+
   const [currentIndex, setCurrentIndex] = useState(() => {
     const index = SERVICES.findIndex((s) => s.id === service);
     return index >= 0 ? index : 0;
@@ -139,7 +139,7 @@ export default function InfiniteServiceSlider() {
   const [dragOffset, setDragOffset] = useState(0);
   const [startTime, setStartTime] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const isInternalUpdate = useRef(false);
 
   useEffect(() => {
@@ -147,7 +147,7 @@ export default function InfiniteServiceSlider() {
       isInternalUpdate.current = false;
       return;
     }
-    
+
     const newIndex = SERVICES.findIndex((s) => s.id === service);
     if (newIndex !== -1 && newIndex !== currentIndex) {
       setCurrentIndex(newIndex);
@@ -258,7 +258,7 @@ export default function InfiniteServiceSlider() {
   const getVisualPosition = (index: number): "prev" | "center" | "next" | "hidden" => {
     const total = SERVICES.length;
     let diff = index - currentIndex;
-    
+
     if (diff > total / 2) diff -= total;
     if (diff < -total / 2) diff += total;
 
@@ -270,7 +270,7 @@ export default function InfiniteServiceSlider() {
 
   const getCardStyle = (index: number) => {
     const position = getVisualPosition(index);
-    
+
     let translateX = 0;
     let scale = 1;
     let opacity = 1;
@@ -312,8 +312,8 @@ export default function InfiniteServiceSlider() {
       transform: `translateX(${translateX}%) scale(${scale})`,
       opacity,
       zIndex,
-      transition: isDragging 
-        ? "none" 
+      transition: isDragging
+        ? "none"
         : "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease",
     };
   };
@@ -329,18 +329,18 @@ export default function InfiniteServiceSlider() {
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
-      style={{ 
+      style={{
         cursor: isDragging ? "grabbing" : "grab",
         userSelect: "none",
         WebkitUserSelect: "none",
         touchAction: "pan-y",
       }}
     >
-      <div className="relative h-[720px] sm:h-[800px] md:h-[700px] mx-auto max-w-7xl mt-10 sm:mt-0">
+      <div className="relative h-180 sm:h-200 md:h-175 mx-auto max-w-7xl mt-10 sm:mt-0">
         {SERVICES.map((serviceItem, index) => {
           const cardStyle = getCardStyle(index);
           const position = getVisualPosition(index);
-          
+
           return (
             <div
               key={serviceItem.id}
@@ -353,10 +353,11 @@ export default function InfiniteServiceSlider() {
                   ${position === "center" ? "pointer-events-auto" : "pointer-events-none"}
                 `}
               >
-                <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl border border-gray-200 overflow-hidden">
+                <div className="relative bg-white/80 backdrop-blur-md rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl border border-gray-200 overflow-hidden">
+
                   {/* Floating Background Elements - Service Specific */}
                   <ServiceFloatingElements serviceId={serviceItem.id} />
-                  
+
                   {/* Header */}
                   <div className="relative z-10 text-center mb-8 sm:mb-12">
                     <h2
@@ -401,10 +402,9 @@ export default function InfiniteServiceSlider() {
             }}
             className={`
               h-2 rounded-full transition-all duration-300
-              ${
-                index === currentIndex
-                  ? "w-8 bg-black"
-                  : "w-2 bg-gray-300 hover:bg-gray-400"
+              ${index === currentIndex
+                ? "w-8 bg-black"
+                : "w-2 bg-gray-300 hover:bg-gray-400"
               }
             `}
             aria-label={`Go to service ${index + 1}`}

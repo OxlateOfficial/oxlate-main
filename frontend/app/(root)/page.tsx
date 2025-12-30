@@ -1,4 +1,3 @@
-// oxlate-main/frontend/app/(root)/page.tsx
 import HeroSection from "@/components/sections/home/HeroSection/HeroSection";
 import HomeStickyBar from "@/components/sections/home/HomeStickyBar";
 import InfiniteServiceSlider from "@/components/services/cards/InfiniteServiceSlider";
@@ -7,7 +6,7 @@ import CTASection from "@/components/sections/CTA/CTASection";
 import ServicePortfolioSection from "@/components/services/portfolio/ServicePortfolioSection";
 import WhyTrustUsSection from "@/components/sections/home/WhyTrustSection";
 import InitService from "@/components/services/InitService";
-
+import GridBg from "@/components/sections/home/HeroSection/gridbg/GridBg";
 import LazySection from "@/components/performance/LazySection";
 import { loadServiceLanding } from "@/lib/cms/loadServiceLanding";
 import { SERVICES, ServiceId } from "@/lib/constants/services";
@@ -20,12 +19,10 @@ export default async function Home({ searchParams }: Props) {
   const params = await searchParams;
   const serviceParam = params.service;
 
-  const service: ServiceId =
-    SERVICES.some(s => s.id === serviceParam)
-      ? (serviceParam as ServiceId)
-      : "web-development";
+  const service: ServiceId = SERVICES.some((s) => s.id === serviceParam)
+    ? (serviceParam as ServiceId)
+    : "web-development";
 
-  // Preload ALL service landings to avoid API calls
   const allLandings = SERVICES.reduce((acc, s) => {
     try {
       acc[s.id] = loadServiceLanding(s.id);
@@ -38,24 +35,39 @@ export default async function Home({ searchParams }: Props) {
   const initialLanding = allLandings[service] || loadServiceLanding("web-development");
 
   return (
-    <main className="relative w-full font-[Orbitron]">
-      <InitService service={service} />
-      <HeroSection />
-      <HomeStickyBar />
-      <InfiniteServiceSlider />
+    <main className="relative w-full font-[Orbitron] bg">
 
+      {/* Grid Background Layer */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <GridBg />
+      </div>
+
+
+      {/* Hero Section */}
+      <section className="relative pt-0">
+        <InitService service={service} />
+        <HeroSection />
+        {/* <HomeStickyBar /> */}
+        <InfiniteServiceSlider />
+      </section>
+
+      {/* Service Landing Preview */}
       <LazySection>
-        {/* Pass all landings to avoid API calls */}
-        <ServiceLandingPreview 
+        <ServiceLandingPreview
           allLandings={allLandings}
-          initialLanding={initialLanding} 
+          initialLanding={initialLanding}
         />
       </LazySection>
 
-      {/* <CTASection variant="soft" service={service} /> */}
+      {/* Portfolio */}
       <ServicePortfolioSection service={service} />
+
+      {/* Trust Section */}
       <WhyTrustUsSection />
+
+      {/* Final CTA */}
       <CTASection variant="final" service={service} />
+
     </main>
   );
 }

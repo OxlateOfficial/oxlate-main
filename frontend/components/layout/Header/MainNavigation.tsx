@@ -1,11 +1,15 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { useTheme } from "@/components/layout/Providers";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
+import { useServiceSelection } from "@/hooks/useServiceSelection";
+import { SERVICES } from "@/lib/constants/services";
+import { trackEvent } from "@/lib/analytics/events";
+import { useTheme } from "@/components/layout/Providers";
 
 const STATIC_NAV = [
   { label: "Home", href: "/" },
@@ -15,191 +19,165 @@ const STATIC_NAV = [
   { label: "Contact", href: "/contact" },
 ];
 
-
-export const SERVICES = [
-  { id: "web-development", label: "Web Development" },
-  { id: "app-development", label: "App Development" },
-  { id: "automation", label: "Automation" },
-  { id: "software", label: "ERP / Software" },
-  { id: "custom", label: "Custom Solution" },
-] as const;
-
-export default function MainNavigation() {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+export default function ServiceSelector(): React.JSX.Element {
+  const { service, setService } = useServiceSelection();
+  const router = useRouter();
+  const pathname = usePathname() || "/";
   const { theme, toggleTheme } = useTheme();
 
+  const [open, setOpen] = useState(false);
+
+  // close mobile menu on route change
+  useEffect(() => {
+    const handleRouteChange = () => setOpen(false);
+    // next/navigation doesn't give an event API here — keep defensive
+    // we will still close the menu if pathname changes
+  }, [pathname]);
+
+  // close on escape
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  function handleServiceSelect(id: string) {
+    setService(id);
+    trackEvent?.("select_service", { service: id });
+    router.push(`/services/${encodeURIComponent(id)}`, { scroll: false });
+    setOpen(false);
+  }
 
   return (
-    <header className="w-full">
-      <nav className="mx-auto w-full px-4 py-4 bg-white max-w-6xl relative mt-7 rounded-3xl pl-8 pr-7 shadow-md">
-        {/* MOBILE HEADER */}
-        <div className="flex items-center justify-between md:hidden w-full gap-3">
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/images/icons/Oxlate_logoX_blk.svg"
-              alt="Oxlate"
-              width={40}
-              height={40}
-              priority
-            />
-          </Link>
+    <div className="sticky top-7 z-50 mx-4 sm:mx-0">
+      <div className="max-w-7xl mx-auto">
+        <div className="card bg-white/95 dark:bg-[#0b1220]/80 backdrop-blur-sm p-3 rounded-lg shadow-sm border border-(--color-border)">
+          <nav className="flex items-center justify-between gap-4">
+            {/* LEFT: logo + brand */}
+              <Link href="/" className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-neutral-900/90 dark:bg-white/5 flex items-center justify-center">
+                  <Image
+                    src="/images/icons/Oxlate_logoX_blk.svg"
+                    alt="Oxlate"
+                    width={20}
+                    height={20}
+                    className="invert dark:invert-0"
+                  />
+                </div>
+              </Link>
+            <div className="flex items-center gap-4">
 
-          <div className="flex items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="text-sm px-3 py-2 rounded-full border border-gray-300 hover:bg-gray-100 transition"
-            >
-              {theme === "dark" ? "☀️" : "🌙"}
-            </button>
 
-            <button
-              aria-label="Toggle menu"
-              aria-expanded={open}
-              onClick={() => setOpen((v) => !v)}
-              className="p-2 -mr-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black flex items-center justify-center"
-            >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                {open ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M3 6h18M3 12h18M3 18h18" />
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
+              {/* Desktop nav links */}
+              <div className="hidden md:flex items-center gap-6 ml-4">
+                {STATIC_NAV.map((item) => (
+                  <NavLink key={item.href} href={item.href} label={item.label} pathname={pathname} />
+                ))}
 
-        {/* DESKTOP NAV */}
-        <div className="hidden md:flex items-center justify-between">
-          <div className="flex items-center gap-14">
-            {STATIC_NAV.slice(0, 2).map((item) => (
-              <NavLink key={item.href} {...item} pathname={pathname} />
-            ))}
+                {/* Services dropdown */}
+                <details className="relative group">
+                  <summary className="list-none cursor-pointer text-sm font-medium flex items-center gap-2 px-2 py-1 rounded-md hover:text-primary transition">
+                    Services
+                    <span className="ml-1 text-xs opacity-70">⌄</span>
+                  </summary>
 
-            {/* SERVICES DROPDOWN */}
-            <div className="relative group">
-              <button className="text-sm font-medium text-gray-700 hover:text-black transition">
-                Services
-              </button>
+                  <div className="absolute left-0 mt-2 w-56 p-3 card bg-white/95 dark:bg-[#071024]/90 border border-(--color-border) rounded-lg shadow-lg">
+                    <div className="flex flex-col gap-2">
+                      {SERVICES.map((s) => (
+                        <button
+                          key={s.id}
+                          onClick={() => handleServiceSelect(s.id)}
+                          className={`text-sm text-left px-3 py-2 rounded hover:bg-soft transition ${service === s.id ? "bg-primary/10" : ""}`}
+                        >
+                          {s.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
 
-              <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-64 bg-white border rounded-xl shadow-lg
-                              opacity-0 translate-y-1
-                              group-hover:opacity-100 group-hover:translate-y-0
-                              group-focus-within:opacity-100 group-focus-within:translate-y-0
-                              transition-all duration-200">
-                <div className="flex flex-col p-2">
-                  {SERVICES.map((service) => (
-                    <Link
-                      key={service.id}
-                      href={`/services/${service.id}`}
-                      className="px-4 py-2 text-sm rounded-lg hover:bg-gray-100"
+            {/* RIGHT: actions */}
+            <div className="flex items-center gap-3">
+              <div className="hidden md:flex items-center gap-3">
+                <button
+                  onClick={toggleTheme}
+                  aria-label="Toggle theme"
+                  className="w-9 h-9 rounded-lg border border-(--color-border) hover:bg-soft flex items-center justify-center transition"
+                >
+                  {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                </button>
+              </div>
+
+              {/* Mobile actions */}
+              <div className="md:hidden flex items-center gap-2">
+                <button onClick={toggleTheme} aria-label="Toggle theme" className="w-9 h-9 rounded-lg border border-(--color-border) flex items-center justify-center">
+                  {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                </button>
+
+                <button
+                  onClick={() => setOpen((s) => !s)}
+                  aria-expanded={open}
+                  aria-controls="mobile-menu"
+                  aria-label="Open menu"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-soft transition"
+                >
+                  {open ? <X size={18} /> : <Menu size={18} />}
+                </button>
+              </div>
+            </div>
+          </nav>
+
+          {/* MOBILE MENU */}
+          <div
+            id="mobile-menu"
+            className={`md:hidden mt-3 pt-3 border-t border-(--color-border) transition-all overflow-hidden ${open ? "max-h-125" : "max-h-0"}`}
+          >
+            <div className={`flex flex-col gap-3 pb-3`}>
+              {STATIC_NAV.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className={`block text-sm font-medium px-2 py-2 rounded-md ${pathname === item.href ? "text-primary" : "text-secondary hover:text-primary"}`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              <div>
+                <p className="text-xs uppercase tracking-wide text-muted mb-2">Services</p>
+                <div className="flex flex-wrap gap-2">
+                  {SERVICES.map((s) => (
+                    <button
+                      key={s.id}
+                      onClick={() => handleServiceSelect(s.id)}
+                      className={`px-3 py-1.5 text-sm rounded-md ${service === s.id ? "bg-primary text-white" : "bg-soft"}`}
                     >
-                      {service.label}
-                    </Link>
+                      {s.label}
+                    </button>
                   ))}
                 </div>
               </div>
+
             </div>
-
-            {STATIC_NAV.slice(2).map((item) => (
-              <NavLink key={item.href} {...item} pathname={pathname} />
-            ))}
           </div>
-
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-            className="text-sm px-3 py-2 rounded-full border border-gray-300 hover:bg-gray-100 transition"
-          >
-            {theme === "dark" ? "☀️" : "🌙"}
-          </button>
         </div>
-
-        {/* MOBILE MENU */}
-        {open && (
-          <div className="fixed inset-0 z-40 bg-white md:hidden">
-            <div className="px-6 py-6 flex flex-col gap-6 bg-white border-black border-b">
-              <button
-                onClick={() => setOpen(false)}
-                className="self-end text-sm text-gray-600"
-              >
-                Close
-              </button>
-
-              <Link href="/" onClick={() => setOpen(false)}>
-                Home
-              </Link>
-              <Link href="/about-oxlate" onClick={() => setOpen(false)}>
-                About
-              </Link>
-
-              <div>
-                <button
-                  onClick={() => setServicesOpen((v) => !v)}
-                  className="font-medium"
-                >
-                  Services
-                </button>
-
-                {servicesOpen && (
-                  <div className="mt-3 ml-4 flex flex-col gap-3">
-                    {SERVICES.map((service) => (
-                      <Link
-                        key={service.id}
-                        href={`/services/${service.id}`}
-                        onClick={() => setOpen(false)}
-                        className="text-sm text-gray-700"
-                      >
-                        {service.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <Link href="/pricing" onClick={() => setOpen(false)}>
-                Pricing
-              </Link>
-              <Link href="/portfolio" onClick={() => setOpen(false)}>
-                Portfolio
-              </Link>
-              <Link href="/contact" onClick={() => setOpen(false)}>
-                Contact
-              </Link>
-            </div>
-          </div>
-        )}
-      </nav>
-    </header>
+      </div>
+    </div>
   );
 }
 
-function NavLink({
-  href,
-  label,
-  pathname,
-}: {
-  href: string;
-  label: string;
-  pathname: string;
-}) {
-  const isActive = pathname === href;
+function NavLink({ href, label, pathname }: { href: string; label: string; pathname: string }) {
+  const isActive = pathname === href || pathname.startsWith(href + "/");
   return (
     <Link
       href={href}
-      className={`text-sm font-medium transition ${
-        isActive ? "text-black" : "text-gray-600 hover:text-black"
-      }`}
+      className={`text-sm font-medium transition px-2 py-1 rounded-md ${isActive ? "text-primary" : "text-secondary hover:text-primary"}`}
+      aria-current={isActive ? "page" : undefined}
     >
       {label}
     </Link>

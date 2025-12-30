@@ -28,7 +28,7 @@ export default function OxlateHero() {
       className="relative min-h-screen w-full bg-gray-800 overflow-hidden flex items-center justify-center"
     >
       {/* Ambient Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] via-transparent to-gray-800 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-white/2 via-transparent to-gray-800 pointer-events-none" />
 
       {/* Large Oxlate Logo Background - Faded */}
       <div
@@ -38,7 +38,7 @@ export default function OxlateHero() {
           transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       >
-        <div className="relative w-[80%] h-[80%] max-w-[1400px] max-h-[1400px]">
+        <div className="relative w-[80%] h-[80%] max-w-350 max-h-350">
           <Image
             src="/images/icons/Oxlate_wht.svg"
             alt=""
@@ -178,7 +178,7 @@ export default function OxlateHero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
         <div className="flex flex-col items-center text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 border border-white/10 rounded-full mb-16 backdrop-blur-sm bg-white/[0.02] animate-[fadeIn_0.8s_ease-out]">
+          <div className="inline-flex items-center gap-2.5 px-5 py-2 border border-white/10 rounded-full mb-16 backdrop-blur-sm bg-white/2 animate-[fadeIn_0.8s_ease-out]">
             <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
             <span className="text-[11px] tracking-[0.35em] text-white/60 uppercase font-light">
               Strongly Modern
@@ -243,7 +243,7 @@ export default function OxlateHero() {
               </span>
             </button>
 
-            <button className="group px-10 py-4 border border-white/20 text-white font-medium tracking-wide backdrop-blur-sm hover:bg-white/[0.05] hover:border-white/30 transition-all duration-300 text-[15px]">
+            <button className="group px-10 py-4 border border-white/20 text-white font-medium tracking-wide backdrop-blur-sm hover:bg-white/5 hover:border-white/30 transition-all duration-300 text-[15px]">
               <span className="flex items-center gap-2">
                 See Our Work
                 <svg
@@ -262,7 +262,7 @@ export default function OxlateHero() {
           <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-[fadeIn_1s_ease-out_1s_both]">
             <div className="flex flex-col items-center gap-3 opacity-30 hover:opacity-60 transition-opacity duration-500 cursor-pointer">
               <span className="text-[10px] text-white tracking-[0.3em] uppercase font-light">Scroll</span>
-              <div className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent animate-[slideDown_2s_ease-in-out_infinite]" />
+              <div className="w-px h-12 bg-linear-to-b from-white/50 to-transparent animate-[slideDown_2s_ease-in-out_infinite]" />
             </div>
           </div>
         </div>

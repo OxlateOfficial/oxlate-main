@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import SvgRenderer from '@/components/svg/SvgRenderer';
+import { Svg } from '@react-three/drei';
+
 
 type Landing = {
   id: string;
@@ -78,23 +81,16 @@ const ServiceBackgroundPattern = ({ serviceId }: { serviceId: string }) => {
     case 'app-development':
       return (
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-          <svg className="w-full h-full" viewBox="0 0 800 600">
-            <rect x="100" y="50" width="120" height="220" rx="20" stroke="currentColor" strokeWidth="2" fill="none" />
-            <rect x="580" y="100" width="100" height="180" rx="15" stroke="currentColor" strokeWidth="2" fill="none" />
-            <circle cx="400" cy="450" r="60" stroke="currentColor" strokeWidth="2" fill="none" />
-          </svg>
+          <SvgRenderer name="appFrame1"
+          className='w-full h-full'
+           />
         </div>
       );
     case 'web-development':
       return (
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-          <svg className="w-full h-full" viewBox="0 0 800 600">
-            <rect x="100" y="100" width="250" height="180" rx="8" stroke="currentColor" strokeWidth="2" fill="none" />
-            <line x1="100" y1="140" x2="350" y2="140" stroke="currentColor" strokeWidth="2" />
-            <rect x="450" y="200" width="280" height="200" rx="8" stroke="currentColor" strokeWidth="2" fill="none" />
-            <path d="M 150 450 L 130 480 L 150 510" stroke="currentColor" strokeWidth="3" fill="none" />
-            <path d="M 200 450 L 220 480 L 200 510" stroke="currentColor" strokeWidth="3" fill="none" />
-          </svg>
+          <SvgRenderer name="webFrame1" className=''/>
+          <SvgRenderer name="webFrame2" className=''/>
         </div>
       );
     case 'automation':
@@ -186,7 +182,7 @@ export default function ServiceLandingClient({ landing }: Props) {
   return (
     <div className="min-h-screen bg-white">
       {/* ==================== HERO SECTION ==================== */}
-      <section className={`relative bg-gradient-to-br ${theme.gradient} text-white overflow-hidden`}>
+      <section className={`relative bg-linear-to-br ${theme.gradient} text-white overflow-hidden`}>
         <ServiceBackgroundPattern serviceId={landing.id} />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
@@ -275,7 +271,7 @@ export default function ServiceLandingClient({ landing }: Props) {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="flex items-start gap-3"
                   >
-                    <div className={`flex-shrink-0 w-1.5 h-1.5 rounded-full ${theme.accent} mt-2.5`}></div>
+                    <div className={`shrink-0 w-1.5 h-1.5 rounded-full ${theme.accent} mt-2.5`}></div>
                     <span className="text-gray-700 leading-relaxed">{highlight}</span>
                   </motion.div>
                 ))}
@@ -341,7 +337,7 @@ export default function ServiceLandingClient({ landing }: Props) {
                     className="relative flex gap-6 sm:gap-8"
                   >
                     {/* Step number */}
-                    <div className={`flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br ${theme.gradient} text-white flex items-center justify-center font-bold text-2xl shadow-lg relative z-10`}>
+                    <div className={`shrink-0 w-16 h-16 rounded-full bg-linear-to-br ${theme.gradient} text-white flex items-center justify-center font-bold text-2xl shadow-lg relative z-10`}>
                       {step.number}
                     </div>
 
@@ -393,7 +389,7 @@ export default function ServiceLandingClient({ landing }: Props) {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white rounded-xl p-5 sm:p-6 shadow-sm flex items-start gap-4"
                 >
-                  <div className={`flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br ${theme.gradient} flex items-center justify-center`}>
+                  <div className={`shrink-0 w-6 h-6 rounded-full bg-linear-to-br ${theme.gradient} flex items-center justify-center`}>
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
@@ -435,7 +431,7 @@ export default function ServiceLandingClient({ landing }: Props) {
                   <span className="text-base sm:text-lg font-semibold text-gray-900 pr-4">
                     {faq.q}
                   </span>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full ${theme.accent} flex items-center justify-center text-white transition-transform duration-300 ${openFaqIndex === index ? 'rotate-180' : ''}`}>
+                  <div className={`shrink-0 w-8 h-8 rounded-full ${theme.accent} flex items-center justify-center text-white transition-transform duration-300 ${openFaqIndex === index ? 'rotate-180' : ''}`}>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -465,7 +461,7 @@ export default function ServiceLandingClient({ landing }: Props) {
       </section>
 
       {/* ==================== CTA SECTION ==================== */}
-      <section className={`relative bg-gradient-to-br ${theme.gradient} text-white py-16 sm:py-20 md:py-24 overflow-hidden`}>
+      <section className={`relative bg-linear-to-br ${theme.gradient} text-white py-16 sm:py-20 md:py-24 overflow-hidden`}>
         <ServiceBackgroundPattern serviceId={landing.id} />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">

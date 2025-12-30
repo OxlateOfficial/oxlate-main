@@ -10,75 +10,38 @@ export default function ServiceSelector() {
   const router = useRouter();
 
   return (
-    <div
-      className="
-        sticky top-2 z-50
-        mx-2 sm:mx-0
-        bg-white/95 backdrop-blur-md
-        border border-gray-200
-        rounded-[22px] sm:rounded-3xl
-        shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-        overflow-x-auto
-        scrollbar-hide
-      "
-    >
-      <nav
-        className="
-          px-3 sm:px-4
-          py-3 sm:py-4
-        "
-      >
-        <div
-          className="
-            flex items-center gap-2 sm:gap-4
-            min-w-max
-            justify-start sm:justify-center
-          "
-        >
-          {SERVICES.map((item) => {
-            const isActive = service === item.id;
-
-            return (
-              <button
-                key={item.id}
-                onClick={() => {
-                  setService(item.id);
-                  router.push(`/?service=${item.id}`, { scroll: false });
-                  trackEvent("service_select", { service: item.id });
-                }}
-                className={`
-                  px-4 sm:px-6
-                  py-2.5 sm:py-3
-                  text-[12px] sm:text-sm
-                  font-medium
-                  rounded-full
-                  whitespace-nowrap
-                  transition-all duration-200
-                  ${
-                    isActive
-                      ? `
-                        text-black
-                        bg-white
-                        border border-black
-                        shadow-[0_4px_12px_rgba(0,0,0,0.12)]
-                      `
-                      : `
-                        text-gray-400
-                        border border-transparent
-                        hover:text-gray-700
-                        hover:border-gray-300
-                        hover:bg-gray-50
-                      `
-                  }
-                `}
-                style={{ fontFamily: "'Orbitron', sans-serif" }}
-              >
-                {item.label}
-              </button>
-            );
-          })}
+    <div className="sticky top-20 z-40 mx-4 sm:mx-0">
+      <div className="max-w-7xl mx-auto">
+        <div className="card bg-white/95 backdrop-blur-sm p-2">
+          <nav className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+            {SERVICES.map((item) => {
+              const isActive = service === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setService(item.id);
+                    router.push(`/?service=${item.id}`, { scroll: false });
+                    trackEvent("service_select", { service: item.id });
+                  }}
+                  aria-pressed={isActive}
+                  className={`
+                    px-6 py-3 text-sm font-medium rounded-lg whitespace-nowrap
+                    transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary
+                    ${
+                      isActive
+                        ? "bg-dark text-white shadow-md"
+                        : "text-secondary hover:bg-soft"
+                    }
+                  `}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </nav>
         </div>
-      </nav>
+      </div>
     </div>
   );
 }

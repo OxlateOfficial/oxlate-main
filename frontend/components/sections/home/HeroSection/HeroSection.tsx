@@ -2,117 +2,199 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useTheme } from "@/components/layout/Providers";
-import GridBg from "./gridbg/GridBg";
-export default function HeroSection() {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+import { useServiceSelection } from "@/hooks/useServiceSelection";
+import { SVG_REGISTRY } from "@/components/svg/SvgRegistry";
+import { useRouter } from "next/navigation";
+import { trackEvent } from "@/lib/analytics/events";
 
-  const [scrollY, setScrollY] = useState(0);
+export default function HeroSection() {
+  const { service, setService } = useServiceSelection();
+  const [mounted, setMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    let ticking = false;
-
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    setMounted(true);
   }, []);
 
-  // ---- Fade calculations (tuned) ----
-  const contentOpacity = Math.max(0, 1 - scrollY / 220);
-  const contentTranslate = Math.min(20, scrollY / 10);
-
-  const sectionOpacity = Math.max(0.15, 1 - scrollY / 420);
-  const bgOpacity = Math.max(0, 1 - scrollY / 520);
+  const services = [
+    {
+      id: "web-development",
+      label: "Website",
+      description: "Modern, responsive sites",
+      icon: "webFrameDetailed",
+    },
+    {
+      id: "app-development",
+      label: "App",
+      description: "iOS & Android solutions",
+      icon: "mobileFrameDetailed",
+    },
+    {
+      id: "automation",
+      label: "Automation",
+      description: "Workflow optimization",
+      icon: "pipelineLinear",
+    },
+    {
+      id: "software",
+      label: "ERP / Software",
+      description: "Enterprise systems",
+      icon: "databaseCylinder",
+    },
+    {
+      id: "custom",
+      label: "Custom",
+      description: "Tailored solutions",
+      icon: "customShape",
+    },
+  ];
 
   return (
-    <main
-      className={`relative w-full font-[Orbitron] overflow-hidden transition-colors duration-200 ${
-        isDark ? "bg-dark text-white" : "bg-soft text-primary"
-      }`}
-      style={{
-        opacity: sectionOpacity,
-        transition: "opacity 0.15s linear",
-      }}
-    >
+    <section className="relative w-full min-h-[45vh] flex items-center px-4 sm:px-6 lg:px-8 pt-28 pb-0">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
+          {/* Left: Content */}
+          <div className="space-y-8">
+            
+            {/* Brand */}
+            <div 
+              className={`transition-all duration-700 ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-dark rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/images/icons/Oxlate_logoX_blk.svg"
+                    alt="Oxlate"
+                    width={24}
+                    height={24}
+                    className="invert"
+                  />
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold text-primary tracking-tight">
+                    Oxlate
+                  </h1>
+                  <p className="text-[8px] uppercase tracking-[0.3em] text-brand font-medium">
+                    Strongly Modern
+                  </p>
+                </div>
+              </div>
+            </div>
 
-      {/* <div className="absolute inset-0 pointer-events-none">
-        <GridBg
-          columns={16}
-          rows={10}
-          stroke="#000"
-          strokeOpacity={0.06}
-          strokeWidth={0.4}
-          className="w-full h-full"
-        />
-      </div> */}
-      {/* SEO TEXT */}
-      <section className="sr-only">
-        <h1>Oxlate Web Development Company</h1>
-        <p>
-          Oxlate is a web development and automation company based in India,
-          providing mobile-first websites, ERP systems, custom software and
-          SEO-friendly digital solutions for local and global businesses.
-        </p>
-      </section>
+            {/* Main Headline */}
+            <div 
+              className={`transition-all duration-700 delay-100 ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-[1.1] mb-6">
+                We solve business<br />
+                problems with<br />
+                <span className="text-brand">technology</span>
+              </h2>
+              <p className="text-base text-secondary leading-relaxed max-w-xl">
+                Secure, modern, and easy-to-use digital solutions tailored to real business needs.
+              </p>
+            </div>
 
-      {/* HERO CONTENT */}
-      <section
-        className="
-          relative w-full
-          min-h-[55vh]
-          sm:min-h-[50vh]
-          flex items-center justify-center
-          px-4
-          py-14 sm:py-20
-        "
-      >
-        <div
-          className="
-            max-w-xl sm:max-w-2xl mx-auto text-center
-            mt-[10vh] sm:mt-[10vh] md:mt-[8vh]
-            space-y-5 sm:space-y-6
-            will-change-transform
-          "
-          style={{
-            opacity: contentOpacity,
-            transform: `translateY(${contentTranslate}px)`,
-            transition: "opacity 0.15s linear, transform 0.15s linear",
-          }}
-        >
-          {/* LOGO */}
-          <div className="flex justify-center">
-            <Image
-              src="/images/icons/Oxlate_blk.svg"
-              alt="Oxlate Logo"
-              width={120}
-              height={120}
-              priority
-              className="select-none w-54 sm:w-72 md:w-94 h-auto"
-            />
+            {/* CTA */}
+            <div 
+              className={`transition-all duration-700 delay-200 ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <button className="btn-primary px-8 py-4 text-base font-semibold">
+                Get a Free Consultation
+              </button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div 
+              className={`flex items-center gap-6 transition-all duration-700 delay-300 ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <div className="flex items-center gap-2 text-secondary">
+                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm font-medium">Trusted by businesses</span>
+              </div>
+              <div className="flex items-center gap-2 text-secondary">
+                <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                </svg>
+                <span className="text-sm font-medium">Built for India</span>
+              </div>
+            </div>
+
           </div>
 
-          {/* TAGLINE */}
-          <p className="text-[10px] sm:text-xs uppercase tracking-[0.28em] font-medium -mt-4 text-brand">
-            STRONGLY MODERN
-          </p>
+          {/* Right: Service Card Grid */}
+          <div 
+            className={`transition-all duration-1000 delay-400 ${
+              mounted ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+            }`}
+          >
+            <div className="grid grid-cols-2 gap-4">
+              {services.map((item, index) => {
+                const Icon = SVG_REGISTRY[item.icon as keyof typeof SVG_REGISTRY];
+                const isActive = service === item.id;
+                
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      setService(item.id);
+                      router.push(`/?service=${item.id}`, { scroll: false });
+                      trackEvent("service_select", { service: item.id });
+                    }}
+                    className={`
+                      group relative p-6 rounded-2xl text-left
+                      transition-all duration-300
+                      hover:scale-[1.02] active:scale-[0.98]
+                      ${index === 4 ? "col-span-2" : ""}
+                      ${isActive ? "bg-primary border-2 border-[#35588d] shadow-xl" : "bg- border-2 border-[#E5E7EB] hover:border-primary"}
+                    `}
+                  >
+                    {/* Active Indicator */}
+                    {isActive && (
+                      <div className="absolute top-4 right-4">
+                        <div className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+                      </div>
+                    )}
 
-          {/* DESCRIPTION */}
-          <p className="max-w-md sm:max-w-xl mx-auto text-xs sm:text-base leading-relaxed tracking-wide px-2 sm:px-4 text-muted">
-            We design and build secure, modern digital solutions that are simple
-            to use, tailored to your business, and built to last.
-          </p>
+                    {/* Icon */}
+                    <div className="mb-4">
+                      <div className={`w-12 h-12 transition-transform duration-300 ${isActive ? "scale-110" : "group-hover:scale-110"}`}>
+                        <Icon 
+                          className={`w-full h-full ${isActive ? "text-white" : "text-primary"}`}
+                          stroke="currentColor"
+                          fill="none"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Text */}
+                    <div>
+                      <h3 className={`text-lg font-bold mb-1 ${isActive ? "text-white" : "text-primary"}`}>
+                        {item.label}
+                      </h3>
+                      <p className={`text-sm ${isActive ? "text-white/70" : "text-muted"}`}>
+                        {item.description}
+                      </p>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }

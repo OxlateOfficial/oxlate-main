@@ -6,7 +6,7 @@ type Props = {
 
 export default function ServiceFeaturesCard({ features }: Props) {
   return (
-    <div className="relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200 min-h-[280px] sm:min-h-[320px] flex flex-col">
+    <div className="relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200 min-h-70 sm:min-h-80 flex flex-col">
       {/* Decorative corner elements - subtle and minimal */}
       <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.03] pointer-events-none">
         <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -22,7 +22,7 @@ export default function ServiceFeaturesCard({ features }: Props) {
       {/* Header with separator */}
       <div className="mb-5 sm:mb-6 pb-4 border-b border-gray-200">
         <h3
-          className="text-sm sm:text-base font-bold text-black tracking-[0.1em] uppercase"
+          className="text-sm sm:text-base font-bold text-black tracking-widest uppercase"
           style={{ fontFamily: "'Orbitron', sans-serif" }}
         >
           What You Get
@@ -30,7 +30,7 @@ export default function ServiceFeaturesCard({ features }: Props) {
       </div>
 
       {/* Features List */}
-      <ul className="space-y-3 sm:space-y-3.5 flex-grow">
+      <ul className="space-y-3 sm:space-y-3.5 grow">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3 group">
             {/* Enhanced Checkmark Icon with hover effect */}
