@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import OrbitHeroBackground from "./Floatingbg/Orbitherobackground";
-
+import { useTheme } from "@/components/layout/Providers";
+import GridBg from "./gridbg/GridBg";
 export default function HeroSection() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -33,24 +36,25 @@ export default function HeroSection() {
 
   return (
     <main
-      className="relative w-full font-[Orbitron] bg-primary overflow-hidden"
+      className={`relative w-full font-[Orbitron] overflow-hidden transition-colors duration-200 ${
+        isDark ? "bg-dark text-white" : "bg-soft text-primary"
+      }`}
       style={{
         opacity: sectionOpacity,
         transition: "opacity 0.15s linear",
       }}
     >
-      {/* BACKGROUND LAYER */}
-      {/* <div
-        className="absolute inset-0 pointer-events-none will-change-transform"
-        style={{
-          opacity: bgOpacity,
-          transform: `translateY(${scrollY * 0.05}px)`,
-          transition: "opacity 0.15s linear",
-        }}
-      >
-        <OrbitHeroBackground />
-      </div> */}
 
+      <div className="absolute inset-0 pointer-events-none">
+        <GridBg
+          columns={16}
+          rows={10}
+          stroke="#000"
+          strokeOpacity={0.06}
+          strokeWidth={0.4}
+          className="w-full h-full"
+        />
+      </div>
       {/* SEO TEXT */}
       <section className="sr-only">
         <h1>Oxlate Web Development Company</h1>
@@ -88,26 +92,22 @@ export default function HeroSection() {
           {/* LOGO */}
           <div className="flex justify-center">
             <Image
-              src="/images/icons/Oxlate_wht.svg"
+              src="/images/icons/Oxlate_blk.svg"
               alt="Oxlate Logo"
               width={120}
               height={120}
               priority
-              className="
-                select-none
-                w-54 sm:w-72 md:w-94
-                h-auto
-              "
+              className="select-none w-54 sm:w-72 md:w-94 h-auto"
             />
           </div>
 
           {/* TAGLINE */}
-          <p className="text-[10px] sm:text-xs uppercase tracking-[0.28em] font-medium -mt-4 text-gray-200">
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.28em] font-medium -mt-4 text-brand">
             STRONGLY MODERN
           </p>
 
           {/* DESCRIPTION */}
-          <p className="max-w-md sm:max-w-xl mx-auto text-xs sm:text-base leading-relaxed tracking-wide px-2 sm:px-4 text-gray-100">
+          <p className="max-w-md sm:max-w-xl mx-auto text-xs sm:text-base leading-relaxed tracking-wide px-2 sm:px-4 text-muted">
             We design and build secure, modern digital solutions that are simple
             to use, tailored to your business, and built to last.
           </p>
