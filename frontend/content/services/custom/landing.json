@@ -1,48 +1,107 @@
 {
   "id": "custom",
-  "title": "Custom Development Services",
-  "whatIs": "Custom development is the process of creating fast, modern, and user-friendly applications that represent your business online and generate leads.",
-  "why": [
-    "Creates strong first impressions",
-    "Builds trust and credibility",
-    "Works 24/7 for your business",
-    "Mobile-friendly for all users"
-  ],
-  "process": [
+  "title": "Custom Development",
+  "tagline": "Tailor-made software built around your exact needs",
+
+  "hero": {
+    "subtitle": "Bespoke digital solutions designed for complex requirements",
+    "stats": [
+      { "value": "100%", "unit": "", "label": "Custom-built" },
+      { "value": "Flexible", "unit": "", "label": "Architecture" },
+      { "value": "Long-term", "unit": "", "label": "Scalability" }
+    ]
+  },
+
+  "overview": {
+    "heading": "Solutions built specifically for your business",
+    "description": "We design and develop custom software solutions that address unique challenges, integrate with your processes, and scale with your growth.",
+    "highlights": [
+      "Bespoke system design",
+      "Custom integrations and logic",
+      "Scalable and maintainable architecture",
+      "Long-term extensibility"
+    ]
+  },
+
+  "valueBlocks": [
     {
-      "step": 1,
-      "title": "Understand Requirements",
-      "desc": "We understand your business goals and audience."
+      "icon": "customization",
+      "title": "Fully Custom",
+      "description": "No templates, no shortcuts — built from scratch"
     },
     {
-      "step": 2,
-      "title": "Design & Layout",
-      "desc": "We design a clean, modern layout tailored to your brand."
+      "icon": "architecture",
+      "title": "Flexible Architecture",
+      "description": "Adaptable systems designed for change"
     },
     {
-      "step": 3,
-      "title": "Development",
-      "desc": "We build fast, SEO-ready, scalable code."
+      "icon": "integration",
+      "title": "System Integration",
+      "description": "Connects seamlessly with existing tools"
     },
     {
-      "step": 4,
-      "title": "Launch & Support",
-      "desc": "We deploy and provide post-launch support."
+      "icon": "ownership",
+      "title": "Full Ownership",
+      "description": "You own the code and the solution"
     }
   ],
+
+  "workflow": {
+    "heading": "Our custom development approach",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Requirement Discovery",
+        "description": "Deep understanding of goals, constraints, and workflows",
+        "deliverable": "Requirement specification"
+      },
+      {
+        "number": 2,
+        "title": "System Design",
+        "description": "Architecture and technical planning",
+        "deliverable": "System design document"
+      },
+      {
+        "number": 3,
+        "title": "Development",
+        "description": "Iterative development with validation",
+        "deliverable": "Functional software"
+      },
+      {
+        "number": 4,
+        "title": "Deployment & Support",
+        "description": "Launch, documentation, and support",
+        "deliverable": "Live system + handover"
+      }
+    ]
+  },
+
+  "guarantees": [
+    "Custom-built architecture",
+    "Clean and maintainable codebase",
+    "Detailed documentation",
+    "Long-term extensibility"
+  ],
+
   "faqs": [
     {
-      "q": "How long does website development take?",
-      "a": "Usually between 5–10 days depending on requirements."
+      "q": "Is this different from regular development?",
+      "a": "Yes. Everything is built specifically around your requirements with no predefined structure."
     },
     {
-      "q": "Will the website be mobile-friendly?",
-      "a": "Yes, all websites are fully responsive and mobile-first."
+      "q": "Can the system evolve later?",
+      "a": "Absolutely. Custom systems are designed to evolve over time."
     },
     {
-      "q": "Do you provide support after launch?",
-      "a": "Yes, we provide post-launch support and guidance."
+      "q": "Who owns the code?",
+      "a": "You receive full ownership of the source code."
     }
   ],
-  "ctaText": "View Full Web Development Page"
+
+  "cta": {
+    "heading": "Need a custom-built solution?",
+    "subheading": "Let’s design software that fits your business",
+    "buttonText": "Discuss Your Idea",
+    "supportText": "or request a technical consultation"
+  }
 }

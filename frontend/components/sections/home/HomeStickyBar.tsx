@@ -12,8 +12,8 @@ export default function HomeStickyBar() {
       {/* Sentinel lives ABOVE the bar */}
       <div ref={sentinelRef} className="h-px" />
 
-      <div className="sticky top-0 z-50 ">
-        <nav className="mx-auto  h-[64] max-w-6xl px-4 py-4 relative ">
+      <div className="sticky top-0 z-50 -mt-10 sm:mt-0 ">
+        <nav className="mx-auto -mt-10 sm:mt-0  h-[64] max-w-6xl px-4 py-4 relative ">
 
           {/* Service selector */}
           <div

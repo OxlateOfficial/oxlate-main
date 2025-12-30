@@ -1,48 +1,107 @@
 {
   "id": "web-development",
   "title": "Web Development",
-  "whatIs": "Web development is the process of building reliable, secure, and easy-to-use websites that support real business goals and create lasting trust online.",
-  "why": [
-    "Builds a clear and trustworthy first impression",
-    "Helps customers understand your business better",
-    "Provides a consistent online presence",
-    "Designed for real users across all devices"
-  ],
-  "process": [
+  "tagline": "Websites built for clarity, trust, and performance",
+
+  "hero": {
+    "subtitle": "Business-focused websites designed to convert and scale",
+    "stats": [
+      { "value": "5–10", "unit": "days", "label": "Delivery time" },
+      { "value": "100%", "unit": "", "label": "Responsive design" },
+      { "value": "SEO", "unit": "ready", "label": "Optimized" }
+    ]
+  },
+
+  "overview": {
+    "heading": "Websites that represent your business properly",
+    "description": "We build modern, fast, and secure websites that help businesses establish trust and communicate clearly with their audience.",
+    "highlights": [
+      "Mobile-first design",
+      "Fast and optimized code",
+      "SEO-friendly structure",
+      "Secure deployment"
+    ]
+  },
+
+  "valueBlocks": [
     {
-      "step": 1,
-      "title": "Understand the business",
-      "desc": "We take time to understand your goals, audience, and expectations before starting."
+      "icon": "design",
+      "title": "Clean Design",
+      "description": "Focused layouts with clear communication"
     },
     {
-      "step": 2,
-      "title": "Align requirements",
-      "desc": "We clarify scope and confirm requirements to ensure everything is clear and agreed upon."
+      "icon": "performance",
+      "title": "High Performance",
+      "description": "Optimized for speed and stability"
     },
     {
-      "step": 3,
-      "title": "Design and build",
-      "desc": "We design with purpose and develop secure, reliable code focused on usability."
+      "icon": "seo",
+      "title": "SEO Ready",
+      "description": "Built for visibility and indexing"
     },
     {
-      "step": 4,
-      "title": "Launch and support",
-      "desc": "We deploy carefully and remain available to support you after launch."
+      "icon": "maintenance",
+      "title": "Easy Maintenance",
+      "description": "Structured and maintainable codebase"
     }
   ],
+
+  "workflow": {
+    "heading": "Our web development process",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Discovery",
+        "description": "Understanding goals and audience",
+        "deliverable": "Website plan"
+      },
+      {
+        "number": 2,
+        "title": "Design",
+        "description": "Visual design and layout structure",
+        "deliverable": "Design mockups"
+      },
+      {
+        "number": 3,
+        "title": "Development",
+        "description": "Clean, secure implementation",
+        "deliverable": "Working website"
+      },
+      {
+        "number": 4,
+        "title": "Launch & Support",
+        "description": "Deployment and post-launch support",
+        "deliverable": "Live website"
+      }
+    ]
+  },
+
+  "guarantees": [
+    "Mobile-first responsive design",
+    "Clean and optimized code",
+    "SEO-friendly structure",
+    "Post-launch support"
+  ],
+
   "faqs": [
     {
-      "q": "How long does website development take?",
-      "a": "Timelines depend on scope, but most business websites are completed within one to two weeks."
+      "q": "Will my website work on all devices?",
+      "a": "Yes. All websites are fully responsive."
     },
     {
-      "q": "Will the website work well on mobile devices?",
-      "a": "Yes, every website is designed to work smoothly across all screen sizes."
+      "q": "Is SEO included?",
+      "a": "Yes. We follow SEO best practices by default."
     },
     {
       "q": "Do you provide support after launch?",
-      "a": "Yes, we offer post-launch support and guidance as your business grows."
+      "a": "Yes. We provide post-launch assistance."
     }
   ],
-  "ctaText": "View full web development details"
+
+  "cta": {
+    "heading": "Ready to build your website?",
+    "subheading": "Let’s create a strong online presence",
+    "buttonText": "Start Web Project",
+    "supportText": "or schedule a free consultation"
+  }
 }
