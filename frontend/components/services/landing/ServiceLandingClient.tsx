@@ -318,23 +318,133 @@ const IconOwnershipKey = () => (
     <path strokeWidth={2} d="M10 17h11M18 17v-2M21 17v-2" />
   </svg>
 );
+// 🔹 Mobile / Responsive
+const IconResponsive = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <rect x="3" y="4" width="14" height="16" rx="2" strokeWidth={2} />
+    <path strokeWidth={2} d="M17 8h4v8h-4" />
+    <circle cx="10" cy="18" r="0.5" />
+  </svg>
+);
+
+// 🔹 Monitoring / Reliability
+const IconMonitoring = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M3 12h4l3-6 4 12 3-6h4" />
+  </svg>
+);
+
+// 🔹 Integration
+const IconIntegration = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="7" height="7" strokeWidth={2} />
+    <rect x="14" y="14" width="7" height="7" strokeWidth={2} />
+    <path strokeWidth={2} d="M10 6h4v4M14 10v4" />
+  </svg>
+);
+// 🔹 SEO / Search
+const ICONSEO = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7" strokeWidth={2} />
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M21 21l-4.3-4.3" />
+  </svg>
+);
+
+
 
 
 const getGuaranteeIcon = (text: string) => {
   const value = text.toLowerCase();
 
-  if (value.includes("code")) return <IconCode />;
-  if (value.includes("documentation")) return <IconDocumentation />;
-  if (value.includes("support")) return <IconSupportShield />;
-  if (value.includes("secure") || value.includes("security")) return <IconSecure />;
-  if (value.includes("scalable") || value.includes("architecture") || value.includes("modular"))
-    return <IconArchitecture />;
-  if (value.includes("ownership") || value.includes("source code"))
-    return <IconOwnershipKey />;
+  // Code / Quality
+  if (
+    value.includes("code") ||
+    value.includes("maintainable") ||
+    value.includes("clean code") ||
+    value.includes("industry standard")
+  ) {
+    return <IconCode />;
+  }
 
-  // fallback
+  // Documentation
+  if (value.includes("documentation") || value.includes("training")) {
+    return <IconDocumentation />;
+  }
+
+  // Support
+  if (value.includes("support")) {
+    return <IconSupportShield />;
+  }
+
+  // Security
+  if (
+    value.includes("secure") ||
+    value.includes("security") ||
+    value.includes("role-based") ||
+    value.includes("data")
+  ) {
+    return <IconSecure />;
+  }
+
+  // Scalability / Architecture
+  if (
+    value.includes("scalable") ||
+    value.includes("architecture") ||
+    value.includes("modular") ||
+    value.includes("extensibility")
+  ) {
+    return <IconArchitecture />;
+  }
+
+  // Ownership
+  if (
+    value.includes("ownership") ||
+    value.includes("source code")
+  ) {
+    return <IconOwnershipKey />;
+  }
+
+  // Responsive / Mobile-first
+  if (
+    value.includes("mobile") ||
+    value.includes("responsive")
+  ) {
+    return <IconResponsive />;
+  }
+
+  // SEO
+  if (
+    value.includes("seo") ||
+    value.includes("search") ||
+    value.includes("visibility") ||
+    value.includes("indexing")
+  ) {
+    return <ICONSEO />;
+  }
+
+  // Integration
+  if (
+    value.includes("integration") ||
+    value.includes("non-intrusive")
+  ) {
+    return <IconIntegration />;
+  }
+
+  // Monitoring / Reliability
+  if (
+    value.includes("monitoring") ||
+    value.includes("reliability") ||
+    value.includes("execution")
+  ) {
+    return <IconMonitoring />;
+  }
+
+  // Sensible default
   return <IconCode />;
 };
+
 
 
 
