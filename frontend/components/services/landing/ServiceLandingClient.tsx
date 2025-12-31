@@ -269,6 +269,74 @@ const getIcon = (iconName: string) => {
   }
 };
 
+// 🔹 Code / Quality
+const IconCode = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+  </svg>
+);
+
+// 🔹 Documentation
+const IconDocumentation = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <rect x="4" y="3" width="16" height="18" rx="2" strokeWidth={2} />
+    <path strokeWidth={2} d="M8 7h8M8 11h8M8 15h6" />
+  </svg>
+);
+
+// 🔹 Support
+const IconSupportShield = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M12 3l8 4v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" />
+  </svg>
+);
+
+// 🔹 Security
+const IconSecure = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <rect x="5" y="11" width="14" height="10" rx="2" strokeWidth={2} />
+    <path strokeWidth={2} d="M8 11V7a4 4 0 018 0v4" />
+  </svg>
+);
+
+// 🔹 Scalability / Architecture
+const IconArchitecture = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="7" height="7" strokeWidth={2} />
+    <rect x="14" y="3" width="7" height="7" strokeWidth={2} />
+    <rect x="8.5" y="14" width="7" height="7" strokeWidth={2} />
+    <path strokeWidth={2} d="M6.5 10v4M17.5 10v4" />
+  </svg>
+);
+
+// 🔹 Ownership
+const IconOwnershipKey = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <circle cx="7" cy="17" r="3" strokeWidth={2} />
+    <path strokeWidth={2} d="M10 17h11M18 17v-2M21 17v-2" />
+  </svg>
+);
+
+
+const getGuaranteeIcon = (text: string) => {
+  const value = text.toLowerCase();
+
+  if (value.includes("code")) return <IconCode />;
+  if (value.includes("documentation")) return <IconDocumentation />;
+  if (value.includes("support")) return <IconSupportShield />;
+  if (value.includes("secure") || value.includes("security")) return <IconSecure />;
+  if (value.includes("scalable") || value.includes("architecture") || value.includes("modular"))
+    return <IconArchitecture />;
+  if (value.includes("ownership") || value.includes("source code"))
+    return <IconOwnershipKey />;
+
+  // fallback
+  return <IconCode />;
+};
+
+
 
 
 export default function ServiceLandingClient({ landing }: Props) {
@@ -467,41 +535,46 @@ export default function ServiceLandingClient({ landing }: Props) {
         </div>
       </section>
 
-      {/* ==================== GUARANTEES SECTION ==================== */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 sm:mb-12"
-            >
-              What you can expect
-            </motion.h2>
+     {/* ==================== GUARANTEES SECTION ==================== */}
+<section className="py-20 sm:py-24 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center"
+    >
+      What you can expect
+    </motion.h2>
 
-            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-              {landing.guarantees.map((guarantee, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-xl p-5 sm:p-6 shadow-sm flex items-start gap-4"
-                >
-                  <div className={`shrink-0 w-6 h-6 rounded-full bg-linear-to-br ${theme.gradient} flex items-center justify-center`}>
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700 leading-relaxed">{guarantee}</span>
-                </motion.div>
-              ))}
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {landing.guarantees.map((guarantee, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.08 }}
+          className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300"
+        >
+          <div
+            className={`w-14 h-14 mb-6 rounded-2xl bg-linear-to-br ${theme.gradient} 
+                        text-white flex items-center justify-center`}
+          >
+            <div className="w-7 h-7">
+              {getGuaranteeIcon(guarantee)}
             </div>
           </div>
-        </div>
-      </section>
+
+          <p className="text-gray-800 font-medium leading-relaxed text-base">
+            {guarantee}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* ==================== FAQ SECTION ==================== */}
       <section className="py-16 sm:py-20 md:py-24 lg:py-28">
