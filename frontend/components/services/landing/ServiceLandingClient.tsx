@@ -136,39 +136,140 @@ const ServiceBackgroundPattern = ({ serviceId }: { serviceId: string }) => {
 };
 
 // Icon components
-const IconPerformance = () => (
+
+const IconDesign = () => (
   <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M12 20l9-5-9-5-9 5 9 5z M12 12l9-5-9-5-9 5 9 5z" />
   </svg>
 );
+
+// 🔹 Performance
+
+const IconPerformance = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </svg>
+);
+
+// 🔹 Security
 
 const IconSecurity = () => (
   <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M12 11c1.1 0 2 .9 2 2v2h-4v-2c0-1.1.9-2 2-2z" />
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M6 11V7a6 6 0 1112 0v4m2 0v10a2 2 0 01-2 2H6a2 2 0 01-2-2V11z" />
   </svg>
 );
+
+// 🔹 Scalability / Scaling
 
 const IconScalability = () => (
   <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M7 11l5-5 5 5M12 6v12" />
   </svg>
 );
+
+// 🔹 Support
 
 const IconSupport = () => (
   <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+    <circle cx="12" cy="12" r="10" strokeWidth={2} />
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M12 8v4l3 3" />
   </svg>
 );
 
+// 🔹 SEO / Insights
+
+const IconSEO = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7" strokeWidth={2} />
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M21 21l-4.3-4.3" />
+  </svg>
+);
+
+// 🔹 Maintenance / Reliability
+
+const IconMaintenance = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M9 12l2 2 4-4" />
+    <circle cx="12" cy="12" r="10" strokeWidth={2} />
+  </svg>
+);
+
+// 🔹 Workflow / Integration / Control
+
+const IconWorkflow = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="7" height="7" strokeWidth={2} />
+    <rect x="14" y="3" width="7" height="7" strokeWidth={2} />
+    <rect x="14" y="14" width="7" height="7" strokeWidth={2} />
+    <path strokeWidth={2} d="M10 6h4M17 10v4" />
+  </svg>
+);
+
+// 🔹 Ownership
+
+const IconOwnership = () => (
+  <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M12 3l9 4-9 4-9-4 9-4z" />
+    <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+      d="M3 11l9 4 9-4" />
+  </svg>
+);
+
+
+
+
 const getIcon = (iconName: string) => {
-  switch (iconName) {
-    case 'performance': return <IconPerformance />;
-    case 'security': return <IconSecurity />;
-    case 'scalability': return <IconScalability />;
-    case 'support': return <IconSupport />;
-    default: return <IconPerformance />;
+  switch (iconName.toLowerCase()) {
+    case "performance":
+      return <IconPerformance />;
+
+    case "security":
+      return <IconSecurity />;
+
+    case "scalability":
+    case "scaling":
+      return <IconScalability />;
+
+    case "support":
+      return <IconSupport />;
+
+    case "design":
+    case "architecture":
+    case "customization":
+      return <IconDesign />;
+
+    case "seo":
+    case "insights":
+      return <IconSEO />;
+
+    case "maintenance":
+    case "reliability":
+      return <IconMaintenance />;
+
+    case "workflow":
+    case "integration":
+    case "control":
+      return <IconWorkflow />;
+
+    case "ownership":
+      return <IconOwnership />;
+
+    default:
+      return null;
   }
 };
+
+
 
 export default function ServiceLandingClient({ landing }: Props) {
   const router = useRouter();
