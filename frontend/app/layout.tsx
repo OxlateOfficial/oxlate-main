@@ -1,67 +1,74 @@
-import Footer from "@/components/layout/Footer/Footer";
-import "./globals.css";
-import type { Metadata } from "next";
-import { Orbitron } from "next/font/google";
-import Analytics from "@/components/performance/GoogleAnalytics";
-import HeaderClient from "@/components/layout/Header/HeaderClient";
-import { Providers } from "@/components/layout/Providers";
-import MainNavigation from "@/components/layout/Header/MainNavigation";
-import ServiceSelector from "@/components/layout/Header/SelectionState";
-const OrbitronFont = Orbitron({
-  variable: "--font-orbitron",
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-});
+import type { Metadata, Viewport } from 'next'
+import { Inter, Orbitron } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
 
+// <CHANGE> Added Inter and Orbitron fonts
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
+
+const orbitron = Orbitron({ 
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+
+
+// <CHANGE> Updated metadata for Oxlate
 export const metadata: Metadata = {
-  title: {
-    default: "Oxlate | Web Development, Automation & Custom Software",
-    template: "%s | Oxlate"
-  },
-  description:
-    "Oxlate is a modern web development and automation company providing fast, mobile-first websites, ERP systems, and custom software solutions for businesses in India.",
-  keywords: [
-    "Oxlate",
-    "Web Development Company",
-    "Website Development India",
-    "Automation Services",
-    "Custom Software Development",
-    "ERP Development",
-    "Mobile-first websites"
-  ],
-  alternates: {
-    canonical: "https://www.oxlate.com"
-  },
+  title: 'Oxlate | Digital Solutions for Indian Businesses',
+  description: 'Professional website development, app development, and business automation services for Indian SMBs. Clear pricing, fast delivery, built for India.',
+  keywords: ['website development India', 'app development', 'business automation', 'digital services', 'SMB solutions'],
+  authors: [{ name: 'Oxlate' }],
+  creator: 'Oxlate',
   openGraph: {
-    title: "Oxlate | Strongly Modern Digital Solutions",
-    description:
-      "Modern web development, automation, ERP and custom software solutions built for performance and scalability.",
-    url: "https://www.oxlate.com",
-    siteName: "Oxlate",
-    type: "website"
-  }
-};
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://oxlate.com',
+    title: 'Oxlate | Digital Solutions for Indian Businesses',
+    description: 'We Build Digital Solutions That Actually Work',
+    siteName: 'Oxlate',
+  },
+  manifest: "/manifest.json",
+  icons: {
+    // The primary icon for your site (e.g., in browser tabs).
+    icon: "/icon.svg",
+    // A fallback shortcut icon.
+    shortcut: "/favicon.ico",
+    // Icon for Apple devices when added to the home screen.
+    apple: "/apple-icon.png",
+  },
+
+    appleWebApp: {
+    title: "Oxlate", // Sets the <meta name="apple-mobile-web-app-title"> tag.
+    capable: true,
+    statusBarStyle: "default",
+  },
+    generator: 'v0.app'
+}
+
+export const viewport: Viewport = {
+  themeColor: '#1E40AF',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${OrbitronFont.variable} antialiased bg-white text-black scroll-smooth `}
-      >
-        <Providers>
-          <MainNavigation />
-          {/* <ServiceSelector /> */}
-          {/* <Oxlatebg/> */}
-          {/* <HeaderClient/> */}"
-          {children}
-          <Analytics />
-          <Footer/>
-        </Providers>
+    <html lang="en" className={`${inter.variable} ${orbitron.variable}`}>
+      <body className="font-sans antialiased">
+        {children}
+        <Analytics />
       </body>
     </html>
-  );
+  )
 }
