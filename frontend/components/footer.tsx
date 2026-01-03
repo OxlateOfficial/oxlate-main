@@ -119,7 +119,7 @@ export function Footer() {
                   oxlateofficial@gmail.com
                 </a>
               </li>
-              <li>Metro Station, A62, Gali Number 6, near Dwarka Mod, Block A, Sewak Park, Nawada, New Delhi, Delhi, 110059</li>
+                <li>Chandigarh, India</li>
               <li>Response time: 24 hours</li>
             </ul>
           </div>
