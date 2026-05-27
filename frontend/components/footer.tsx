@@ -121,6 +121,16 @@ export function Footer() {
               </li>
                 <li>Chandigarh, India</li>
               <li>Response time: 24 hours</li>
+              <li className="pt-2">
+                <a 
+                  href="https://g.page/r/CYbNnrb42Up2EBI/review" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-secondary-foreground transition-colors hover:text-secondary-foreground/80 underline decoration-secondary-foreground/30 underline-offset-4"
+                >
+                  Review Oxlate on Google
+                </a>
+              </li>
             </ul>
           </div>
         </div>

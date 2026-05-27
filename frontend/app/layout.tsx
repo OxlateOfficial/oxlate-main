@@ -67,6 +67,28 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${orbitron.variable}`}>
       <body className="font-sans antialiased">
         {children}
+                <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Oxlate",
+              "url": "https://www.oxlate.com",
+              "logo": "https://www.oxlate.com/icons/Oxlate_wht.svg",
+              "telephone": "+91-07888816472",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Punjab",
+                "addressCountry": "IN"
+              },
+              "sameAs": [
+                "https://g.page/r/CYbNnrb42Up2EBI/review",
+                "https://www.linkedin.com/company/oxlateofficial/"
+              ]
+            })
+          }}
+        />
         <Analytics />
       </body>
     </html>
