@@ -8,22 +8,22 @@ import { SectionHeader } from "@/components/section-header";
 export function AnimatedTestimonials() {
   const testimonials = [
     {
-      text: "Fast, professional, and delivered exactly what we needed. The platform handles 100+ users without any issues.",
-      author: "Team Lead",
-      role: "Educational Institution",
-      project: "Community Platform",
+      text: "Oxlate transformed our personal project into a professional platform. Clean code, great design, and delivered ahead of schedule.",
+      author: "Alex R.",
+      role: "Independent Developer",
+      project: "Portfolio Platform",
     },
     {
-      text: "The automation saved us 10 hours per week. Worth every rupee to have a reliable team handle this.",
+      text: "Fast, reliable, and understood our requirements without endless back-and-forths. The final product exceeded our expectations.",
+      author: "Priya M.",
+      role: "Founder, Tech Startup",
+      project: "SaaS Dashboard",
+    },
+    {
+      text: "Built our e-commerce store in 3 weeks. Professional quality, SEO-optimized, and customers have been loving it.",
       author: "Rahul K.",
-      role: "Small Business Owner",
-      project: "Instagram Automation",
-    },
-    {
-      text: "Oxlate revamped our legacy systems into a modern app. Truly understood our business logic and delivered on time.",
-      author: "Vikram S.",
-      role: "Operations Manager",
-      project: "Custom Web Application",
+      role: "Business Owner",
+      project: "E-commerce Platform",
     }
   ];
 

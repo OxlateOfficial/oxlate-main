@@ -11,7 +11,7 @@ import { SectionHeader } from "@/components/section-header"
 export const metadata: Metadata = {
   title: "Pricing | Oxlate Digital Services",
   description:
-    "Transparent pricing for website development, app development, and business automation. Starting from ₹15,000. No hidden costs.",
+    "Transparent pricing for website development and app development. Starting from ₹8,000. No hidden costs.",
 }
 
 export default function PricingPage() {
@@ -45,7 +45,7 @@ export default function PricingPage() {
                 <CardHeader>
                   <CardTitle>Starter</CardTitle>
                   <CardDescription>Perfect for small businesses</CardDescription>
-                  <div className="mt-4 text-4xl font-bold">₹15,000</div>
+                  <div className="mt-4 text-4xl font-bold">Starting from <span className="text-primary">₹8,000</span></div>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">

@@ -17,6 +17,7 @@ export function Footer() {
             </div>
           </Link>
             <p className="text-sm text-secondary-foreground/80">We Build Digital Solutions That Actually Work</p>
+            <p className="text-xs text-secondary-foreground/60 italic">Also available: automation & consulting services</p>
             <div className="flex space-x-4">
               <Link
                 href="https://www.linkedin.com/company/oxlateofficial/"

@@ -35,9 +35,6 @@ export function Navbar() {
                 <DropdownMenuItem asChild>
                   <Link href="/services/app-development">App Development</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services/business-automation">Business Automation</Link>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -86,13 +83,6 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   App Development
-                </Link>
-                <Link
-                  href="/services/business-automation"
-                  className="pl-4 text-sm font-medium text-foreground transition-colors hover:text-primary"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Business Automation
                 </Link>
               </div>
 

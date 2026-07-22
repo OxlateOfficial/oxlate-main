@@ -32,15 +32,15 @@ export function AnimatedServices() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <SectionHeader
-            title="What We Build For You"
-            subtitle="Professional digital solutions tailored for Indian businesses"
+            title="What We Build"
+            subtitle="Modern websites and mobile apps that drive real results"
             centered
             className="mb-12"
           />
         </motion.div>
 
         <motion.div 
-          className="grid gap-8 md:grid-cols-3"
+          className="grid gap-8 md:grid-cols-2"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -60,7 +60,7 @@ export function AnimatedServices() {
               </CardHeader>
               <CardContent className="flex-1">
                 <div className="mb-6 text-3xl font-bold text-foreground font-display">
-                  <span className="text-lg text-muted-foreground font-normal">from</span> <span className="text-primary">₹15,000</span>
+                  <span className="text-lg text-muted-foreground font-normal">from</span> <span className="text-primary">₹8,000</span>
                 </div>
                 <ul className="space-y-3 text-sm text-foreground/80">
                   <li className="flex items-start font-medium">
@@ -85,7 +85,7 @@ export function AnimatedServices() {
             </Card>
           </motion.div>
 
-          {/* AI Integration */}
+          {/* App Development */}
           <motion.div variants={itemVariants}>
             <Card className="group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-border/50 h-full flex flex-col relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4">
@@ -97,72 +97,33 @@ export function AnimatedServices() {
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                   <Smartphone className="h-7 w-7" />
                 </div>
-                <CardTitle className="text-2xl">AI Integration</CardTitle>
+                <CardTitle className="text-2xl">App Development</CardTitle>
                 <CardDescription className="text-base text-muted-foreground/80 text-balance">
-                  Add ChatGPT-like intelligence to your business processes and customer service.
+                  Native iOS & Android apps that engage your users and grow your business.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-1">
                 <div className="mb-6 text-3xl font-bold text-foreground font-display">
-                  <span className="text-lg text-muted-foreground font-normal">from</span> <span className="text-primary">₹25,000</span>
+                  <span className="text-lg text-muted-foreground font-normal">from</span> <span className="text-primary">₹50,000</span>
                 </div>
                 <ul className="space-y-3 text-sm text-foreground/80">
                   <li className="flex items-start font-medium">
                     <Check className="mr-3 h-5 w-5 text-secondary shrink-0" />
-                    <span>Custom AI chatbots</span>
+                    <span>iOS & Android native apps</span>
                   </li>
                   <li className="flex items-start font-medium">
                     <Check className="mr-3 h-5 w-5 text-secondary shrink-0" />
-                    <span>Document processing</span>
+                    <span>Custom UI/UX design</span>
                   </li>
                   <li className="flex items-start font-medium">
                     <Check className="mr-3 h-5 w-5 text-secondary shrink-0" />
-                    <span>Customer support automation</span>
+                    <span>App store deployment</span>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter className="pt-6">
                 <Button asChild variant="default" className="w-full shadow-md group-hover:shadow-lg transition-all">
-                  <Link href="/services#ai-integration">Learn More</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
-
-          {/* Business Automation */}
-          <motion.div variants={itemVariants}>
-            <Card className="group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-border/50 h-full flex flex-col">
-              <CardHeader>
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <Zap className="h-7 w-7" />
-                </div>
-                <CardTitle className="text-2xl">Automation Services</CardTitle>
-                <CardDescription className="text-base text-muted-foreground/80 text-balance">
-                  Automate repetitive tasks and save hours of manual work every week.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <div className="mb-6 text-3xl font-bold text-foreground font-display">
-                  <span className="text-lg text-muted-foreground font-normal">from</span> <span className="text-primary">₹10,000</span>
-                </div>
-                <ul className="space-y-3 text-sm text-foreground/80">
-                  <li className="flex items-start font-medium">
-                    <Check className="mr-3 h-5 w-5 text-secondary shrink-0" />
-                    <span>Instagram/WhatsApp automation</span>
-                  </li>
-                  <li className="flex items-start font-medium">
-                    <Check className="mr-3 h-5 w-5 text-secondary shrink-0" />
-                    <span>Excel & Email workflows</span>
-                  </li>
-                  <li className="flex items-start font-medium">
-                    <Check className="mr-3 h-5 w-5 text-secondary shrink-0" />
-                    <span>Lead generation systems</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter className="pt-6">
-                <Button asChild variant="outline" className="w-full bg-transparent border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all">
-                  <Link href="/services#automation">Learn More</Link>
+                  <Link href="/services#app-development">Learn More</Link>
                 </Button>
               </CardFooter>
             </Card>

@@ -1,193 +1,123 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Target, Zap, Shield, Users } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { SectionHeader } from "@/components/section-header"
+import { Target, Zap, Shield, ArrowRight } from "lucide-react"
+import { Navbar } from "@/components/layout/Navbar"
+import { Footer } from "@/components/layout/Footer"
+import { CTABand } from "@/components/features/home/CTABand"
 
 export const metadata: Metadata = {
   title: "About Oxlate | Digital Solutions for Indian Businesses",
   description:
-    "Learn about Oxlate's mission to help Indian businesses succeed online with transparent pricing, fast delivery, and quality solutions.",
+    "Learn about Oxlate's mission — helping Indian businesses build a strong digital presence with transparent process, fast delivery, and honest communication.",
+  alternates: {
+    canonical: "https://www.oxlate.com/about",
+  },
 }
+
+const values = [
+  {
+    icon: Target,
+    title: "Transparency",
+    description:
+      "Clear scope, honest pricing, and straightforward communication at every step. You'll never be surprised by a change in cost or timeline.",
+  },
+  {
+    icon: Zap,
+    title: "Speed",
+    description:
+      "We move fast without cutting corners. Our lean process gets you from idea to live product in weeks, not months.",
+  },
+  {
+    icon: Shield,
+    title: "Quality",
+    description:
+      "We build for performance, accessibility, and longevity — not just for the demo. Every product is production-grade from day one.",
+  },
+]
 
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 to-accent/10 px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-6 font-display text-4xl font-bold sm:text-5xl">About Oxlate</h1>
-            <p className="text-pretty text-xl text-muted-foreground">
-              We help Indian businesses succeed online with digital solutions that actually work
-            </p>
-          </div>
-        </section>
 
-        {/* Mission Section */}
-        <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        {/* Page hero */}
+        <section className="bg-background px-6 py-20 lg:px-16">
           <div className="mx-auto max-w-4xl">
-            <SectionHeader title="Our Mission" centered className="mb-8" />
-            <p className="text-center text-lg leading-relaxed text-muted-foreground">
-              We believe every Indian business deserves a strong digital presence. Whether you're a shop owner in
-              Amritsar, a startup founder in Bangalore, or an institute in Delhi, we're here to provide clear,
-              affordable, and effective digital solutions. Our goal is simple: help you grow your business online
-              without the complexity, hidden costs, or technical jargon.
+            <p className="eyebrow mb-4">About Oxlate</p>
+            <h1 className="mb-6">
+              Built by builders,{" "}
+              <span className="text-accent">for builders</span>
+            </h1>
+            <p className="max-w-xl text-xl leading-relaxed text-muted-foreground">
+              We help Indian businesses succeed online with digital solutions that actually work — websites, apps, and SEO, with no hidden costs and no jargon.
             </p>
           </div>
         </section>
 
-        {/* Approach Section */}
-        <section className="bg-muted px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        {/* Mission */}
+        <section className="section-padding bg-muted px-6 lg:px-16">
           <div className="mx-auto max-w-7xl">
-            <SectionHeader title="Our Approach" subtitle="How we work with you" centered className="mb-12" />
+            <div className="grid items-center gap-16 lg:grid-cols-2">
+              <div>
+                <p className="eyebrow mb-4">Our Mission</p>
+                <h2 className="mb-6">Every business deserves a strong digital presence</h2>
+                <p className="mb-4 text-lg leading-relaxed text-muted-foreground">
+                  Whether you're a shop owner in Chandigarh, a startup founder in Bangalore, or a service provider in Delhi — you deserve a digital presence that works as hard as you do.
+                </p>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  Our goal is to remove the complexity, hidden costs, and technical jargon from digital services and replace them with clear, affordable, effective solutions.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  { label: "Reply Commitment", value: "< 24 hrs" },
+                  { label: "Quote Turnaround", value: "48 hrs" },
+                  { label: "Tech Stack", value: "Modern" },
+                  { label: "Focus", value: "India" },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-[var(--radius-md)] border border-border bg-surface p-6 text-center shadow-[var(--shadow-card-resting)]"
+                  >
+                    <p className="stat-number text-2xl">{stat.value}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
+        {/* Approach */}
+        <section className="section-padding bg-background px-6 lg:px-16">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <p className="eyebrow mb-3">Our Approach</p>
+              <h2>How we work</h2>
+            </div>
             <div className="grid gap-8 md:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Target className="h-6 w-6" />
+              {values.map((v) => {
+                const Icon = v.icon
+                return (
+                  <div
+                    key={v.title}
+                    className="flex flex-col rounded-[var(--radius-md)] border border-border bg-surface p-8 shadow-[var(--shadow-card-resting)] transition-all duration-200 hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1"
+                  >
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-[var(--radius-sm)] bg-primary-tint">
+                      <Icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="mb-3">{v.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{v.description}</p>
                   </div>
-                  <CardTitle>Transparency</CardTitle>
-                  <CardDescription>Clear communication, no hidden costs</CardDescription>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  We believe in upfront pricing and honest communication. You'll always know what you're paying for, how
-                  long it will take, and what you're getting. No surprises, no fine print.
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Zap className="h-6 w-6" />
-                  </div>
-                  <CardTitle>Speed</CardTitle>
-                  <CardDescription>Fast delivery without compromising quality</CardDescription>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  We know you need to move fast in today's market. Our streamlined processes and experienced team allow
-                  us to deliver quality solutions in weeks, not months.
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Shield className="h-6 w-6" />
-                  </div>
-                  <CardTitle>Quality</CardTitle>
-                  <CardDescription>Built to last and perform</CardDescription>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  We don't cut corners. Every website, app, and automation we build is designed for performance,
-                  security, and scalability. Your success is our success.
-                </CardContent>
-              </Card>
+                )
+              })}
             </div>
           </div>
         </section>
 
-        {/* Values Section */}
-        <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <SectionHeader title="Our Values" subtitle="What guides our work" centered className="mb-12" />
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <div className="space-y-3 rounded-lg border border-border bg-card p-6">
-                <h3 className="text-xl font-semibold">Clear Communication</h3>
-                <p className="text-muted-foreground">
-                  We explain things in plain language. No technical jargon, no confusing terms - just clear, honest
-                  communication throughout your project.
-                </p>
-              </div>
-
-              <div className="space-y-3 rounded-lg border border-border bg-card p-6">
-                <h3 className="text-xl font-semibold">Reliable Delivery</h3>
-                <p className="text-muted-foreground">
-                  When we commit to a timeline, we stick to it. You can count on us to deliver what we promise, when we
-                  promise it.
-                </p>
-              </div>
-
-              <div className="space-y-3 rounded-lg border border-border bg-card p-6">
-                <h3 className="text-xl font-semibold">Long-term Partnerships</h3>
-                <p className="text-muted-foreground">
-                  We're not just looking for one-time projects. We want to grow with your business and be your trusted
-                  technology partner for years to come.
-                </p>
-              </div>
-
-              <div className="space-y-3 rounded-lg border border-border bg-card p-6">
-                <h3 className="text-xl font-semibold">Indian Business Focus</h3>
-                <p className="text-muted-foreground">
-                  We understand the unique challenges and opportunities of the Indian market. Our solutions are designed
-                  specifically for Indian businesses.
-                </p>
-              </div>
-
-              <div className="space-y-3 rounded-lg border border-border bg-card p-6">
-                <h3 className="text-xl font-semibold">Customer Success</h3>
-                <p className="text-muted-foreground">
-                  Your success is our metric. We measure our performance by how much value we bring to your business,
-                  not just by projects completed.
-                </p>
-              </div>
-
-              <div className="space-y-3 rounded-lg border border-border bg-card p-6">
-                <h3 className="text-xl font-semibold">Continuous Improvement</h3>
-                <p className="text-muted-foreground">
-                  We stay updated with the latest technologies and best practices to ensure you always get modern,
-                  effective solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section className="bg-muted px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <SectionHeader
-              title="Our Team"
-              subtitle="Experienced professionals dedicated to your success"
-              centered
-              className="mb-8"
-            />
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mb-8 flex justify-center">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                  <Users className="h-12 w-12" />
-                </div>
-              </div>
-              <p className="text-lg text-muted-foreground">
-                Our team consists of experienced developers, designers, and business analysts who understand both
-                technology and the Indian business landscape. We combine technical expertise with practical business
-                knowledge to deliver solutions that truly work for your needs.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 font-display text-3xl font-bold sm:text-4xl">Ready to Work Together?</h2>
-            <p className="mb-8 text-lg text-muted-foreground">
-              Let's discuss how we can help your business grow online
-            </p>
-            <Button asChild size="lg">
-              <Link href="/contact">Get in Touch</Link>
-            </Button>
-          </div>
-        </section>
+        <CTABand />
       </main>
-
       <Footer />
     </div>
   )
