@@ -31,11 +31,11 @@ export function HeroX({ centerShift = { x: 0, y: 0 } }: HeroXProps) {
           : undefined
       }
       className="layer-l2 pointer-events-none select-none will-change-transform
-                 /* Mobile (< 768px): crowns top center */
-                 relative mx-auto w-[260px] h-[260px] my-6 block
+                 /* Mobile (< 768px): atmospheric CAD watermark anchored in hero */
+                 absolute right-[-12%] top-20 w-[290px] h-[290px] sm:w-[350px] sm:h-[350px] opacity-[0.13] block z-10
                  /* Desktop (>= 768px): central coordinate anchor */
                  md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2
-                 md:w-[88vw] md:max-w-[1240px] md:h-[88vw] md:max-h-[1240px] md:my-0 origin-center z-45"
+                 md:w-[88vw] md:max-w-[1240px] md:h-[88vw] md:max-h-[1240px] md:opacity-100 md:my-0 origin-center md:z-45"
       aria-hidden="true"
     >
       <div className="relative w-full h-full flex flex-col items-center justify-center">

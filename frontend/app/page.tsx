@@ -163,10 +163,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-3 text-center">
-            Process Section */}
-        <ProcessSection />
-
-        {/*     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg
                     className="h-8 w-8"
                     fill="none"
@@ -208,6 +205,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Process Section */}
+        <ProcessSection />
 
         {/* CTA Section */}
         <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
