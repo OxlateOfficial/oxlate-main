@@ -1,0 +1,46 @@
+{
+  "viewports": [
+    {
+      "name": "desktop-1440",
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    {
+      "name": "laptop-1280",
+      "width": 1280,
+      "height": 800,
+      "deviceScaleFactor": 1
+    },
+    {
+      "name": "tablet-1024",
+      "width": 1024,
+      "height": 768,
+      "deviceScaleFactor": 1
+    },
+    {
+      "name": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    },
+    {
+      "name": "small-mobile-375",
+      "width": 375,
+      "height": 812,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "screenshotDirectory": "qa/screenshots",
+  "requiredScreenshots": [
+    "hero-state-01.png",
+    "hero-state-02.png",
+    "hero-state-03.png",
+    "hero-mobile.png",
+    "hero-reduced-motion.png"
+  ]
+}

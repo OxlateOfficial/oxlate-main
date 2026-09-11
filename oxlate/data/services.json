@@ -1,0 +1,26 @@
+[
+  {
+    "id": "web-development",
+    "name": "Web Development",
+    "serviceType": "Web Development",
+    "shortDescription": "Modern, high-performance websites and web applications built with Next.js, React, and web standards.",
+    "anchor": "/services#web-development",
+    "legacyAliases": ["/services/website-development"]
+  },
+  {
+    "id": "mobile-development",
+    "name": "Mobile Application Development",
+    "serviceType": "Mobile Application Development",
+    "shortDescription": "Native and cross-platform iOS and Android applications engineered for responsive, offline-resilient workflows.",
+    "anchor": "/services#app-development",
+    "legacyAliases": ["/services/app-development"]
+  },
+  {
+    "id": "custom-software",
+    "name": "Custom Software Engineering",
+    "serviceType": "Custom Software Engineering",
+    "shortDescription": "Bespoke business systems, internal administrative tools, and scalable cloud architectures tailored to operational workflows.",
+    "anchor": "/services#custom-software",
+    "legacyAliases": ["/services/business-automation"]
+  }
+]

@@ -1,39 +1,42 @@
-import { Analytics } from '@vercel/analytics/next'
-import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { SmoothScroll } from '@/components/ui/smooth-scroll'
-import './globals.css'
+import type { Metadata, Viewport } from "next";
+import { Orbitron } from "next/font/google";
+import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
+import { DEFAULT_SITE_METADATA } from "@/lib/seo/metadata";
+import { StructuredData } from "@/components/seo/structured-data";
+import { generateRootJsonLdGraph } from "@/lib/seo/schema";
+import "./globals.css";
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
-const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+  display: "swap",
+});
 
-export const metadata: Metadata = {
-  title: 'Oxlate — Premium technology partner',
-  description: 'Oxlate is a premium technology partner building thoughtful web experiences and mobile applications for ambitious teams.',
-  generator: 'Oxlate',
-  openGraph: {
-    title: 'Oxlate — Premium technology partner',
-    description: 'Thoughtful web experiences and mobile applications, built with care.',
-    type: 'website',
-    siteName: 'Oxlate',
-  },
-  icons: { icon: '/icon.svg' },
-}
+export const metadata: Metadata = DEFAULT_SITE_METADATA;
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: 'oklch(0.965 0.018 88)',
-}
+  themeColor: "#F5F2EC",
+  width: "device-width",
+  initialScale: 1,
+};
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const rootJsonLd = generateRootJsonLdGraph();
+
   return (
-    <html lang="en" className="bg-background">
-      <body className={`${geist.variable} ${geistMono.variable}`}>
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+    <html lang="en">
+      <head>
+        <StructuredData data={rootJsonLd} />
+      </head>
+      <body
+        className={`min-h-screen bg-[#F5F2EC] text-[#111111] antialiased selection:bg-[#A87445] selection:text-[#FFFFFF] ${orbitron.variable}`}
+      >
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
-  )
+  );
 }

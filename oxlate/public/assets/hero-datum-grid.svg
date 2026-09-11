@@ -1,0 +1,47 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- CAD Grid Axis & Linework (L1 Architectural Grid) -->
+  <defs>
+    <pattern id="cadGridSmall" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#292929" stroke-width="0.5" stroke-opacity="0.04" />
+    </pattern>
+    <pattern id="cadGridMajor" width="160" height="160" patternUnits="userSpaceOnUse">
+      <path d="M 160 0 L 0 0 0 160" fill="none" stroke="#292929" stroke-width="0.75" stroke-opacity="0.08" />
+    </pattern>
+  </defs>
+
+  <!-- Background Grids -->
+  <rect width="1440" height="900" fill="url(#cadGridSmall)" />
+  <rect width="1440" height="900" fill="url(#cadGridMajor)" />
+
+  <!-- Primary CAD Datum Lines -->
+  <!-- Horizontal Datum Axis -->
+  <line x1="0" y1="450" x2="1440" y2="450" stroke="#111111" stroke-width="0.75" stroke-opacity="0.14" stroke-dasharray="8 6" />
+  <line x1="80" y1="220" x2="1360" y2="220" stroke="#292929" stroke-width="0.5" stroke-opacity="0.12" />
+  <line x1="80" y1="680" x2="1360" y2="680" stroke="#292929" stroke-width="0.5" stroke-opacity="0.12" />
+
+  <!-- Vertical Coordinate Lines -->
+  <line x1="720" y1="40" x2="720" y2="860" stroke="#111111" stroke-width="0.75" stroke-opacity="0.14" stroke-dasharray="8 6" />
+  <line x1="240" y1="60" x2="240" y2="840" stroke="#292929" stroke-width="0.5" stroke-opacity="0.10" />
+  <line x1="1200" y1="60" x2="1200" y2="840" stroke="#292929" stroke-width="0.5" stroke-opacity="0.10" />
+
+  <!-- Architectural Crosshair Ticks (+) at Intersections -->
+  <!-- Center (720, 450) -->
+  <path d="M 712 450 H 728 M 720 442 V 458" stroke="#111111" stroke-width="1" stroke-opacity="0.25" />
+  <!-- (240, 220) -->
+  <path d="M 234 220 H 246 M 240 214 V 226" stroke="#292929" stroke-width="0.75" stroke-opacity="0.2" />
+  <!-- (1200, 220) -->
+  <path d="M 1194 220 H 1206 M 1200 214 V 226" stroke="#292929" stroke-width="0.75" stroke-opacity="0.2" />
+  <!-- (240, 680) -->
+  <path d="M 234 680 H 246 M 240 674 V 686" stroke="#292929" stroke-width="0.75" stroke-opacity="0.2" />
+  <!-- (1200, 680) -->
+  <path d="M 1194 680 H 1206 M 1200 674 V 686" stroke="#292929" stroke-width="0.75" stroke-opacity="0.2" />
+
+  <!-- Subtle Diagonal Structural Trajectory Guides -->
+  <line x1="720" y1="450" x2="1360" y2="80" stroke="#A87445" stroke-width="0.75" stroke-opacity="0.12" stroke-dasharray="4 4" />
+  <line x1="720" y1="450" x2="1360" y2="820" stroke="#292929" stroke-width="0.5" stroke-opacity="0.10" stroke-dasharray="4 4" />
+  <line x1="720" y1="450" x2="80" y2="80" stroke="#292929" stroke-width="0.5" stroke-opacity="0.10" stroke-dasharray="4 4" />
+  <line x1="720" y1="450" x2="80" y2="820" stroke="#292929" stroke-width="0.5" stroke-opacity="0.10" stroke-dasharray="4 4" />
+
+  <!-- Outer Framing Guides -->
+  <rect x="80" y="60" width="1280" height="780" fill="none" stroke="#D9D4CC" stroke-width="0.75" stroke-opacity="0.4" />
+</svg>

@@ -1,0 +1,24 @@
+import React from 'react';
+import { cn } from '@/lib/utils';
+
+export interface CrosshairProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+}
+
+export function Crosshair({ size = 12, className, ...props }: CrosshairProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('text-[#D9D4CC] pointer-events-none shrink-0', className)}
+      aria-hidden="true"
+      {...props}
+    >
+      <line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" strokeWidth="1" />
+      <line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}

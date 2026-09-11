@@ -1,0 +1,103 @@
+[
+  {
+    "id": "project-01",
+    "slug": "productivity-system",
+    "index": "01",
+    "priority": 1,
+    "featuredInHero": true,
+    "featuredOnHome": true,
+    "badge": "Independent Project",
+    "title": "Productivity & Workflow Engine",
+    "subtitle": "Full-Stack Task & Systems Orchestration",
+    "category": "Web Architecture // Application Platform",
+    "headline": "High-performance web system designed for complex multi-tier project tracking and deterministic state.",
+    "summary": "An independent full-stack web platform engineered to demonstrate scalable system architecture, type-safe APIs, and responsive interface design without third-party template bloat.",
+    "whatWasBuilt": "Full-stack application featuring server-side rendering, responsive component architecture, secure authentication sessions, and high-performance relational database schema.",
+    "technicalChallenge": "Managing dense real-time state across multiple nested workboards without client rendering lag, memory leaks, or unthrottled DOM mutations.",
+    "architecturalSolution": "Engineered a streamlined application utilizing Next.js App Router, TypeScript, and a relational PostgreSQL database with deterministic optimistic mutations and strict boundary validation.",
+    "highlights": [
+      "End-to-end type safety across API boundaries and client state",
+      "Sub-second page rendering with minimal client runtime overhead",
+      "Relational schema design with transactional data integrity",
+      "Modular design system with zero third-party visual component dependencies"
+    ],
+    "techStack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Node.js"],
+    "schematicType": "platform",
+    "images": [
+      "/work/project-01/interface-main.png",
+      "/work/project-01/architecture-flow.png",
+      "/work/project-01/mobile-preview.png"
+    ],
+    "liveUrl": "https://oxlate.dev",
+    "githubUrl": "https://github.com/OxlateOfficial",
+    "publishedAt": "2026-08-15",
+    "updatedAt": "2026-09-08"
+  },
+  {
+    "id": "project-02",
+    "slug": "analytics-engine",
+    "index": "02",
+    "priority": 2,
+    "featuredInHero": true,
+    "featuredOnHome": true,
+    "badge": "Independent Project",
+    "title": "Real-Time Operational Analytics",
+    "subtitle": "Data Aggregation & Telemetry Console",
+    "category": "Data Architecture // Dashboard Systems",
+    "headline": "Low-latency administrative telemetry console transforming raw event streams into clear operational views.",
+    "summary": "A high-efficiency data intelligence console designed to handle continuous event ingestion and render real-time operational analytics without UI stutter or memory bloat.",
+    "whatWasBuilt": "Operational analytics dashboard featuring SVG-rendered metrics, time-series data aggregation, configurable filter matrices, and secure role-based access control.",
+    "technicalChallenge": "Processing continuous high-frequency telemetry events on client browsers without dropping frames or freezing interactive chart canvases.",
+    "architecturalSolution": "Implemented web worker thread isolation for mathematical computations and hardware-accelerated SVG projections, maintaining steady 60fps rendering across data spikes.",
+    "highlights": [
+      "Hardware-accelerated SVG charts rendering thousands of points at 60fps",
+      "Web worker background computation for client-side aggregation",
+      "Zero-latency multi-tier filter state query serialization",
+      "Strict data sanitization and deterministic state replay"
+    ],
+    "techStack": ["React", "TypeScript", "Tailwind CSS", "SVG Geometry", "Node.js", "REST APIs"],
+    "schematicType": "platform",
+    "images": [
+      "/work/project-02/analytics-overview.png",
+      "/work/project-02/metrics-detail.png"
+    ],
+    "liveUrl": "https://oxlate.dev",
+    "githubUrl": "https://github.com/OxlateOfficial",
+    "publishedAt": "2026-08-20",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "project-03",
+    "slug": "fieldsync-mobile",
+    "index": "03",
+    "priority": 3,
+    "featuredInHero": true,
+    "featuredOnHome": false,
+    "badge": "Founding Developer's Work",
+    "title": "Cross-Platform Mobile Application",
+    "subtitle": "Mobile Architecture & Offline Sync",
+    "category": "Mobile Architecture // Native & Offline Sync",
+    "headline": "Offline-first mobile application built for fluid user interaction, local ledger queueing, and resilient state.",
+    "summary": "A cross-platform mobile product built by the founding developer to test and prove offline-first data synchronization, intuitive gesture navigation, and robust state persistence.",
+    "whatWasBuilt": "Native-feel client application with local storage persistence, gesture-driven navigation, and background data synchronization pipelines.",
+    "technicalDirection": "Built with React Native and typed API backends, focusing on resilient error recovery and predictable offline-first operation.",
+    "technicalChallenge": "Mobile products often fail when network connectivity drops intermittently, creating lost form states, sync conflicts, and poor user trust in remote environments.",
+    "architecturalSolution": "Constructed a local-first mobile client using React Native with an embedded SQLite ledger and a deterministic queue. When network connectivity restores, state updates sync with a typed Node.js backend with conflict resolution.",
+    "highlights": [
+      "Local-first SQLite data persistence with zero-latency input response",
+      "Deterministic sync queue with automatic retry and rollback capability",
+      "Unified cross-platform UI targeting iOS and Android form factors",
+      "End-to-end typed Remote Procedure Call (RPC) integration"
+    ],
+    "techStack": ["React Native", "TypeScript", "Node.js", "PostgreSQL", "SQLite", "Expo"],
+    "schematicType": "mobile",
+    "images": [
+      "/work/project-03/mobile-screen-1.png",
+      "/work/project-03/mobile-screen-2.png"
+    ],
+    "liveUrl": "https://oxlate.dev",
+    "githubUrl": "https://github.com/OxlateOfficial",
+    "publishedAt": "2026-08-25",
+    "updatedAt": "2026-09-10"
+  }
+]

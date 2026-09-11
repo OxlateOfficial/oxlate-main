@@ -1,0 +1,22 @@
+[
+  {
+    "id": "designing-for-precision-engineering",
+    "slug": "designing-for-precision-engineering",
+    "title": "Designing for Precision Engineering: The Oxlate Design System",
+    "excerpt": "How brutalist restraint, micro-precision typography, and deterministic UI states build long-term trust in technical software.",
+    "author": {
+      "name": "Abhishek",
+      "role": "Lead Architect & Founder",
+      "url": "https://oxlate.com/about",
+      "sameAs": [
+        "https://github.com/OxlateOfficial",
+        "https://x.com/OxlateOfficial"
+      ]
+    },
+    "readingTime": "6 min read",
+    "tags": ["Design Systems", "Architecture", "Engineering", "Next.js"],
+    "publishedAt": "2026-09-11",
+    "updatedAt": "2026-09-11",
+    "indexable": false
+  }
+]

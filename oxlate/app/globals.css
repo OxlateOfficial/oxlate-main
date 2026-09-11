@@ -1,72 +1,56 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
-@import 'lenis/dist/lenis.css';
-
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-border: var(--border);
-  --color-ring: var(--ring);
-  --color-bronze: var(--bronze);
-  --color-bronze-foreground: var(--bronze-foreground);
-  --radius-sm: 0.4rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-}
+@import "tailwindcss";
 
 :root {
-  color-scheme: light;
-  --background: oklch(0.965 0.018 88);
-  --foreground: oklch(0.19 0.015 45);
-  --card: oklch(0.98 0.012 88);
-  --card-foreground: oklch(0.19 0.015 45);
-  --primary: oklch(0.19 0.015 45);
-  --primary-foreground: oklch(0.965 0.018 88);
-  --muted: oklch(0.91 0.025 83);
-  --muted-foreground: oklch(0.48 0.025 55);
-  --bronze: oklch(0.55 0.09 55);
-  --bronze-foreground: oklch(0.98 0.012 88);
-  --border: oklch(0.19 0.015 45 / 18%);
-  --ring: oklch(0.55 0.09 55 / 55%);
-}
+  /* Z-Layer Tokens (L0–L8) per docs/elements/03-LAYERS.md */
+  --z-l0: 0;   /* L0: Canvas Atmosphere (#F5F2EC base) */
+  --z-l1: 1;   /* L1: Architectural Grid (Hairline datum lines, HERO-SVG-01) */
+  --z-l2: 10;  /* L2: Brand Geometry (Oxlate vector mark paths & struts) */
+  --z-l3: 20;  /* L3: Media & Visuals (Interface captures, mockups) */
+  --z-l4: 30;  /* L4: UI Surfaces (Parchment surfaces, structural panels) */
+  --z-l5: 40;  /* L5: Primary Content (Headlines, lead paragraphs, copy) */
+  --z-l6: 45;  /* L6: Motion Overlay (Transition wipes, datum beams) */
+  --z-l7: 50;  /* L7: Navigation & Controls (Fixed navbar, scroll dial) */
+  --z-l8: 100; /* L8: Overlays & System Modals (Dialogs, system alerts) */
 
-* { @apply border-border; }
-html { background: var(--background); }
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-body { @apply bg-background text-foreground font-sans antialiased; }
-::selection { background: var(--bronze); color: var(--bronze-foreground); }
-:focus-visible { outline: 2px solid var(--bronze); outline-offset: 4px; }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  /* Foundational Palette Custom Properties per docs/design/01-THEME.md */
+  --bg-canvas: #F5F2EC;
+  --bg-recessed: #ECE8E1;
+  --bg-surface: #FAF8F5;
+  --ink-primary: #111111;
+  --ink-secondary: #292929;
+  --ink-muted: #6C6B66;
+  --border-stone: #D9D4CC;
+  --accent-bronze: #A87445;
+  --accent-hover: #B98250;
+  --contrast-white: #FFFFFF;
 }
 
 @layer utilities {
-  .text-balance { text-wrap: balance; }
-  .text-pretty { text-wrap: pretty; }
-  .eyebrow { @apply font-mono text-[0.68rem] uppercase tracking-[0.2em]; }
+  /* Z-Layer Utility Classes */
+  .layer-l0 { z-index: var(--z-l0); }
+  .layer-l1 { z-index: var(--z-l1); }
+  .layer-l2 { z-index: var(--z-l2); }
+  .layer-l3 { z-index: var(--z-l3); }
+  .layer-l4 { z-index: var(--z-l4); }
+  .layer-l5 { z-index: var(--z-l5); }
+  .layer-l6 { z-index: var(--z-l6); }
+  .layer-l7 { z-index: var(--z-l7); }
+  .layer-l8 { z-index: var(--z-l8); }
+
+  .font-orbitron {
+    font-family: var(--font-orbitron), sans-serif;
+  }
 }
 
-.dark { color-scheme: light; }
-@media (prefers-color-scheme: dark) { :root { color-scheme: light; } }
+/* Base Styles */
+html {
+  background-color: var(--bg-canvas);
+  color: var(--ink-primary);
+  scroll-behavior: smooth;
+}
 
-@keyframes none { from {} to {} }
-/* Oxlate's directional line language */
-.motif-line { stroke: var(--bronze); stroke-width: 1; fill: none; opacity: .38; }
-.motif-line-strong { stroke: var(--foreground); stroke-width: 1.4; fill: none; opacity: .65; }
-.shadow-oxlate { box-shadow: 12px 16px 0 color-mix(in oklch, var(--foreground) 8%, transparent); }
-
+body {
+  background-color: var(--bg-canvas);
+  color: var(--ink-primary);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}

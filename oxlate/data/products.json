@@ -1,0 +1,20 @@
+[
+  {
+    "id": "oxlate-observability",
+    "slug": "oxlate-observability",
+    "name": "Oxlate Core Observability",
+    "tagline": "Internal system observability and metric pipeline for distributed Next.js services.",
+    "description": "A high-performance telemetry and event aggregator designed for real-time latency inspection and automated health governance across web infrastructure.",
+    "status": "development",
+    "category": "Developer Infrastructure",
+    "technologies": ["TypeScript", "Node.js", "ClickHouse", "OpenTelemetry"],
+    "features": [
+      "Sub-millisecond trace ingestion",
+      "Automated edge anomaly detection",
+      "Unified log streaming"
+    ],
+    "publishedAt": "2026-09-11",
+    "updatedAt": "2026-09-11",
+    "indexable": false
+  }
+]
