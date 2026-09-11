@@ -11,6 +11,7 @@ interface EntityFact {
 const ENTITY_FACTS: EntityFact[] = [
   { label: "ORGANIZATION", value: "Oxlate" },
   { label: "ESTABLISHED", value: "2025" },
+  { label: "LOCATION", value: "Chandigarh, India" },
   { label: "PRACTICE", value: "Web, Mobile & Custom Digital Systems" },
   { label: "OPERATING MODEL", value: "Direct Founder-Led Engineering" },
   { label: "TECHNICAL RIGOR", value: "Type Safety & Clean Component Structure" },
@@ -41,7 +42,7 @@ export function AboutSection() {
           {/* Left Narrative Column (7 cols) - Answers: Who, When, What, How */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-base sm:text-lg text-[#292929] leading-[1.65]">
             <p className="text-xl sm:text-2xl font-medium text-[#111111] leading-snug">
-              Founded in 2025, Oxlate is a compact, founder-led technology firm specializing in web applications, mobile products, and custom business software.
+              Founded in 2025 in Chandigarh, India, Oxlate is a compact, founder-led technology firm specializing in web applications, mobile products, and custom business software.
             </p>
 
             <p>

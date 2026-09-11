@@ -9,12 +9,15 @@
  * - Leaked draft/noindex content into sitemaps
  */
 
+import fs from "fs";
+import path from "path";
 import { siteConfig } from "@/lib/config/site";
 import { getAllProjects } from "@/data/projects.data";
 import { getAllProducts } from "@/data/products.data";
 import { getAllInsights } from "@/data/insights.data";
 import { LEGACY_REDIRECT_REGISTRY, HOST_REDIRECT_REGISTRY } from "@/lib/seo/legacy-url-map";
 import { routes } from "@/lib/seo/routes";
+import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/seo/schema";
 
 export interface SeoValidationError {
   category: "METADATA" | "SLUG" | "CANONICAL" | "REDIRECT" | "SITEMAP" | "ENTITY";
@@ -86,6 +89,13 @@ export function validateSeoArchitecture(): ValidationReport {
       errors.push({
         category: "METADATA",
         message: `Indexable project missing both publishedAt and updatedAt timestamps: '${p.slug}'`,
+        itemRef: p.slug,
+      });
+    }
+    if (p.liveUrl?.includes("oxlate.dev") && p.indexable !== false) {
+      errors.push({
+        category: "SITEMAP",
+        message: `Project '${p.slug}' contains placeholder domain 'oxlate.dev' but is marked indexable. Set 'indexable: false' before deployment.`,
         itemRef: p.slug,
       });
     }
@@ -203,6 +213,62 @@ export function validateSeoArchitecture(): ValidationReport {
     errors.push({
       category: "CANONICAL",
       message: `Canonical home mismatch: expected '${siteConfig.url}/', got '${canonicalHome}'`,
+    });
+  }
+
+  // 9. Brand & Favicon Asset Integrity Invariants
+  const requiredBrandAssets = [
+    "favicon.ico",
+    "icon.svg",
+    "apple-icon.png",
+    "web-app-manifest-192x192.png",
+    "web-app-manifest-512x512.png",
+    "Oxlate_logoX_blk.svg",
+  ];
+
+  for (const asset of requiredBrandAssets) {
+    const assetPath = path.join(process.cwd(), "public", asset);
+    if (!fs.existsSync(assetPath)) {
+      errors.push({
+        category: "METADATA",
+        message: `Required brand/favicon asset missing from disk: 'public/${asset}'`,
+        itemRef: asset,
+      });
+    }
+  }
+
+  // 10. Brand Entity & Schema Invariants (Disambiguation Integrity)
+  if (siteConfig.name !== "Oxlate") {
+    errors.push({
+      category: "ENTITY",
+      message: `Brand entity invariant violated: siteConfig.name must be 'Oxlate', found '${siteConfig.name}'`,
+    });
+  }
+  if (siteConfig.legalName !== "Oxlate") {
+    errors.push({
+      category: "ENTITY",
+      message: `Brand legal entity invariant violated: siteConfig.legalName must be 'Oxlate', found '${siteConfig.legalName}'`,
+    });
+  }
+  if (siteConfig.location.city !== "Chandigarh" || siteConfig.location.country !== "India") {
+    errors.push({
+      category: "ENTITY",
+      message: `Entity geographic grounding violated: location must be Chandigarh, India`,
+    });
+  }
+
+  const orgSchema = generateOrganizationSchema();
+  const webSiteSchema = generateWebSiteSchema();
+  if (webSiteSchema.publisher["@id"] !== orgSchema["@id"]) {
+    errors.push({
+      category: "ENTITY",
+      message: `Schema graph disconnection: WebSite publisher ID '${webSiteSchema.publisher["@id"]}' does not match Organization ID '${orgSchema["@id"]}'`,
+    });
+  }
+  if (!orgSchema.knowsAbout || orgSchema.knowsAbout.length === 0) {
+    errors.push({
+      category: "ENTITY",
+      message: `Organization schema missing 'knowsAbout' categorical disciplines`,
     });
   }
 

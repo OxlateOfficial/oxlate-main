@@ -40,6 +40,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${project.title} — Selected Work | Oxlate`,
     description: project.headline,
+    robots:
+      project.indexable === false
+        ? {
+            index: false,
+            follow: false,
+            googleBot: {
+              index: false,
+              follow: false,
+            },
+          }
+        : undefined,
     alternates: {
       canonical: pageUrl,
     },

@@ -12,7 +12,7 @@ export function Navbar() {
         {/* Left: O X L A T E + Tech Micro-Stack */}
         <Link href="/" className="flex items-center gap-3 group" aria-label="Oxlate Home">
           <span className="font-orbitron text-base sm:text-lg font-bold tracking-[0.35em] text-[#111111]">
-            O X L A T E
+            OXLATE
           </span>
           <div className="hidden sm:flex flex-col font-mono text-[7.5px] uppercase tracking-widest text-[#8C8A84] leading-tight pl-2 border-l border-[#D9D4CC]">
             <span>TECHNOLOGY</span>

@@ -112,10 +112,16 @@ export const DEFAULT_SITE_METADATA: Metadata = {
     images: ['/opengraph-image'],
   },
   icons: {
-    icon: '/icon.svg',
-    shortcut: '/icon.svg',
-    apple: '/apple-icon.png',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
+  manifest: '/manifest.webmanifest',
   verification: {
     google: siteConfig.verification.google || undefined,
     other: siteConfig.verification.bing ? { 'msvalidate.01': siteConfig.verification.bing } : undefined,

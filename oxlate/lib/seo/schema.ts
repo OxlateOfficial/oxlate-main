@@ -20,6 +20,7 @@ export interface OrganizationSchema {
   '@id': string
   name: string
   legalName?: string
+  alternateName?: string
   url: string
   logo: string
   description: string
@@ -27,6 +28,7 @@ export interface OrganizationSchema {
   foundingDate: string
   address?: PostalAddressSchema
   sameAs: string[]
+  knowsAbout?: string[]
 }
 
 export interface WebSiteSchema {
@@ -34,6 +36,7 @@ export interface WebSiteSchema {
   '@type': 'WebSite'
   '@id': string
   name: string
+  alternateName?: string
   url: string
   publisher: {
     '@id': string
@@ -65,6 +68,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
+    alternateName: siteConfig.name,
     url: siteConfig.url,
     logo: `${siteConfig.url}/Oxlate_logoX_blk.svg`,
     description: siteConfig.description,
@@ -81,6 +85,12 @@ export function generateOrganizationSchema(): OrganizationSchema {
       siteConfig.social.github,
       siteConfig.social.alternateWebsite,
     ],
+    knowsAbout: [
+      "Web Development",
+      "Mobile Applications",
+      "Custom Software Engineering",
+      "Full-Stack Development",
+    ],
   }
 }
 
@@ -92,6 +102,7 @@ export function generateWebSiteSchema(): WebSiteSchema {
     '@type': 'WebSite',
     '@id': `${siteConfig.url}/#website`,
     name: siteConfig.name,
+    alternateName: siteConfig.name,
     url: siteConfig.url,
     publisher: {
       '@id': `${siteConfig.url}/#organization`,

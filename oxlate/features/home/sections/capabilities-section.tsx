@@ -72,7 +72,7 @@ export function CapabilitiesSection() {
             Built for real workflows.
           </h2>
           <p className="text-base sm:text-lg text-[#292929] max-w-2xl font-normal leading-relaxed">
-            We focus strictly on modern web and mobile product engineering. We do not attempt to be everything to everyone; we engineer high-performance systems for real operational demands.
+            Oxlate focuses strictly on modern web and mobile product engineering. We do not attempt to be everything to everyone; we engineer high-performance systems for real operational demands.
           </p>
         </div>
 
