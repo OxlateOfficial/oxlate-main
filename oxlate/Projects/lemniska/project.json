@@ -1,0 +1,49 @@
+{
+  "id": "project-01",
+  "slug": "lemniska",
+  "index": "01",
+  "priority": 1,
+  "featuredInHero": true,
+  "featuredOnHome": true,
+  "badge": "Founding Developer's Work",
+  "title": "Lemniska — Telehealth & Care Marketplace",
+  "subtitle": "Cross-Platform Doctor Consultation & AI Health Assistant",
+  "category": "Mobile Architecture // Telemedicine & Health Care",
+  "headline": "HIPAA-compliant telemedicine ecosystem connecting 5,000+ active patients with verified medical specialists, second opinions, and AI health assistance.",
+  "summary": "Architected and engineered by founding engineer Gurmeet (bringing 7+ years of core software engineering experience from his previous company tenure). Lemniska is an end-to-end digital health ecosystem featuring on-demand doctor consultations across 10+ specialties, an AI-powered triage buddy, interactive wellness video feeds, and encrypted medical records, serving over 5,000+ downloads on Google Play Store.",
+  "whatWasBuilt": "Cross-platform mobile application with on-demand doctor booking across 10+ specialties, video e-consultations, an interactive AI Buddy assistant, 'Healthy Media' wellness reel feeds, multi-lingual doctor listings (English, Hindi, Punjabi), and secure OTP/social authentication.",
+  "technicalChallenge": "Engineering a HIPAA-compliant telehealth and patient records pipeline requiring ultra-low-latency appointment scheduling, secure multimedia streams, and high-concurrency availability feeds while safeguarding sensitive protected health information (PHI) with zero data leakage across intermittent mobile network connections.",
+  "architecturalSolution": "Developed cross-platform mobile client architecture using React Native with tokenized state persistence, end-to-end encrypted REST/WebSocket APIs, edge-cached video delivery for wellness media, and modular doctor-patient appointment dispatching with automatic reconnection.",
+  "highlights": [
+    "5,000+ verified active downloads on Google Play Store",
+    "Engineered by founding developer Gurmeet (7+ years engineering expertise)",
+    "HIPAA-compliant architecture with encrypted consultations & records",
+    "Integrated 'AI Buddy' conversational triage assistant for 24/7 patient guidance",
+    "Doctor marketplace with 270+ verified specialists across multi-lingual consults",
+    "'Healthy Media' short-form wellness video reels and patient rewards program"
+  ],
+  "techStack": [
+    "React Native",
+    "TypeScript",
+    "Node.js",
+    "WebSockets",
+    "HIPAA Security",
+    "PostgreSQL",
+    "Redis",
+    "Android & iOS"
+  ],
+  "schematicType": "mobile",
+  "images": [
+    "/work/lemniska/01-home-specialties.jpeg",
+    "/work/lemniska/02-doctor-listing.jpeg",
+    "/work/lemniska/03-ai-buddy-intro.jpeg",
+    "/work/lemniska/04-ai-buddy-chat.jpeg",
+    "/work/lemniska/05-healthy-media-feed.jpeg",
+    "/work/lemniska/06-user-profile-menu.jpeg",
+    "/work/lemniska/07-auth-welcome.jpeg"
+  ],
+  "liveUrl": "https://www.lemniska.com",
+  "publishedAt": "2025-10-15",
+  "updatedAt": "2026-09-12",
+  "indexable": true
+}

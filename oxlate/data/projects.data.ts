@@ -40,7 +40,8 @@ export function getHeroProjects(): ProjectItem[] {
 }
 
 export function getFeaturedHomeProjects(): ProjectItem[] {
-  return PROJECTS.filter((p) => p.featuredOnHome).slice(0, 2);
+  const featured = PROJECTS.filter((p) => p.featuredOnHome);
+  return featured.length > 0 ? featured : PROJECTS.slice(0, 2);
 }
 
 export function getProjectBySlug(slug: string): ProjectItem | undefined {

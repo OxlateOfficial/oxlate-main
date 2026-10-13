@@ -15,7 +15,51 @@ export const metadata: Metadata = {
     "A transparent catalog of independent digital products, web platforms, and mobile software engineered by Oxlate.",
 };
 
-function ProjectSchematic({ type }: { type: "platform" | "mobile" }) {
+function ProjectSchematic({
+  type,
+  image,
+  title,
+  imageCount,
+}: {
+  type: "platform" | "mobile";
+  image?: string;
+  title?: string;
+  imageCount?: number;
+}) {
+  if (image) {
+    return (
+      <div className="relative w-full h-56 sm:h-80 bg-[#111111] text-[#FAF8F5] font-mono text-xs overflow-hidden select-none border border-[#292929] rounded-[2px] flex flex-col justify-between group-hover/schematic:border-[#A87445]/60 transition-colors">
+        <Image
+          src={image}
+          alt={title || "Interface"}
+          fill
+          className={`opacity-90 transition-transform duration-300 group-hover/schematic:scale-[1.01] ${
+            type === "mobile" ? "object-contain p-3" : "object-cover object-top"
+          }`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/25 to-[#111111]/80 pointer-events-none" />
+
+        {/* Top Readout */}
+        <div className="relative z-10 flex items-center justify-between text-[#FAF8F5]/90 px-6 pt-4">
+          <span className="flex items-center gap-2 bg-[#111111]/80 px-2.5 py-1 border border-[#292929] backdrop-blur-xs">
+            <span className="w-2 h-2 rounded-full bg-[#A87445]" />
+            {type === "platform" ? "SYS_ARCH // WEB_PLATFORM_ENGINEERING" : "DATA_FLOW // RESILIENT_MOBILE_SYNC"}
+          </span>
+          <span className="text-[#A87445] bg-[#111111]/80 px-2.5 py-1 border border-[#292929] backdrop-blur-xs">
+            VERIFIED INTERFACE
+          </span>
+        </div>
+
+        {/* Bottom Specs Bar */}
+        <div className="relative z-10 flex items-center justify-between text-[11px] text-[#D9D4CC] border-t border-[#292929]/80 bg-[#111111]/85 backdrop-blur-xs px-6 py-3">
+          <span>SYSTEM: {type.toUpperCase()} ARCHITECTURE</span>
+          <span className="text-[#FAF8F5]">{imageCount ? `${imageCount} INTERFACE CAPTURES` : "VERIFIED SPEC"}</span>
+          <span className="text-[#A87445] group-hover/schematic:text-white transition-colors">CLICK TO EXPLORE CASE STUDY &amp; GALLERY →</span>
+        </div>
+      </div>
+    );
+  }
+
   if (type === "platform") {
     return (
       <div className="relative w-full h-56 sm:h-72 bg-[#111111] text-[#FAF8F5] p-6 font-mono text-xs overflow-hidden select-none border border-[#292929] rounded-[2px] flex flex-col justify-between">
@@ -220,7 +264,12 @@ export default function WorkPage() {
 
             {/* High-Resolution Architectural Schematic with Link */}
             <Link href={`/work/${project.slug}`} className="block mb-10 group/schematic">
-              <ProjectSchematic type={project.schematicType} />
+              <ProjectSchematic
+                type={project.schematicType}
+                image={project.images?.[0]}
+                title={project.title}
+                imageCount={project.images?.length}
+              />
             </Link>
 
             {/* 2-Column Deep Architecture Specs */}

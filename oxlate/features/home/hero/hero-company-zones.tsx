@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Globe, Smartphone, ArrowRight } from "lucide-react";
 import { LeftArchitecturalFrame } from "./hero-architectural-frames";
@@ -479,21 +480,21 @@ export function WorkZone({ isActive, isMuted, onHover, isInteractive = true, cla
       {/* Honest Credibility Headline */}
       <h3 className="font-sans text-lg font-bold text-[#111111] tracking-tight mb-1">
         <GenerativeText
-          text="Independent Projects"
+          text="Selected Work & Systems"
           mode="plotter"
           progress={progress?.zone04Progress}
         />
       </h3>
       <p className="font-sans text-xs text-[#6C6B66] leading-relaxed mb-4">
         <GenerativeText
-          text="A selection of products and systems built by the founding developer."
+          text="A selection of client products and technical platforms built by our team."
           mode="plotter"
           progress={progress?.zone04Progress}
         />
       </p>
 
-      {/* 3 Side-by-Side Visual Project Frames - Direct Links to /work/[slug] */}
-      <div className="grid grid-cols-3 gap-2.5 mb-3.5">
+      {/* Visual Project Frames - Direct Links to /work/[slug] */}
+      <div className={`grid gap-2.5 mb-3.5 ${heroProjects.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
         {heroProjects.map((project: ProjectItem, idx: number) => (
           <Link
             key={project.id}
@@ -505,61 +506,72 @@ export function WorkZone({ isActive, isMuted, onHover, isInteractive = true, cla
             title={`View ${project.title}`}
           >
             <div className="relative aspect-[4/3] w-full bg-[#161615] rounded-[2px] overflow-hidden border border-[#D9D4CC]/80 mb-1.5 transition-colors group-hover/proj:border-[#A87445]">
-              <svg className="w-full h-full" viewBox="0 0 80 60" fill="none">
-                <rect width="80" height="60" fill="#181817" />
-                {idx === 0 && (
-                  <>
-                    <polygon
-                      points="40,10 70,30 40,50 10,30"
-                      stroke="#FAF8F5"
-                      strokeWidth="0.75"
-                      strokeOpacity="0.4"
-                    />
-                    <polygon
-                      points="40,18 62,30 40,42 18,30"
-                      stroke="#A87445"
-                      strokeWidth="0.75"
-                      strokeOpacity="0.8"
-                    />
-                    <line x1="40" y1="10" x2="40" y2="50" stroke="#FAF8F5" strokeWidth="0.5" strokeOpacity="0.3" />
-                  </>
-                )}
-                {idx === 1 && (
-                  <>
-                    <path
-                      d="M 0 50 Q 20 20 40 40 T 80 20"
-                      stroke="#FAF8F5"
-                      strokeWidth="1"
-                      strokeOpacity="0.5"
-                      fill="none"
-                    />
-                    <path
-                      d="M 0 45 Q 25 10 50 35 T 80 15"
-                      stroke="#A87445"
-                      strokeWidth="1"
-                      strokeOpacity="0.8"
-                      fill="none"
-                    />
-                    <line x1="0" y1="55" x2="80" y2="55" stroke="#FAF8F5" strokeWidth="0.5" strokeOpacity="0.2" />
-                  </>
-                )}
-                {idx === 2 && (
-                  <>
-                    {[0, 15, 30, 45, 60, 75].map((x) => (
-                      <line key={x} x1={x} y1="60" x2="40" y2="0" stroke="#FAF8F5" strokeWidth="0.5" strokeOpacity="0.3" />
-                    ))}
-                    <line
-                      x1="10"
-                      y1="45"
-                      x2="70"
-                      y2="45"
-                      stroke="#A87445"
-                      strokeWidth="0.75"
-                      strokeOpacity="0.7"
-                    />
-                  </>
-                )}
-              </svg>
+              {project.images?.[0] ? (
+                <Image
+                  src={project.images[0]}
+                  alt={project.title}
+                  fill
+                  className={`opacity-85 group-hover/proj:opacity-100 transition-opacity ${
+                    project.schematicType === "mobile" ? "object-contain p-1" : "object-cover object-top"
+                  }`}
+                />
+              ) : (
+                <svg className="w-full h-full" viewBox="0 0 80 60" fill="none">
+                  <rect width="80" height="60" fill="#181817" />
+                  {idx === 0 && (
+                    <>
+                      <polygon
+                        points="40,10 70,30 40,50 10,30"
+                        stroke="#FAF8F5"
+                        strokeWidth="0.75"
+                        strokeOpacity="0.4"
+                      />
+                      <polygon
+                        points="40,18 62,30 40,42 18,30"
+                        stroke="#A87445"
+                        strokeWidth="0.75"
+                        strokeOpacity="0.8"
+                      />
+                      <line x1="40" y1="10" x2="40" y2="50" stroke="#FAF8F5" strokeWidth="0.5" strokeOpacity="0.3" />
+                    </>
+                  )}
+                  {idx === 1 && (
+                    <>
+                      <path
+                        d="M 0 50 Q 20 20 40 40 T 80 20"
+                        stroke="#FAF8F5"
+                        strokeWidth="1"
+                        strokeOpacity="0.5"
+                        fill="none"
+                      />
+                      <path
+                        d="M 0 45 Q 25 10 50 35 T 80 15"
+                        stroke="#A87445"
+                        strokeWidth="1"
+                        strokeOpacity="0.8"
+                        fill="none"
+                      />
+                      <line x1="0" y1="55" x2="80" y2="55" stroke="#FAF8F5" strokeWidth="0.5" strokeOpacity="0.2" />
+                    </>
+                  )}
+                  {idx === 2 && (
+                    <>
+                      {[0, 15, 30, 45, 60, 75].map((x) => (
+                        <line key={x} x1={x} y1="60" x2="40" y2="0" stroke="#FAF8F5" strokeWidth="0.5" strokeOpacity="0.3" />
+                      ))}
+                      <line
+                        x1="10"
+                        y1="45"
+                        x2="70"
+                        y2="45"
+                        stroke="#A87445"
+                        strokeWidth="0.75"
+                        strokeOpacity="0.7"
+                      />
+                    </>
+                  )}
+                </svg>
+              )}
             </div>
             <span className="font-mono text-[9px] text-[#8C8A84] tracking-wider">
               {project.index}

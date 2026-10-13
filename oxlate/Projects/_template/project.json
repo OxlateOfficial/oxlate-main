@@ -1,0 +1,38 @@
+{
+  "id": "project-05",
+  "slug": "my-project-slug",
+  "index": "05",
+  "priority": 5,
+  "featuredInHero": false,
+  "featuredOnHome": false,
+  "badge": "Client Work",
+  "title": "Project Title",
+  "subtitle": "Subtitle Describing the System",
+  "category": "Web Architecture // System Platform",
+  "headline": "High-impact summary headline of the system.",
+  "summary": "Detailed narrative explaining who built it, why it was built, and key project outcomes.",
+  "whatWasBuilt": "Full description of features, platform components, and systems delivered.",
+  "technicalChallenge": "Key engineering hurdles, performance constraints, or scalability challenges.",
+  "architecturalSolution": "Technical design, frameworks, caching, database choices, or algorithms used.",
+  "highlights": [
+    "Key measurable outcome or milestone",
+    "Specific architecture decision",
+    "Performance metric or technical advantage"
+  ],
+  "techStack": [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Node.js"
+  ],
+  "schematicType": "platform",
+  "images": [
+    "/work/my-project-slug/01-main.jpg",
+    "/work/my-project-slug/02-feature.jpg"
+  ],
+  "liveUrl": "https://example.com",
+  "githubUrl": "https://github.com/...",
+  "publishedAt": "2026-10-01",
+  "updatedAt": "2026-10-01",
+  "indexable": true
+}

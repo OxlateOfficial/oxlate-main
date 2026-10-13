@@ -1,0 +1,48 @@
+{
+  "id": "project-02",
+  "slug": "mentorkrish",
+  "index": "02",
+  "priority": 2,
+  "featuredInHero": true,
+  "featuredOnHome": true,
+  "badge": "Client Work",
+  "title": "Mentor Krish — SAT & Admissions Platform",
+  "subtitle": "High-Converting EdTech Portal, DSAT Testing & Knowledge Base",
+  "category": "Web Architecture // Client EdTech Platform",
+  "headline": "Production educational consultancy platform and Digital SAT prep portal built for the first commercial client of Abhishek and Vaibhav.",
+  "summary": "The inaugural commercial client project engineered by Abhishek and Vaibhav for Mentor Krish (client contract delivered at ₹24,000 and continuously maintained under active engineering support). The platform features targeted test prep curricula (SAT, PSAT, ACT, IELTS, TOEFL), an interactive academic roadmap, verified student achievement showcases, an academic knowledge base, and direct consultation booking.",
+  "whatWasBuilt": "Full-stack responsive web application featuring academic program catalogs, an interactive 4-stage student roadmap, a 'Moments of Excellence' modal lightbox gallery for verified student scores (AP 5/5 achievements), a searchable blog and test prep knowledge base, and an integrated diagnostic trial booking engine.",
+  "technicalChallenge": "Delivering a comprehensive, high-converting EdTech platform within budget constraints while maintaining sub-second performance, accessible responsive typography for students, and an intuitive content layout for high-volume course and blog updates.",
+  "architecturalSolution": "Engineered an optimized React and Next.js frontend with Tailwind CSS, utilizing server-rendered SEO landing pages, client-side dynamic search and category filters for academic articles, interactive modal lightbox showcases, and unified lead inquiry routing.",
+  "highlights": [
+    "Inaugural client engagement engineered by Abhishek & Vaibhav (delivered at ₹24,000, continuously maintained)",
+    "Full academic prep curriculum portal for Digital SAT, PSAT, ACT, and IELTS",
+    "Interactive 4-step diagnostic academic roadmap with visual milestone tracking",
+    "'Moments of Excellence' interactive lightbox gallery celebrating student score breakthroughs",
+    "High-performance searchable knowledge base with instant category filtering",
+    "Zero-latency inquiry and free diagnostic trial booking workflows"
+  ],
+  "techStack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "REST APIs",
+    "Node.js"
+  ],
+  "schematicType": "platform",
+  "images": [
+    "/work/mentorkrish/01-hero-landing.jpg",
+    "/work/mentorkrish/02-academic-prep-programs.jpg",
+    "/work/mentorkrish/03-academic-roadmap.jpg",
+    "/work/mentorkrish/04-moments-of-excellence.jpg",
+    "/work/mentorkrish/05-student-milestones-modal.jpg",
+    "/work/mentorkrish/06-insights-knowledge-base.jpg",
+    "/work/mentorkrish/07-blog-articles-grid.jpg",
+    "/work/mentorkrish/08-contact-trial-portal.jpg"
+  ],
+  "liveUrl": "https://mentorkrish.in",
+  "publishedAt": "2025-08-10",
+  "updatedAt": "2026-10-13",
+  "indexable": true
+}

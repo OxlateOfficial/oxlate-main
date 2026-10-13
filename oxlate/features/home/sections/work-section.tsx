@@ -1,13 +1,58 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { SectionTag } from "@/components/ui/section-tag";
 import { Crosshair } from "@/components/ui/crosshair";
 import { DatumLine } from "@/components/ui/datum-line";
 import { Button } from "@/components/ui/button";
-import { getFeaturedHomeProjects, ProjectItem } from "@/data/projects.data";
+import { getFeaturedHomeProjects, getAllProjects, ProjectItem } from "@/data/projects.data";
 
-function ProjectSchematic({ type }: { type: "platform" | "mobile" }) {
+function ProjectSchematic({
+  type,
+  image,
+  title,
+  imageCount,
+}: {
+  type: "platform" | "mobile";
+  image?: string;
+  title?: string;
+  imageCount?: number;
+}) {
+  if (image) {
+    return (
+      <div className="relative w-full h-44 sm:h-56 bg-[#111111] text-[#FAF8F5] font-mono text-[11px] overflow-hidden select-none border border-[#292929] rounded-[2px] flex flex-col justify-between group-hover:border-[#A87445]/60 transition-colors">
+        <Image
+          src={image}
+          alt={title || "Project interface"}
+          fill
+          className={`opacity-90 transition-transform duration-300 group-hover:scale-[1.02] ${
+            type === "mobile" ? "object-contain p-2" : "object-cover object-top"
+          }`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/20 to-[#111111]/75 pointer-events-none" />
+
+        {/* Top Readout */}
+        <div className="relative z-10 flex items-center justify-between text-[#FAF8F5]/90 px-4 pt-3">
+          <span className="flex items-center gap-2 bg-[#111111]/80 px-2 py-0.5 border border-[#292929] backdrop-blur-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#A87445]" />
+            {type === "platform" ? "SYS_ARCH // WEB_PLATFORM" : "SYS_ARCH // MOBILE_SYS"}
+          </span>
+          <span className="text-[#A87445] text-[10px] bg-[#111111]/80 px-2 py-0.5 border border-[#292929] backdrop-blur-xs">
+            VERIFIED INTERFACE
+          </span>
+        </div>
+
+        {/* Bottom Metrics Bar */}
+        <div className="relative z-10 flex items-center justify-between text-[10px] text-[#D9D4CC] border-t border-[#292929]/80 bg-[#111111]/85 backdrop-blur-xs px-4 py-2">
+          <span>STACK: {type.toUpperCase()} ARCHITECTURE</span>
+          <span className="text-[#FAF8F5]">{imageCount ? `${imageCount} CAPTURES` : "SYSTEM SPEC"}</span>
+          <span className="text-[#A87445] group-hover:text-white transition-colors">EXPLORE CASE STUDY →</span>
+        </div>
+      </div>
+    );
+  }
+
   if (type === "platform") {
     return (
       <div className="relative w-full h-44 sm:h-52 bg-[#111111] text-[#FAF8F5] p-5 font-mono text-[11px] overflow-hidden select-none border border-[#292929] rounded-[2px] flex flex-col justify-between group-hover:border-[#A87445]/60 transition-colors">
@@ -183,7 +228,12 @@ export function WorkSection() {
 
                 {/* Architectural Schematic View with Link to /work/[slug] */}
                 <Link href={`/work/${project.slug}`} className="block mb-8 group/schematic">
-                  <ProjectSchematic type={project.schematicType} />
+                  <ProjectSchematic
+                    type={project.schematicType}
+                    image={project.images?.[0]}
+                    title={project.title}
+                    imageCount={project.images?.length}
+                  />
                 </Link>
 
                 {/* Summary */}
@@ -274,4 +324,4 @@ export function WorkSection() {
   );
 }
 
-const PROJECTS_COUNT = 3;
+const PROJECTS_COUNT = getAllProjects().length;
