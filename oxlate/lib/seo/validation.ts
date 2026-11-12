@@ -18,6 +18,7 @@ import { getAllInsights } from "@/data/insights.data";
 import { LEGACY_REDIRECT_REGISTRY, HOST_REDIRECT_REGISTRY } from "@/lib/seo/legacy-url-map";
 import { routes } from "@/lib/seo/routes";
 import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/seo/schema";
+import { ROUTE_H1_REGISTRY } from "@/lib/seo/metadata";
 
 export interface SeoValidationError {
   category: "METADATA" | "SLUG" | "CANONICAL" | "REDIRECT" | "SITEMAP" | "ENTITY";
@@ -270,6 +271,17 @@ export function validateSeoArchitecture(): ValidationReport {
       category: "ENTITY",
       message: `Organization schema missing 'knowsAbout' categorical disciplines`,
     });
+  }
+
+  // 11. Validate Route H1 Registry
+  for (const [route, def] of Object.entries(ROUTE_H1_REGISTRY)) {
+    if (!def.h1Text || def.h1Text.trim() === "") {
+      errors.push({
+        category: "METADATA",
+        message: `Route '${route}' missing canonical H1 definition in ROUTE_H1_REGISTRY`,
+        itemRef: route,
+      });
+    }
   }
 
   const report: ValidationReport = {

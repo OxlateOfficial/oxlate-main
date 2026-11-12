@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { getAllProjects, getProjectBySlug, ProjectItem } from "@/data/projects.data";
 import { ProjectPhotoGallery } from "@/features/work/project-photo-gallery";
 import { siteConfig } from "@/lib/config/site";
+import { StructuredData } from "@/components/seo/structured-data";
 
 interface PageProps {
   params: Promise<{
@@ -31,14 +32,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!project) {
     return {
-      title: "Project Not Found | Oxlate",
+      title: "Project Not Found",
     };
   }
 
   const pageUrl = `${siteConfig.url}/work/${project.slug}`;
 
   return {
-    title: `${project.title} — Selected Work | Oxlate`,
+    title: `${project.title} — Selected Work`,
     description: project.headline,
     robots:
       project.indexable === false
@@ -56,7 +57,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     openGraph: {
       type: "article",
-      title: `${project.title} — Selected Work | Oxlate`,
+      title: `${project.title} — Selected Work | ${siteConfig.name}`,
       description: project.summary,
       url: pageUrl,
       images: [
@@ -68,7 +69,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} | Oxlate`,
+      title: `${project.title} | ${siteConfig.name}`,
       description: project.headline,
       images: [project.images[0] || "/opengraph-image"],
     },
@@ -88,8 +89,26 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : allProjects[allProjects.length - 1];
   const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : allProjects[0];
 
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": project.schematicType === "mobile" ? "SoftwareApplication" : "CreativeWork",
+    name: project.title,
+    headline: project.headline,
+    description: project.summary,
+    url: `${siteConfig.url}/work/${project.slug}`,
+    image: project.images[0] ? `${siteConfig.url}${project.images[0]}` : undefined,
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    keywords: project.techStack.join(", "),
+  };
+
   return (
     <main className="relative min-h-screen bg-[#F5F2EC] text-[#111111]">
+      <StructuredData data={projectJsonLd} />
+
       {/* Top Architectural Navigation Bar */}
       <header className="sticky top-0 z-40 w-full bg-[#F5F2EC]/90 backdrop-blur-md border-b border-[#D9D4CC]/60 px-6 sm:px-10 lg:px-12 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">

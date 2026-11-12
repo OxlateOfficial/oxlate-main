@@ -263,7 +263,7 @@ export function DeviceMockup() {
                   <div className="relative flex-1 w-full bg-[#0E0E0D] overflow-hidden">
                     <Image
                       src={currentScreen.src}
-                      alt={currentScreen.label}
+                      alt={currentScreen.caption}
                       fill
                       priority
                       className="object-cover object-top transition-opacity duration-300"
@@ -315,7 +315,7 @@ export function DeviceMockup() {
                   <div className="relative flex-1 w-full bg-[#161615] overflow-hidden pt-8">
                     <Image
                       src={currentScreen.src}
-                      alt={currentScreen.label}
+                      alt={currentScreen.caption}
                       fill
                       priority
                       className="object-cover object-top transition-opacity duration-300"

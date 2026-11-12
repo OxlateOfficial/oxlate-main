@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Oxlate — Web Development & Mobile Applications";
+export const alt = "Oxlate — Web & Mobile Software Studio";
 export const size = {
   width: 1200,
   height: 630,
@@ -93,7 +93,7 @@ export default async function Image() {
           >
             <span>EST. 2025</span>
             <span style={{ color: "#D9D4CC" }}>//</span>
-            <span style={{ color: "#6C6B66" }}>INDIA & GLOBAL</span>
+            <span style={{ color: "#6C6B66" }}>FOUNDER-LED STUDIO</span>
           </div>
         </div>
 
@@ -103,7 +103,7 @@ export default async function Image() {
             display: "flex",
             flexDirection: "column",
             gap: "20px",
-            maxWidth: "920px",
+            maxWidth: "960px",
             zIndex: 10,
           }}
         >
@@ -116,18 +116,18 @@ export default async function Image() {
               textTransform: "uppercase",
             }}
           >
-            Technology & Software Engineering
+            Founder-Led Software Studio • Direct Builder Access
           </div>
           <div
             style={{
-              fontSize: "56px",
+              fontSize: "52px",
               fontWeight: 900,
-              lineHeight: 1.1,
+              lineHeight: 1.12,
               letterSpacing: "-0.03em",
               color: "#111111",
             }}
           >
-            Thoughtful web experiences and mobile applications.
+            Fast, reliable websites &amp; mobile apps for growing businesses.
           </div>
         </div>
 
@@ -155,11 +155,11 @@ export default async function Image() {
               textTransform: "uppercase",
             }}
           >
-            <span>Web Systems</span>
+            <span>Web Applications</span>
             <span style={{ color: "#A87445" }}>/</span>
-            <span>Mobile Applications</span>
+            <span>Mobile Apps</span>
             <span style={{ color: "#A87445" }}>/</span>
-            <span>Custom Software</span>
+            <span>Internal Tools</span>
           </div>
 
           <div

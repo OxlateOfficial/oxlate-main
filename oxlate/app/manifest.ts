@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/lib/config/site';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Oxlate — Precision Technology Partner',
-    short_name: 'Oxlate',
-    description: 'Thoughtful web experiences and mobile applications built with calm, architectural discipline.',
+    name: siteConfig.title,
+    short_name: siteConfig.name,
+    description: siteConfig.description,
     start_url: '/',
     display: 'standalone',
     background_color: '#F5F2EC',

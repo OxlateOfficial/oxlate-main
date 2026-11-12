@@ -4,11 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { ContactSection } from "@/features/home/sections/contact-section";
+import { SectionTag } from "@/components/ui/section-tag";
 import { createPageMetadata } from "@/lib/seo/metadata-factory";
 
 export const metadata: Metadata = createPageMetadata({
   pageType: "CONTACT",
-  title: "Start a Project — Direct Founder Consultation | Oxlate",
+  title: "Start a Project — Direct Founder Consultation",
   description:
     "Start a direct conversation with Oxlate founders. Free technical consultation for web applications, mobile apps, and custom business tools.",
 });
@@ -49,6 +50,20 @@ export default function ContactPage() {
           </Link>
         </div>
       </header>
+
+      {/* Contact Header & Semantic H1 */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-16 sm:pt-24 pb-6 sm:pb-8">
+        <SectionTag index="06" label="START A PROJECT" showPip className="mb-6" />
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#111111] leading-[1.12] mb-6">
+          Start a Project — Direct Founder Consultation.
+        </h1>
+        <p className="text-lg sm:text-xl text-[#292929] max-w-3xl font-normal leading-relaxed mb-4">
+          Tell us about what you want to build. You will hear back directly from a founding engineer within 24 hours with honest scoping and architectural advice.
+        </p>
+        <p className="font-mono text-xs uppercase tracking-wider text-[#A87445]">
+          // Direct technical conversation. Zero sales pressure.
+        </p>
+      </section>
 
       {/* Core Contact & Engagement View */}
       <ContactSection />

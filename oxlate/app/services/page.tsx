@@ -4,12 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { CapabilitiesSection } from "@/features/home/sections/capabilities-section";
+import { SectionTag } from "@/components/ui/section-tag";
 import { Button } from "@/components/ui/button";
 import { createPageMetadata } from "@/lib/seo/metadata-factory";
 
 export const metadata: Metadata = createPageMetadata({
   pageType: "SERVICE",
-  title: "Services & Capabilities | Oxlate",
+  title: "Services & Capabilities",
   description:
     "Web development, cross-platform mobile applications, and custom business tools engineered by senior founding developers. Work directly with builders.",
 });
@@ -50,6 +51,20 @@ export default function ServicesPage() {
           </Link>
         </div>
       </header>
+
+      {/* Services Header & Semantic H1 */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-16 sm:pt-24 pb-6 sm:pb-8">
+        <SectionTag index="02" label="SERVICES & CAPABILITIES" showPip className="mb-6" />
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#111111] leading-[1.12] mb-6">
+          Software Engineering Services &amp; Capabilities.
+        </h1>
+        <p className="text-lg sm:text-xl text-[#292929] max-w-3xl font-normal leading-relaxed mb-4">
+          From high-converting web applications to offline-resilient mobile apps and tailored internal tools, we design, architect, and ship software with founder-led precision.
+        </p>
+        <p className="font-mono text-xs uppercase tracking-wider text-[#A87445]">
+          // Senior builder collaboration. 100% code ownership. Zero agency bloat.
+        </p>
+      </section>
 
       {/* Core Capabilities Discipline View */}
       <CapabilitiesSection />

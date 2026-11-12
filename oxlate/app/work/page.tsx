@@ -8,12 +8,14 @@ import { Crosshair } from "@/components/ui/crosshair";
 import { DatumLine } from "@/components/ui/datum-line";
 import { Button } from "@/components/ui/button";
 import { PROJECTS, ProjectItem } from "@/data/projects.data";
+import { createPageMetadata } from "@/lib/seo/metadata-factory";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  pageType: "WORK_INDEX",
   title: "Selected Work — Architectural Project Catalog",
   description:
     "A transparent catalog of independent digital products, web platforms, and mobile software engineered by Oxlate.",
-};
+});
 
 function ProjectSchematic({
   type,

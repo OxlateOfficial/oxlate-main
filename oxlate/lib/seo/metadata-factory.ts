@@ -65,8 +65,14 @@ export function createPageMetadata({
 
   const socialImage = ogImage || "/opengraph-image";
 
+  // Strip duplicate trailing brand suffix if passed by caller to prevent "Title | Oxlate | Oxlate"
+  const cleanTitle = title
+    .replace(new RegExp(`\\s*\\|\\s*${siteConfig.name}\\s*$`, "i"), "")
+    .trim();
+  const fullBrandTitle = `${cleanTitle} | ${siteConfig.name}`;
+
   return {
-    title: pageType === "HOME" ? title : `${title} | ${siteConfig.name}`,
+    title: pageType === "HOME" ? { absolute: siteConfig.title } : cleanTitle,
     description,
     alternates: {
       canonical: canonicalUrl,
@@ -85,7 +91,7 @@ export function createPageMetadata({
     openGraph: {
       type: pageType === "WORK_DETAIL" || pageType === "INSIGHT" ? "article" : "website",
       url: canonicalUrl,
-      title: `${title} | ${siteConfig.name}`,
+      title: fullBrandTitle,
       description,
       siteName: siteConfig.name,
       locale: siteConfig.locale,
@@ -94,7 +100,7 @@ export function createPageMetadata({
           url: socialImage,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: cleanTitle,
         },
       ],
       ...(publishedTime && { publishedTime }),
@@ -104,7 +110,7 @@ export function createPageMetadata({
       card: "summary_large_image",
       site: siteConfig.social.xHandle,
       creator: siteConfig.social.xHandle,
-      title: `${title} | ${siteConfig.name}`,
+      title: fullBrandTitle,
       description,
       images: [socialImage],
     },

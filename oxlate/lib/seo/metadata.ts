@@ -21,7 +21,7 @@ export interface RouteH1Definition {
 export const ROUTE_H1_REGISTRY: Record<string, RouteH1Definition> = {
   '/': {
     route: '/',
-    h1Text: 'Thoughtful web experiences and mobile applications.',
+    h1Text: 'We build fast, reliable websites and mobile apps for growing businesses.',
     sectionHeadings: {
       '02': 'Software built to solve real business problems.',
       '03': 'Real software. Real business results.',
@@ -32,19 +32,19 @@ export const ROUTE_H1_REGISTRY: Record<string, RouteH1Definition> = {
   },
   '/services': {
     route: '/services',
-    h1Text: 'Capabilities and technical disciplines.',
+    h1Text: 'Software Engineering Services & Capabilities.',
   },
   '/work': {
     route: '/work',
-    h1Text: 'Selected engineering demonstrations and case studies.',
+    h1Text: 'Selected Work & Systems.',
   },
   '/about': {
     route: '/about',
-    h1Text: 'A focused technology partner for web and mobile.',
+    h1Text: 'About Oxlate — Founder-Led Software Studio.',
   },
   '/contact': {
     route: '/contact',
-    h1Text: 'Initiate a project or technical consultation.',
+    h1Text: 'Start a Project — Direct Founder Consultation.',
   },
 }
 
@@ -133,41 +133,40 @@ export const DEFAULT_SITE_METADATA: Metadata = {
  */
 export const ROUTE_METADATA_REGISTRY: Record<string, Metadata> = {
   '/': {
-    title: 'Oxlate — Web Development & Mobile Applications',
-    description:
-      'Oxlate builds custom websites, web applications, and mobile products with calm architectural discipline and precision engineering.',
+    title: siteConfig.title,
+    description: siteConfig.description,
     alternates: {
       canonical: `${SITE_URL}/`,
     },
   },
   '/services': {
-    title: 'Services & Capabilities | Oxlate',
+    title: 'Services & Capabilities',
     description:
-      'Explore Oxlate technical capabilities in web development, mobile application engineering, and custom software systems.',
+      'Web development, cross-platform mobile applications, and custom business tools engineered by senior founding developers. Work directly with builders.',
     alternates: {
       canonical: `${SITE_URL}/services`,
     },
   },
   '/work': {
-    title: 'Selected Work & Case Studies | Oxlate',
+    title: 'Selected Work & Systems',
     description:
-      'Demonstrations of craft, software engineering case studies, and mobile application projects built by Oxlate.',
+      'A curated showcase of production mobile applications, high-converting web platforms, and custom digital systems engineered by Oxlate.',
     alternates: {
       canonical: `${SITE_URL}/work`,
     },
   },
   '/about': {
-    title: 'About Oxlate | Technology Partner',
+    title: 'About Oxlate — Founder-Led Software Studio',
     description:
-      'Learn about Oxlate, our engineering principles, founding ethos, and architectural approach to modern software development.',
+      'Oxlate is a founder-led software studio building fast websites, mobile apps, and custom tools. Work directly with senior builders—no middlemen, 100% code ownership.',
     alternates: {
       canonical: `${SITE_URL}/about`,
     },
   },
   '/contact': {
-    title: 'Contact Oxlate | Initiate a Project',
+    title: 'Start a Project — Direct Founder Consultation',
     description:
-      'Get in touch with Oxlate to discuss custom web development, mobile applications, or technical system engineering.',
+      'Start a direct conversation with Oxlate founders. Free technical consultation for web applications, mobile apps, and custom business tools.',
     alternates: {
       canonical: `${SITE_URL}/contact`,
     },
