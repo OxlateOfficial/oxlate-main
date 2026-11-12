@@ -19,145 +19,45 @@ function ProjectSchematic({
   title?: string;
   imageCount?: number;
 }) {
-  if (image) {
-    return (
-      <div className="relative w-full h-44 sm:h-56 bg-[#111111] text-[#FAF8F5] font-mono text-[11px] overflow-hidden select-none border border-[#292929] rounded-[2px] flex flex-col justify-between group-hover:border-[#A87445]/60 transition-colors">
-        <Image
-          src={image}
-          alt={title || "Project interface"}
-          fill
-          className={`opacity-90 transition-transform duration-300 group-hover:scale-[1.02] ${
-            type === "mobile" ? "object-contain p-2" : "object-cover object-top"
-          }`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/20 to-[#111111]/75 pointer-events-none" />
-
-        {/* Top Readout */}
-        <div className="relative z-10 flex items-center justify-between text-[#FAF8F5]/90 px-4 pt-3">
-          <span className="flex items-center gap-2 bg-[#111111]/80 px-2 py-0.5 border border-[#292929] backdrop-blur-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#A87445]" />
-            {type === "platform" ? "SYS_ARCH // WEB_PLATFORM" : "SYS_ARCH // MOBILE_SYS"}
-          </span>
-          <span className="text-[#A87445] text-[10px] bg-[#111111]/80 px-2 py-0.5 border border-[#292929] backdrop-blur-xs">
-            VERIFIED INTERFACE
-          </span>
-        </div>
-
-        {/* Bottom Metrics Bar */}
-        <div className="relative z-10 flex items-center justify-between text-[10px] text-[#D9D4CC] border-t border-[#292929]/80 bg-[#111111]/85 backdrop-blur-xs px-4 py-2">
-          <span>STACK: {type.toUpperCase()} ARCHITECTURE</span>
-          <span className="text-[#FAF8F5]">{imageCount ? `${imageCount} CAPTURES` : "SYSTEM SPEC"}</span>
-          <span className="text-[#A87445] group-hover:text-white transition-colors">EXPLORE CASE STUDY →</span>
-        </div>
-      </div>
-    );
-  }
-
-  if (type === "platform") {
-    return (
-      <div className="relative w-full h-44 sm:h-52 bg-[#111111] text-[#FAF8F5] p-5 font-mono text-[11px] overflow-hidden select-none border border-[#292929] rounded-[2px] flex flex-col justify-between group-hover:border-[#A87445]/60 transition-colors">
-        {/* Background CAD linework */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="cad-grid-platform" width="24" height="24" patternUnits="userSpaceOnUse">
-                <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#D9D4CC" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#cad-grid-platform)" />
-            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#A87445" strokeWidth="1" strokeDasharray="4 4" />
-            <line x1="25%" y1="0" x2="75%" y2="100%" stroke="#D9D4CC" strokeWidth="1" />
-          </svg>
-        </div>
-
-        {/* Top Readout */}
-        <div className="relative z-10 flex items-center justify-between text-[#FAF8F5]/80">
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#A87445]" />
-            SYS_ARCH // WEB_APPLICATION_PLATFORM
-          </span>
-          <span className="text-[#A87445]">VERIFIED ARCHITECTURE</span>
-        </div>
-
-        {/* Center Architectural Nodes */}
-        <div className="relative z-10 grid grid-cols-3 gap-2 text-center my-auto">
-          <div className="border border-[#292929] bg-[#111111]/90 p-2">
-            <div className="text-[#A87445] text-[10px]">CLIENT</div>
-            <div className="text-white font-bold text-xs mt-0.5">NEXT.JS / REACT</div>
-            <div className="text-[9px] text-[#6C6B66] mt-1">Deterministic UI</div>
-          </div>
-          <div className="border border-[#A87445]/50 bg-[#111111]/90 p-2">
-            <div className="text-[#A87445] text-[10px]">CONTRACT</div>
-            <div className="text-white font-bold text-xs mt-0.5">TYPE SAFETY</div>
-            <div className="text-[9px] text-[#6C6B66] mt-1">Zod / TypeScript</div>
-          </div>
-          <div className="border border-[#292929] bg-[#111111]/90 p-2">
-            <div className="text-[#A87445] text-[10px]">STORAGE</div>
-            <div className="text-white font-bold text-xs mt-0.5">POSTGRESQL</div>
-            <div className="text-[9px] text-[#6C6B66] mt-1">Relational Integrity</div>
-          </div>
-        </div>
-
-        {/* Bottom Metrics Bar */}
-        <div className="relative z-10 flex items-center justify-between text-[10px] text-[#6C6B66] border-t border-[#292929] pt-2">
-          <span>STACK: STRICT TYPESCRIPT</span>
-          <span className="text-[#FAF8F5]">SUB-SECOND LOAD</span>
-          <span>RUNTIME: ZERO BLOAT</span>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="relative w-full h-44 sm:h-52 bg-[#111111] text-[#FAF8F5] p-5 font-mono text-[11px] overflow-hidden select-none border border-[#292929] rounded-[2px] flex flex-col justify-between group-hover:border-[#A87445]/60 transition-colors">
-      {/* Background CAD linework */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="cad-grid-mobile" width="24" height="24" patternUnits="userSpaceOnUse">
-              <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#D9D4CC" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#cad-grid-mobile)" />
-          <circle cx="50%" cy="50%" r="40" stroke="#A87445" strokeWidth="1" fill="none" strokeDasharray="2 4" />
-        </svg>
-      </div>
-
-      {/* Top Readout */}
-      <div className="relative z-10 flex items-center justify-between text-[#FAF8F5]/80">
-        <span className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#A87445]" />
-          DATA_FLOW // OFFLINE_SYNC_PIPELINE
-        </span>
-        <span className="text-[#A87445]">LOCAL-FIRST LEDGER</span>
-      </div>
-
-      {/* Center Flow Nodes */}
-      <div className="relative z-10 flex items-center justify-between gap-2 text-center my-auto">
-        <div className="border border-[#292929] bg-[#111111]/90 p-2 flex-1">
-          <div className="text-[10px] text-[#A87445]">INTERFACE</div>
-          <div className="text-white font-bold text-xs mt-0.5">REACT NATIVE</div>
-          <div className="text-[9px] text-[#6C6B66] mt-1">Touch Gestures</div>
+    <div className="relative w-full h-64 sm:h-80 md:h-96 bg-[#161615] text-[#FAF8F5] overflow-hidden rounded-[4px] border border-[#D9D4CC] group-hover:border-[#A87445] transition-all shadow-sm">
+      {/* Top Browser/App Bar */}
+      <div className="h-8 bg-[#242422] border-b border-[#323230] px-3 sm:px-4 flex items-center justify-between z-10 relative">
+        <div className="flex items-center gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/80" />
         </div>
-        <span className="text-[#A87445] font-bold">→</span>
-        <div className="border border-[#A87445]/50 bg-[#111111]/90 p-2 flex-1">
-          <div className="text-[10px] text-[#A87445]">LOCAL QUEUE</div>
-          <div className="text-white font-bold text-xs mt-0.5">SQLITE</div>
-          <div className="text-[9px] text-[#6C6B66] mt-1">Zero Latency</div>
+        <div className="font-mono text-[10px] text-[#D9D4CC] truncate max-w-[200px]">
+          {type === "platform" ? "https://mentorkrish.in" : "lemniska.app // native"}
         </div>
-        <span className="text-[#A87445] font-bold">→</span>
-        <div className="border border-[#292929] bg-[#111111]/90 p-2 flex-1">
-          <div className="text-[10px] text-[#A87445]">SYNC ENGINE</div>
-          <div className="text-white font-bold text-xs mt-0.5">NODE.JS API</div>
-          <div className="text-[9px] text-[#6C6B66] mt-1">State Resolution</div>
+        <div className="font-mono text-[9px] uppercase tracking-wider text-[#A87445]">
+          {imageCount ? `${imageCount} SCREENSHOTS` : "LIVE BUILD"}
         </div>
       </div>
 
-      {/* Bottom Metrics Bar */}
-      <div className="relative z-10 flex items-center justify-between text-[10px] text-[#6C6B66] border-t border-[#292929] pt-2">
-        <span>PERSISTENCE: OFFLINE-FIRST</span>
-        <span className="text-[#FAF8F5]">RESILIENT MOBILE STATE</span>
-        <span>DEPLOYMENT: IOS / ANDROID</span>
+      {/* Clear, High-Resolution Preview Image (NO Dark Murky Overlays) */}
+      <div className="relative w-full h-[calc(100%-32px)] bg-[#111111]">
+        {image ? (
+          <Image
+            src={image}
+            alt={title || "Project interface"}
+            fill
+            className={`transition-transform duration-300 group-hover:scale-[1.01] ${
+              type === "mobile" ? "object-contain p-3" : "object-cover object-top"
+            }`}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-[#6C6B66] font-mono text-xs">
+            Preview Interface
+          </div>
+        )}
+      </div>
+
+      {/* Floating Hover Indicator */}
+      <div className="absolute bottom-3 right-3 z-10 font-mono text-[11px] bg-[#111111]/90 text-white px-3 py-1 rounded-[2px] border border-[#3A3A36] backdrop-blur-md opacity-90 group-hover:opacity-100 group-hover:border-[#A87445] transition-all flex items-center gap-1.5">
+        <span>View Full Case Study</span>
+        <ArrowRight className="w-3 h-3 text-[#A87445]" />
       </div>
     </div>
   );

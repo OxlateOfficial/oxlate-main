@@ -1,12 +1,14 @@
 import React from "react";
+import Link from "next/link";
+import { Globe, Smartphone, Layers, ArrowRight } from "lucide-react";
 import { SectionTag } from "@/components/ui/section-tag";
-import { Crosshair } from "@/components/ui/crosshair";
 import { DatumLine } from "@/components/ui/datum-line";
 
 interface CapabilityPillar {
   index: string;
   title: string;
   category: string;
+  icon: React.ReactNode;
   description: string;
   deliverables: string[];
   techStack: string[];
@@ -17,6 +19,7 @@ const CAPABILITY_PILLARS: CapabilityPillar[] = [
     index: "01",
     title: "Websites & Web Applications",
     category: "Web Engineering",
+    icon: <Globe className="w-5 h-5 text-[#A87445]" />,
     description:
       "Fast, conversion-optimized platforms and web applications built with modern frameworks. Engineered to rank high on search engines, load instantly, and scale cleanly as traffic grows.",
     deliverables: [
@@ -31,6 +34,7 @@ const CAPABILITY_PILLARS: CapabilityPillar[] = [
     index: "02",
     title: "Mobile Applications (iOS & Android)",
     category: "Mobile Engineering",
+    icon: <Smartphone className="w-5 h-5 text-[#A87445]" />,
     description:
       "Cross-platform mobile apps engineered for fluid gestures, offline resilience, and daily use. From user journey prototyping to Google Play and Apple App Store deployment.",
     deliverables: [
@@ -45,6 +49,7 @@ const CAPABILITY_PILLARS: CapabilityPillar[] = [
     index: "03",
     title: "Custom Internal Tools & Automation",
     category: "Business Systems",
+    icon: <Layers className="w-5 h-5 text-[#A87445]" />,
     description:
       "Tailored business software built around how your team actually works. Eliminate repetitive manual tasks, fragile spreadsheets, and disconnected software systems.",
     deliverables: [
@@ -76,80 +81,79 @@ export function CapabilitiesSection() {
           </p>
         </div>
 
-        {/* 3 Architectural Columns with 1px Pale Stone Datum Dividing Lines */}
-        <div className="relative border border-[#D9D4CC]/60 bg-[#FAF8F5]/60 rounded-[2px]">
-          {/* Architectural Alignment Crosshairs */}
-          <Crosshair className="absolute -top-1.5 -left-1.5 text-[#A87445]/60" />
-          <Crosshair className="absolute -top-1.5 -right-1.5 text-[#D9D4CC]" />
-          <Crosshair className="absolute -bottom-1.5 -left-1.5 text-[#D9D4CC]" />
-          <Crosshair className="absolute -bottom-1.5 -right-1.5 text-[#D9D4CC]" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#D9D4CC]/60">
-            {CAPABILITY_PILLARS.map((pillar) => (
-              <div
-                key={pillar.index}
-                className="group p-8 sm:p-10 lg:p-11 flex flex-col justify-between transition-colors duration-200 hover:bg-[#FAF8F5]"
-              >
-                {/* Upper Block: Index & Headings */}
-                <div>
-                  {/* Monospace Indicator Tag */}
-                  <div className="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-[#6C6B66] mb-6">
-                    <span className="flex items-center gap-2">
-                      <span className="inline-block w-1.5 h-1.5 bg-[#A87445]" aria-hidden="true" />
+        {/* 3 Modern Distinct Service Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+          {CAPABILITY_PILLARS.map((pillar) => (
+            <div
+              key={pillar.index}
+              className="group p-8 sm:p-10 bg-[#FAF8F5] border border-[#D9D4CC] rounded-[4px] shadow-xs hover:border-[#A87445] hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+            >
+              {/* Upper Block: Category & Title */}
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-[4px] bg-[#F5F2EC] border border-[#D9D4CC] flex items-center justify-center">
+                      {pillar.icon}
+                    </div>
+                    <span className="font-mono text-xs uppercase tracking-widest text-[#6C6B66]">
                       SERVICE // {pillar.index}
                     </span>
-                    <span className="text-[11px] text-[#A87445]">{pillar.category}</span>
                   </div>
-
-                  {/* Semantic Column Heading */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111] tracking-tight mb-4 group-hover:text-[#111111] transition-colors">
-                    {pillar.title}
-                  </h3>
-
-                  {/* Body Description */}
-                  <p className="text-sm sm:text-base text-[#292929] leading-relaxed mb-8 font-normal">
-                    {pillar.description}
-                  </p>
-
-                  <DatumLine orientation="horizontal" className="mb-6" />
-
-                  {/* Scope & Deliverables List */}
-                  <div className="mb-8">
-                    <div className="font-mono text-xs uppercase tracking-wider text-[#111111] mb-3">
-                      Scope &amp; Deliverables
-                    </div>
-                    <ul className="space-y-2 text-xs sm:text-sm text-[#292929]">
-                      {pillar.deliverables.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5">
-                          <span className="text-[#A87445] mt-1 font-mono text-xs leading-none select-none">
-                            +
-                          </span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <span className="font-mono text-[11px] text-[#A87445] font-semibold">
+                    {pillar.category}
+                  </span>
                 </div>
 
-                {/* Bottom Block: Tech Metadata Chips */}
-                <div className="pt-6 border-t border-[#D9D4CC]/40">
-                  <div className="font-mono text-[11px] uppercase tracking-wider text-[#6C6B66] mb-3">
-                    Technical Stack
+                <h3 className="text-xl sm:text-2xl font-bold text-[#111111] tracking-tight mb-4 group-hover:text-[#A87445] transition-colors">
+                  {pillar.title}
+                </h3>
+
+                <p className="text-sm sm:text-base text-[#292929] leading-relaxed mb-6 font-normal">
+                  {pillar.description}
+                </p>
+
+                <DatumLine orientation="horizontal" className="mb-6" />
+
+                <div className="mb-8">
+                  <div className="font-mono text-xs uppercase tracking-wider text-[#111111] mb-3">
+                    Scope &amp; Deliverables
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {pillar.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="font-mono text-[11px] px-2.5 py-1 bg-[#F5F2EC] border border-[#D9D4CC] text-[#292929] rounded-[2px] transition-colors group-hover:border-[#111111]/30"
-                      >
-                        {tech}
-                      </span>
+                  <ul className="space-y-2.5 text-xs sm:text-sm text-[#292929]">
+                    {pillar.deliverables.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <span className="text-[#A87445] mt-0.5 font-mono text-xs leading-none select-none">
+                          ✓
+                        </span>
+                        <span>{item}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Bottom Block: Tech Stack Chips & Action Link */}
+              <div className="pt-6 border-t border-[#D9D4CC]/40 space-y-4">
+                <div className="flex flex-wrap gap-2">
+                  {pillar.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="font-mono text-[11px] px-2.5 py-1 bg-[#F5F2EC] border border-[#D9D4CC] text-[#292929] rounded-[2px]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs text-[#A87445] hover:text-[#111111] transition-colors font-semibold pt-1"
+                >
+                  <span>Inquire about this service</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

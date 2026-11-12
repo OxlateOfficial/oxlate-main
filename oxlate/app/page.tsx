@@ -1,8 +1,10 @@
 import { HeroSection } from "@/features/home/hero/hero-section";
 import { SideDial, MobileStatusTicker } from "@/features/home/nav";
 import {
+  ProofBar,
   CapabilitiesSection,
   WorkSection,
+  LabsPreviewSection,
   ApproachSection,
   AboutSection,
   ContactSection,
@@ -16,23 +18,28 @@ export default function HomePage() {
       <SideDial />
       <MobileStatusTicker />
 
-      {/* Continuous Homepage Narrative */}
-      {/* 01 // INTRO (#intro) */}
+      {/* 01 // HERO & PURE OBJECT SHOWCASE (#intro) */}
       <HeroSection />
 
-      {/* 02 // CAPABILITIES (#capabilities) */}
+      {/* SOCIAL PROOF & KEY METRICS BAR */}
+      <ProofBar />
+
+      {/* 02 // WHAT WE BUILD / CAPABILITIES (#capabilities) */}
       <CapabilitiesSection />
 
-      {/* 03 // WORK (#work) */}
+      {/* 03 // PROVEN IMPACT / SELECTED WORK (#work) */}
       <WorkSection />
 
-      {/* 04 // APPROACH (#approach) */}
+      {/* PROPRIETARY IN-HOUSE PRODUCTS / STUDIO LABS (#labs) */}
+      <LabsPreviewSection />
+
+      {/* 04 // OUR PROCESS / APPROACH (#approach) */}
       <ApproachSection />
 
-      {/* 05 // ABOUT (#about) */}
+      {/* 05 // THE FOUNDERS & STUDIO (#about) */}
       <AboutSection />
 
-      {/* 06 // CONTACT (#contact) */}
+      {/* 06 // START A PROJECT (#contact) */}
       <ContactSection />
 
       {/* 07 // FOOTER */}

@@ -6,3 +6,4 @@ export * from './constructing-number';
 export * from './slice-revealed-frame';
 export * from './generative-text';
 export * from './generative-line';
+export * from './device-mockup';

@@ -1,5 +1,7 @@
+export * from "./proof-bar";
 export * from "./capabilities-section";
 export * from "./work-section";
+export * from "./labs-preview-section";
 export * from "./approach-section";
 export * from "./about-section";
 export * from "./contact-section";
