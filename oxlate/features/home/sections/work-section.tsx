@@ -175,15 +175,12 @@ export function WorkSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header */}
         <div className="mb-14 sm:mb-18 lg:mb-20">
-          <SectionTag index="03" label="SELECTED WORK" showPip className="mb-6" />
+          <SectionTag index="03" label="PROVEN IMPACT" showPip className="mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] leading-[1.14] mb-5">
-            Demonstrations of craft.
+            Real software. Real business results.
           </h2>
           <p className="text-base sm:text-lg text-[#292929] max-w-2xl font-normal leading-relaxed">
-            A selection of independent products and technical systems built by the founding developer. These demonstrate our technical and design approach.
-          </p>
-          <p className="font-mono text-xs uppercase tracking-wider text-[#A87445] mt-3">
-            // Independent work, built to demonstrate how we think and build.
+            From mobile ecosystems with 5,000+ active downloads to high-converting client web platforms, explore how we engineer software that delivers measurable value.
           </p>
         </div>
 
@@ -247,23 +244,23 @@ export function WorkSection() {
                 <div className="space-y-4 mb-8 text-xs sm:text-sm">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-wider text-[#111111] block mb-1">
-                      Technical Challenge
+                      The Challenge
                     </span>
                     <p className="text-[#6C6B66] leading-relaxed">{project.technicalChallenge}</p>
                   </div>
 
                   <div>
                     <span className="font-mono text-xs uppercase tracking-wider text-[#A87445] block mb-1">
-                      Architectural Solution
+                      How We Solved It
                     </span>
                     <p className="text-[#292929] leading-relaxed">{project.architecturalSolution}</p>
                   </div>
                 </div>
 
-                {/* System Highlights */}
+                {/* Key Business Outcomes */}
                 <div className="mb-8">
                   <div className="font-mono text-xs uppercase tracking-wider text-[#111111] mb-3">
-                    System Highlights
+                    Key Outcomes &amp; Impact
                   </div>
                   <ul className="space-y-2 text-xs sm:text-sm text-[#292929]">
                     {project.highlights.map((highlight, idx) => (

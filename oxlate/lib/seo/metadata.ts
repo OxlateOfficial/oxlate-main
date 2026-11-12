@@ -23,11 +23,11 @@ export const ROUTE_H1_REGISTRY: Record<string, RouteH1Definition> = {
     route: '/',
     h1Text: 'Thoughtful web experiences and mobile applications.',
     sectionHeadings: {
-      '02': 'Built for real workflows.',
-      '03': 'Demonstrations of craft.',
-      '04': 'Engineering principles.',
-      '05': 'A focused technology partner.',
-      '06': 'Have something worth building?',
+      '02': 'Software built to solve real business problems.',
+      '03': 'Real software. Real business results.',
+      '04': 'How we work with you.',
+      '05': 'Work directly with the builders.',
+      '06': "Have a project in mind? Let's talk.",
     },
   },
   '/services': {

@@ -10,15 +10,15 @@ export interface HeroData {
 
 export const heroData: HeroData = {
   chapterTag: "01 // INTRO",
-  headline: "Digital Architecture for the Modern Web.",
+  headline: "We build fast, reliable websites and mobile apps for growing businesses.",
   subtitle:
-    "Oxlate is a technology partner building websites, web applications, mobile products and custom business software with disciplined design and engineering.",
-  ctaLabel: "Contact",
+    "We plan properly from day one so your software scales without breaking. Work directly with senior builders—no middlemen, no bloated agency overhead, and 100% code ownership.",
+  ctaLabel: "Start a Project",
   ctaHref: "#contact",
-  strutTag: "Architecture Discipline",
+  strutTag: "Modern Software Studio",
   serviceDisciplines: [
-    "WEB DEVELOPMENT",
-    "MOBILE APPLICATIONS",
-    "CUSTOM SYSTEMS",
+    "WEB APPLICATIONS",
+    "MOBILE APPS",
+    "INTERNAL TOOLS",
   ],
 };

@@ -87,9 +87,9 @@ export function IdentityZone({ isActive, isMuted, onHover, isInteractive = true,
       {/* Masked Plotter Headline */}
       <h2 className="font-sans text-2xl xl:text-3xl font-bold tracking-tight text-[#111111] leading-tight mb-3">
         <GenerativeText
-          text="A focused technology partner."
+          text="Software built for your business."
           mode="line-mask"
-          lines={["A focused", "technology partner."]}
+          lines={["Software built", "for your business."]}
           progress={progress?.zone01TextProgress}
         />
       </h2>
@@ -97,7 +97,7 @@ export function IdentityZone({ isActive, isMuted, onHover, isInteractive = true,
       {/* Architectural Narrative Description */}
       <p className="font-sans text-xs sm:text-[13px] text-[#4A4946] leading-relaxed mb-4 max-w-[280px]">
         <GenerativeText
-          text="We build thoughtful digital products with design discipline and engineering precision."
+          text="We design and build fast websites, mobile apps, and custom internal tools with direct founder engineering."
           mode="plotter"
           progress={progress?.zone01TextProgress}
         />
@@ -112,7 +112,7 @@ export function IdentityZone({ isActive, isMuted, onHover, isInteractive = true,
         }`}
       >
         <GenerativeText
-          text="Learn about Oxlate"
+          text="Meet the founders"
           mode="decode"
           progress={progress?.zone01TextProgress}
           delayMs={120}
@@ -205,13 +205,13 @@ export function CapabilitiesZone({ isActive, isMuted, onHover, isInteractive = t
             <Globe className="w-5 h-5 text-[#111111] shrink-0 mt-0.5 group-hover/entry:text-[#A87445] transition-colors" />
             <div className="flex flex-col">
               <span className="font-sans text-sm font-bold text-[#111111] group-hover/entry:text-[#A87445] transition-colors">
-                <GenerativeText text="Web" mode="decode" progress={progress?.zone02WebProgress} />
+                <GenerativeText text="Web Apps" mode="decode" progress={progress?.zone02WebProgress} />
               </span>
               <span className="font-sans text-xs text-[#6C6B66]">
-                <GenerativeText text="Websites & web applications" mode="plotter" progress={progress?.zone02WebProgress} />
+                <GenerativeText text="Websites & platforms that convert" mode="plotter" progress={progress?.zone02WebProgress} />
               </span>
               <span className="font-mono text-[10px] text-[#8C8A84] tracking-wide">
-                Modern, high-performance
+                Fast, responsive &amp; SEO-ready
               </span>
             </div>
           </div>
@@ -232,13 +232,13 @@ export function CapabilitiesZone({ isActive, isMuted, onHover, isInteractive = t
             <Smartphone className="w-5 h-5 text-[#111111] shrink-0 mt-0.5 group-hover/entry:text-[#A87445] transition-colors" />
             <div className="flex flex-col">
               <span className="font-sans text-sm font-bold text-[#111111] group-hover/entry:text-[#A87445] transition-colors">
-                <GenerativeText text="Mobile" mode="decode" progress={progress?.zone02MobileProgress} />
+                <GenerativeText text="Mobile Apps" mode="decode" progress={progress?.zone02MobileProgress} />
               </span>
               <span className="font-sans text-xs text-[#6C6B66]">
-                <GenerativeText text="Android & iOS applications" mode="plotter" progress={progress?.zone02MobileProgress} />
+                <GenerativeText text="iOS &amp; Android applications" mode="plotter" progress={progress?.zone02MobileProgress} />
               </span>
               <span className="font-mono text-[10px] text-[#8C8A84] tracking-wide">
-                Native and cross-platform
+                Smooth &amp; offline-resilient
               </span>
             </div>
           </div>
@@ -269,13 +269,13 @@ export function CapabilitiesZone({ isActive, isMuted, onHover, isInteractive = t
             </svg>
             <div className="flex flex-col">
               <span className="font-sans text-sm font-bold text-[#111111] group-hover/entry:text-[#A87445] transition-colors">
-                <GenerativeText text="Custom Software" mode="decode" progress={progress?.zone02SoftwareProgress} />
+                <GenerativeText text="Internal Tools" mode="decode" progress={progress?.zone02SoftwareProgress} />
               </span>
               <span className="font-sans text-xs text-[#6C6B66]">
-                <GenerativeText text="Business systems & internal tools" mode="plotter" progress={progress?.zone02SoftwareProgress} />
+                <GenerativeText text="Custom dashboards &amp; automation" mode="plotter" progress={progress?.zone02SoftwareProgress} />
               </span>
               <span className="font-mono text-[10px] text-[#8C8A84] tracking-wide">
-                Built around your workflow
+                Replace messy spreadsheets
               </span>
             </div>
           </div>
@@ -675,7 +675,7 @@ export function PrinciplesZone({ isActive, isMuted, onHover, isInteractive = tru
 
       {/* 2x2 Principles Grid - Links to #approach */}
       <Link href="/#approach" className="grid grid-cols-2 gap-x-4 gap-y-3.5 group/grid">
-        {/* Principle 01: Focused Scope */}
+        {/* Principle 01: Direct Access */}
         <div className="flex items-start gap-2.5 group/p">
           <svg className="w-4 h-4 text-[#111111] shrink-0 mt-0.5 group-hover/p:text-[#A87445] transition-colors" viewBox="0 0 16 16" fill="none">
             <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.2" />
@@ -683,25 +683,25 @@ export function PrinciplesZone({ isActive, isMuted, onHover, isInteractive = tru
           </svg>
           <div className="flex flex-col">
             <span className="font-sans text-xs font-bold text-[#111111] group-hover/p:text-[#A87445] transition-colors">
-              Focused Scope
+              Direct Access
             </span>
             <span className="font-sans text-[10px] text-[#6C6B66]">
-              Intentionally narrow.
+              Work with builders.
             </span>
           </div>
         </div>
 
-        {/* Principle 02: Direct Engineering */}
+        {/* Principle 02: 100% Ownership */}
         <div className="flex items-start gap-2.5 group/p">
           <span className="font-mono text-sm font-bold text-[#111111] shrink-0 leading-none group-hover/p:text-[#A87445] transition-colors">
             //
           </span>
           <div className="flex flex-col">
             <span className="font-sans text-xs font-bold text-[#111111] group-hover/p:text-[#A87445] transition-colors">
-              Direct Engineering
+              100% Ownership
             </span>
             <span className="font-sans text-[10px] text-[#6C6B66]">
-              Work with builders.
+              You own all code.
             </span>
           </div>
         </div>
@@ -713,7 +713,7 @@ export function PrinciplesZone({ isActive, isMuted, onHover, isInteractive = tru
           </svg>
           <div className="flex flex-col">
             <span className="font-sans text-xs font-bold text-[#111111] group-hover/p:text-[#A87445] transition-colors">
-              Considered Design
+              Fast &amp; Modern
             </span>
             <span className="font-sans text-[10px] text-[#6C6B66]">
               Clean, lasting UI.
@@ -721,17 +721,17 @@ export function PrinciplesZone({ isActive, isMuted, onHover, isInteractive = tru
           </div>
         </div>
 
-        {/* Principle 04: Long-Term Thinking */}
+        {/* Principle 04: Built to Scale */}
         <div className="flex items-start gap-2.5 group/p">
           <svg className="w-4 h-4 text-[#111111] shrink-0 mt-0.5 group-hover/p:text-[#A87445] transition-colors" viewBox="0 0 16 16" fill="none">
             <rect x="2.5" y="2.5" width="11" height="11" stroke="currentColor" strokeWidth="1.2" />
           </svg>
           <div className="flex flex-col">
             <span className="font-sans text-xs font-bold text-[#111111] group-hover/p:text-[#A87445] transition-colors">
-              Long-Term Thinking
+              Built to Scale
             </span>
             <span className="font-sans text-[10px] text-[#6C6B66]">
-              Built for ownership.
+              Reliable under load.
             </span>
           </div>
         </div>

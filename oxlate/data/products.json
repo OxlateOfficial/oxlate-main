@@ -1,20 +1,20 @@
 [
   {
-    "id": "oxlate-observability",
-    "slug": "oxlate-observability",
-    "name": "Oxlate Core Observability",
-    "tagline": "Internal system observability and metric pipeline for distributed Next.js services.",
-    "description": "A high-performance telemetry and event aggregator designed for real-time latency inspection and automated health governance across web infrastructure.",
-    "status": "development",
-    "category": "Developer Infrastructure",
-    "technologies": ["TypeScript", "Node.js", "ClickHouse", "OpenTelemetry"],
+    "id": "oxlate-studio-labs",
+    "slug": "oxlate-labs",
+    "name": "Oxlate Studio Labs",
+    "tagline": "Proprietary software tools and developer utilities engineered in-house.",
+    "description": "We don't just build software for clients—we incubate and ship our own products. Proven tools designed for automation, speed, and real operational workflow efficiency.",
+    "status": "upcoming",
+    "category": "In-House Products",
+    "technologies": ["TypeScript", "Next.js", "PostgreSQL", "AI Automation"],
     "features": [
-      "Sub-millisecond trace ingestion",
-      "Automated edge anomaly detection",
-      "Unified log streaming"
+      "In-house product incubator",
+      "Production-grade architectures",
+      "Rapid iterative releases"
     ],
-    "publishedAt": "2026-09-11",
-    "updatedAt": "2026-09-11",
+    "publishedAt": "2026-10-15",
+    "updatedAt": "2026-11-12",
     "indexable": false
   }
 ]

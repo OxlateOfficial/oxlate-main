@@ -9,9 +9,9 @@ import { createPageMetadata } from "@/lib/seo/metadata-factory";
 
 export const metadata: Metadata = createPageMetadata({
   pageType: "ABOUT",
-  title: "Firm Identity & Engineering Standards",
+  title: "About Oxlate — Founder-Led Software Studio",
   description:
-    "Oxlate is a founder-led engineering partner building software with calm, architectural discipline. Operating with direct builder access and no non-technical sales layers.",
+    "Oxlate is a founder-led software studio building fast websites, mobile apps, and custom tools. Work directly with senior builders—no middlemen, 100% code ownership.",
 });
 
 export default function AboutPage() {
@@ -62,10 +62,10 @@ export default function AboutPage() {
               BUILDER PARTNERSHIP
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] tracking-tight">
-              Work directly with the architects who build your system.
+              Work directly with the founders who build your software.
             </h2>
             <p className="text-sm text-[#6C6B66] mt-1">
-              Direct engineering conversations without account managers or disconnected handoffs.
+              Direct engineering collaboration without account managers, junior handoffs, or agency fluff.
             </p>
           </div>
 

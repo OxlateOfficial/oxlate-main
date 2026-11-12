@@ -15,21 +15,24 @@ const ENGAGEMENT_PROTOCOLS: EngagementProtocol[] = [
   {
     step: "01",
     title: "Direct Builder Access",
-    desc: "You converse directly with an engineering lead, not an account representative or sales screener.",
+    desc: "You speak directly with senior founding engineers, not account executives or sales screeners.",
   },
   {
     step: "02",
-    title: "Technical Feasibility First",
-    desc: "We review your requirements, determine data models and component architecture, and provide realistic milestone timelines.",
+    title: "Honest Technical Scoping",
+    desc: "We provide realistic milestone timelines, recommended stacks, and clear scopes with no hidden fees.",
   },
   {
     step: "03",
-    title: "Zero Sales Pressure",
-    desc: "No aggressive follow-up cadences or bloated multi-month proposal ceremonies. Just calm technical clarity.",
+    title: "Fast 24-Hour Turnaround",
+    desc: "We review your inquiry and respond within one business day with actionable next steps.",
   },
 ];
 
 export function ContactSection() {
+  const mailtoUrl =
+    "mailto:oxlateofficial@gmail.com?subject=New%20Project%20Inquiry%20%E2%80%94%20Oxlate&body=Hi%20Oxlate%20Team%2C%0A%0AI%20am%20looking%20to%20build%3A%0A-%20Project%20Type%20(Web%20App%20%2F%20Mobile%20App%20%2F%20Internal%20Tool)%3A%20%0A-%20Target%20Timeline%3A%20%0A-%20Brief%20Summary%3A%20%0A%0ALooking%20forward%20to%20connecting!";
+
   return (
     <section
       id="contact"
@@ -39,12 +42,12 @@ export function ContactSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header */}
         <div className="mb-14 sm:mb-18 lg:mb-20">
-          <SectionTag index="06" label="ENGAGEMENT" showPip className="mb-6" />
+          <SectionTag index="06" label="START A PROJECT" showPip className="mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] leading-[1.14] mb-5">
-            Have something worth building?
+            Have a project in mind? Let&apos;s talk.
           </h2>
           <p className="text-base sm:text-lg text-[#292929] max-w-2xl font-normal leading-relaxed">
-            Tell us what you are trying to build. We work directly with founders and teams on web and mobile products.
+            Tell us what you are trying to build. You will hear back directly from a founding engineer within 24 hours.
           </p>
         </div>
 
@@ -60,13 +63,13 @@ export function ContactSection() {
             {/* Left Action Area (7 cols) */}
             <div className="lg:col-span-7">
               <div className="font-mono text-xs uppercase tracking-widest text-[#6C6B66] mb-3">
-                INITIATE DIRECT INQUIRY
+                DIRECT FOUNDER CONSULTATION
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-[#111111] tracking-tight mb-4">
-                Start a technical conversation.
+                Start your project conversation.
               </h3>
               <p className="text-sm sm:text-base text-[#292929] leading-relaxed mb-8 max-w-xl">
-                Send an email with a concise summary of what you are planning to build, target timelines, or existing codebases. We review direct project inquiries and typically respond within one business day.
+                Send us an email with a brief summary of what you are planning to build, target timelines, or existing codebases. We provide honest technical feedback, realistic timeline estimates, and clear milestone proposals—with zero sales pressure.
               </p>
 
               {/* Primary Bronze CTA & Direct Email Trigger */}
@@ -75,14 +78,14 @@ export function ContactSection() {
                   asChild
                   className="bg-[#A87445] hover:bg-[#B98250] text-white font-mono text-xs sm:text-sm uppercase tracking-wider px-8 py-6 rounded-[2px] transition-all duration-150 hover:-translate-y-[1px] inline-flex items-center gap-3 border-none"
                 >
-                  <a href="mailto:oxlateofficial@gmail.com">
-                    <span>Start a conversation</span>
+                  <a href={mailtoUrl}>
+                    <span>Email the Founders</span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
 
                 <a
-                  href="mailto:oxlateofficial@gmail.com"
+                  href={mailtoUrl}
                   className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm text-[#111111] hover:text-[#A87445] transition-colors py-2 group"
                 >
                   <Mail className="w-4 h-4 text-[#A87445] group-hover:scale-110 transition-transform" />

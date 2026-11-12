@@ -207,15 +207,15 @@ export default function WorkPage() {
 
       {/* Catalog Title & Header */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-16 sm:pt-24 pb-12 sm:pb-16">
-        <SectionTag index="03" label="WORK ARCHIVE" showPip className="mb-6" />
+        <SectionTag index="03" label="CASE STUDIES" showPip className="mb-6" />
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#111111] leading-[1.12] mb-6">
           Selected Work &amp; Systems.
         </h1>
         <p className="text-lg sm:text-xl text-[#292929] max-w-3xl font-normal leading-relaxed mb-4">
-          A transparent index of independent software engineering, digital products, and technical experiments built by the founding developer.
+          A curated showcase of production mobile applications, high-converting web platforms, and custom digital systems engineered by Oxlate.
         </p>
         <p className="font-mono text-xs uppercase tracking-wider text-[#A87445]">
-          // Independent work, built to demonstrate how we think and build.
+          // Production applications, scalable systems, and founder-engineered solutions.
         </p>
       </section>
 
@@ -350,7 +350,7 @@ export default function WorkPage() {
                 className="bg-[#111111] hover:bg-[#292929] text-white font-mono text-xs uppercase tracking-wider px-6 py-4 rounded-[2px] transition-all inline-flex items-center gap-2 border-none"
               >
                 <Link href={`/work/${project.slug}`}>
-                  <span>View Full Architecture &amp; Gallery</span>
+                  <span>View Case Study &amp; Gallery</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#A87445]" />
                 </Link>
               </Button>
@@ -367,10 +367,10 @@ export default function WorkPage() {
               HAVE A PROJECT IN MIND?
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] tracking-tight">
-              Start a direct conversation with builders.
+              Start a direct conversation with our founders.
             </h2>
             <p className="text-sm text-[#6C6B66] mt-1">
-              Typical response within one business day. Direct technical inquiry.
+              Typical response within one business day. No non-technical intermediaries.
             </p>
           </div>
 
@@ -389,9 +389,9 @@ export default function WorkPage() {
       {/* Minimal Architectural Footer Baseline */}
       <footer className="border-t border-[#D9D4CC] py-10 px-6 sm:px-10 lg:px-12 text-xs text-[#6C6B66]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>&copy; 2025–2026 Oxlate. All rights reserved. Built with architectural discipline.</p>
+          <p>&copy; 2025–2026 Oxlate. All rights reserved. Built with care &amp; precision.</p>
           <div className="font-mono text-[11px] text-[#A87445]">
-            [ INDEPENDENT WORK &amp; ARCHITECTURAL DISCIPLINE ]
+            [ PROVEN WORK &amp; FOUNDER-LED ENGINEERING ]
           </div>
         </div>
       </footer>

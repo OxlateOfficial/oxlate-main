@@ -15,43 +15,43 @@ interface CapabilityPillar {
 const CAPABILITY_PILLARS: CapabilityPillar[] = [
   {
     index: "01",
-    title: "Web & Web Applications",
+    title: "Websites & Web Applications",
     category: "Web Engineering",
     description:
-      "Websites and web applications designed around your business and customers. Fast, accessible, and structured to grow cleanly as your operations scale.",
+      "Fast, conversion-optimized platforms and web applications built with modern frameworks. Engineered to rank high on search engines, load instantly, and scale cleanly as traffic grows.",
     deliverables: [
-      "Customer-Facing Websites & Platforms",
-      "Web Applications & Client Portals",
-      "E-Commerce & Digital Storefronts",
-      "Performance Optimization & SEO",
+      "High-Converting Marketing Websites",
+      "Customer Portals & Client Dashboards",
+      "SaaS MVP Applications & Scalable Frontends",
+      "Speed Optimization & Technical SEO",
     ],
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
     index: "02",
-    title: "Mobile Applications",
+    title: "Mobile Applications (iOS & Android)",
     category: "Mobile Engineering",
     description:
-      "Android and cross-platform applications built around real user workflows. Designed for smooth interactions, offline reliability, and fast daily usage.",
+      "Cross-platform mobile apps engineered for fluid gestures, offline resilience, and daily use. From user journey prototyping to Google Play and Apple App Store deployment.",
     deliverables: [
-      "Android & Cross-Platform Mobile Apps",
-      "Offline-Ready Local Data Storage",
-      "Device & Hardware Integration",
-      "Play Store & App Store Deployment",
+      "Cross-Platform iOS & Android Apps (React Native)",
+      "Offline-First Local Storage & Sync",
+      "Push Notifications & Device Integrations",
+      "App Store & Google Play Store Publishing",
     ],
-    techStack: ["React Native", "TypeScript", "Android / iOS", "Expo"],
+    techStack: ["React Native", "TypeScript", "Expo", "Mobile APIs"],
   },
   {
     index: "03",
-    title: "Custom Software & Internal Tools",
-    category: "Systems & Infrastructure",
+    title: "Custom Internal Tools & Automation",
+    category: "Business Systems",
     description:
-      "Business systems and internal tools built around the way your team actually works. Eliminating manual friction and disconnected spreadsheets.",
+      "Tailored business software built around how your team actually works. Eliminate repetitive manual tasks, fragile spreadsheets, and disconnected software systems.",
     deliverables: [
       "Operational Dashboards & Admin Portals",
-      "Automated Workflow & Reporting Engines",
-      "Secure Database Architecture",
-      "API & Third-Party System Integrations",
+      "Workflow Automation & Scheduled Jobs",
+      "Secure Database Architecture (PostgreSQL)",
+      "Third-Party API & Payment Integrations",
     ],
     techStack: ["Node.js", "PostgreSQL", "REST APIs", "Cloud Infrastructure"],
   },
@@ -67,12 +67,12 @@ export function CapabilitiesSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header */}
         <div className="mb-14 sm:mb-18 lg:mb-20">
-          <SectionTag index="02" label="CAPABILITIES" showPip className="mb-6" />
+          <SectionTag index="02" label="WHAT WE BUILD" showPip className="mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] leading-[1.14] mb-5">
-            Built for real workflows.
+            Software built to solve real business problems.
           </h2>
           <p className="text-base sm:text-lg text-[#292929] max-w-2xl font-normal leading-relaxed">
-            Oxlate focuses strictly on modern web and mobile product engineering. We do not attempt to be everything to everyone; we engineer high-performance systems for real operational demands.
+            We don't build bloated templates or fragile prototypes. We engineer fast, durable web and mobile software designed to scale your operations, delight users, and drive revenue.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export function CapabilitiesSection() {
                   <div className="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-[#6C6B66] mb-6">
                     <span className="flex items-center gap-2">
                       <span className="inline-block w-1.5 h-1.5 bg-[#A87445]" aria-hidden="true" />
-                      PILLAR // {pillar.index}
+                      SERVICE // {pillar.index}
                     </span>
                     <span className="text-[11px] text-[#A87445]">{pillar.category}</span>
                   </div>

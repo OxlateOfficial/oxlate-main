@@ -73,12 +73,12 @@ export function FooterSection() {
             </Link>
 
             <p className="text-sm text-[#292929] leading-relaxed">
-              Precision web and mobile engineering.
+              Precision web &amp; mobile software studio.
             </p>
 
             <div className="font-mono text-[11px] text-[#6C6B66] flex items-center gap-2 pt-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#A87445]" aria-hidden="true" />
-              <span>EST. 2025 // ARCHITECTURAL RIGOR</span>
+              <span>EST. 2025 // FOUNDER-LED STUDIO</span>
             </div>
           </div>
 
@@ -137,7 +137,7 @@ export function FooterSection() {
             </div>
             <div className="space-y-3 text-sm text-[#292929]">
               <p className="text-[#6C6B66] text-xs">
-                Inquiries &amp; Architecture Assessments:
+                New Project Inquiries &amp; Consultations:
               </p>
               <a
                 href="mailto:oxlateofficial@gmail.com"
@@ -146,7 +146,7 @@ export function FooterSection() {
                 oxlateofficial@gmail.com
               </a>
               <div className="pt-3 border-t border-[#D9D4CC]/40 text-xs text-[#6C6B66]">
-                Typical response within one business day.
+                Direct response from founders within 24 hours.
               </div>
             </div>
           </div>
@@ -157,10 +157,10 @@ export function FooterSection() {
         {/* Bottom Legal & Copyright Baseline */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#6C6B66]">
           <p>
-            &copy; 2025–2026 Oxlate. All rights reserved. Built with architectural discipline.
+            &copy; 2025–2026 Oxlate. All rights reserved. Built with care &amp; precision.
           </p>
           <div className="font-mono text-[11px] text-[#A87445]">
-            [ PRECISION TECHNOLOGY PARTNER ]
+            [ FOUNDER-LED SOFTWARE STUDIO ]
           </div>
         </div>
       </div>

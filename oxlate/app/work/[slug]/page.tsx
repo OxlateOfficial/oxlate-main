@@ -230,10 +230,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#6C6B66] block mb-2">
-                  02 // BOTTLENECKS
+                  02 // THE CHALLENGE
                 </span>
                 <h3 className="text-xl font-bold text-[#111111] tracking-tight mb-3">
-                  Technical Challenge
+                  The Problem &amp; Bottlenecks
                 </h3>
                 <p className="text-sm sm:text-base text-[#6C6B66] leading-relaxed">
                   {project.technicalChallenge}
@@ -242,10 +242,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#A87445] block mb-2">
-                  03 // RESOLUTION
+                  03 // OUR SOLUTION
                 </span>
                 <h3 className="text-xl font-bold text-[#111111] tracking-tight mb-3">
-                  Architectural Solution
+                  How We Engineered It
                 </h3>
                 <p className="text-sm sm:text-base text-[#292929] leading-relaxed">
                   {project.architecturalSolution}
@@ -257,7 +257,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <div className="lg:col-span-5 space-y-8 border-t lg:border-t-0 lg:border-l border-[#D9D4CC]/60 pt-8 lg:pt-0 lg:pl-10">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#6C6B66] block mb-3">
-                  SYSTEM HIGHLIGHTS
+                  KEY OUTCOMES &amp; IMPACT
                 </span>
                 <ul className="space-y-3 text-xs sm:text-sm text-[#292929]">
                   {project.highlights.map((highlight, idx) => (
@@ -273,7 +273,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
               <div className="pt-6 border-t border-[#D9D4CC]/40">
                 <span className="font-mono text-xs uppercase tracking-widest text-[#6C6B66] block mb-3">
-                  ARCHITECTURE &amp; STACK
+                  TECHNOLOGIES USED
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
@@ -290,10 +290,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <div className="pt-6 border-t border-[#D9D4CC]/40">
                 <div className="bg-[#F5F2EC]/60 p-4 border border-[#D9D4CC]/60 rounded-[2px]">
                   <span className="font-mono text-[10px] uppercase tracking-widest text-[#A87445] block mb-1">
-                    // CREDIBILITY INVARIANT
+                    // VERIFIED CASE STUDY
                   </span>
                   <p className="text-xs text-[#6C6B66] leading-relaxed">
-                    This project is documented transparently without invented corporate metrics or exaggerated outcome claims.
+                    Documented from live production environments engineered and supported by Oxlate developers.
                   </p>
                 </div>
               </div>

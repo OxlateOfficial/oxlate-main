@@ -71,12 +71,12 @@ export function Navbar() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#111111]" />
           </div>
 
-          {/* Far-Right Architectural Tag */}
+          {/* Far-Right Studio Tag */}
           <div className="hidden xl:flex flex-col font-mono text-[7.5px] uppercase tracking-widest text-[#8C8A84] leading-tight text-right pl-3 border-l border-[#D9D4CC]">
-            <span className="text-[#111111] font-semibold">BUILD</span>
-            <span>A CALMER</span>
-            <span>DIGITAL</span>
-            <span>TOMORROW</span>
+            <span className="text-[#111111] font-semibold">FOUNDER</span>
+            <span>LED SOFTWARE</span>
+            <span>STUDIO</span>
+            <span className="text-[#A87445]">DIRECT BUILD</span>
           </div>
         </div>
       </div>

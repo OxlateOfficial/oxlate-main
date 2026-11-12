@@ -9,9 +9,9 @@ import { createPageMetadata } from "@/lib/seo/metadata-factory";
 
 export const metadata: Metadata = createPageMetadata({
   pageType: "SERVICE",
-  title: "Engineering Capabilities & Services",
+  title: "Services & Capabilities | Oxlate",
   description:
-    "Disciplined web applications, mobile product engineering, and bespoke business software systems built for long-term ownership.",
+    "Web development, cross-platform mobile applications, and custom business tools engineered by senior founding developers. Work directly with builders.",
 });
 
 export default function ServicesPage() {
@@ -62,10 +62,10 @@ export default function ServicesPage() {
               DISCUSS YOUR SCOPE
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] tracking-tight">
-              Direct technical consultation with builders.
+              Direct technical consultation with founders.
             </h2>
             <p className="text-sm text-[#6C6B66] mt-1">
-              Typical response within one business day. No non-technical sales intermediary.
+              Typical response within one business day. No non-technical intermediaries.
             </p>
           </div>
 
@@ -84,9 +84,9 @@ export default function ServicesPage() {
       {/* Minimal Architectural Footer */}
       <footer className="border-t border-[#D9D4CC] py-10 px-6 sm:px-10 lg:px-12 text-xs text-[#6C6B66]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>&copy; 2025–2026 Oxlate. All rights reserved. Built with architectural discipline.</p>
+          <p>&copy; 2025–2026 Oxlate. All rights reserved. Built with care &amp; precision.</p>
           <div className="font-mono text-[11px] text-[#A87445]">
-            [ DISCIPLINES: WEB // MOBILE // SYSTEMS ]
+            [ SERVICES: WEB APPS // MOBILE APPS // INTERNAL TOOLS ]
           </div>
         </div>
       </footer>

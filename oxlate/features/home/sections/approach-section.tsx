@@ -13,32 +13,32 @@ const APPROACH_STEPS: ApproachStep[] = [
   {
     index: "01",
     title: "Understand",
-    description: "Map real workflows, business constraints, and core bottlenecks before writing code.",
-    focus: "Problem Definition",
+    description: "We map your business goals, user journeys, and technical constraints before writing a single line of code.",
+    focus: "Discovery & Scope",
   },
   {
     index: "02",
     title: "Structure",
-    description: "Define data models, system boundaries, and type contracts early to avoid rework.",
+    description: "We design clean system architectures and data models so your product scales smoothly without costly rework.",
     focus: "System Architecture",
   },
   {
     index: "03",
     title: "Design",
-    description: "Craft intentional interfaces focused on usability, clarity, and responsive interaction.",
-    focus: "Considered UX/UI",
+    description: "We craft intuitive, brand-aligned interfaces focused on user clarity, high conversion, and responsive speed.",
+    focus: "UI/UX & Prototyping",
   },
   {
     index: "04",
     title: "Build",
-    description: "Implement with type-safe, modular code and minimal third-party dependencies.",
+    description: "We engineer your software with modern, reliable stacks and share interactive demo releases every single week.",
     focus: "Direct Engineering",
   },
   {
     index: "05",
-    title: "Refine",
-    description: "Optimize load speed, verify edge cases, and deliver software built to last.",
-    focus: "Long-Term Ownership",
+    title: "Launch",
+    description: "We handle deployment, testing, performance tuning, and hand over 100% of the code to your team.",
+    focus: "Deployment & Ownership",
   },
 ];
 
@@ -52,12 +52,12 @@ export function ApproachSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header */}
         <div className="mb-14 sm:mb-18 lg:mb-20">
-          <SectionTag index="04" label="APPROACH" showPip className="mb-6" />
+          <SectionTag index="04" label="OUR PROCESS" showPip className="mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] leading-[1.14] mb-5">
-            How we engineer.
+            How we work with you.
           </h2>
           <p className="text-base sm:text-lg text-[#292929] max-w-2xl font-normal leading-relaxed">
-            A disciplined, 5-stage progression from initial problem definition to durable software delivery.
+            A transparent, 5-stage progression from your initial vision to durable software launch—with zero surprises and weekly progress demos.
           </p>
         </div>
 

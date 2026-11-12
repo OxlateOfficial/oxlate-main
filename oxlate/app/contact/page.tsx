@@ -8,9 +8,9 @@ import { createPageMetadata } from "@/lib/seo/metadata-factory";
 
 export const metadata: Metadata = createPageMetadata({
   pageType: "CONTACT",
-  title: "Direct Project Consultation & Inquiry",
+  title: "Start a Project — Direct Founder Consultation | Oxlate",
   description:
-    "Direct technical conversation with Oxlate engineering leads. Inquire about web platforms, mobile products, or custom systems architecture.",
+    "Start a direct conversation with Oxlate founders. Free technical consultation for web applications, mobile apps, and custom business tools.",
 });
 
 export default function ContactPage() {
@@ -56,9 +56,9 @@ export default function ContactPage() {
       {/* Minimal Architectural Footer */}
       <footer className="border-t border-[#D9D4CC] py-10 px-6 sm:px-10 lg:px-12 text-xs text-[#6C6B66]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>&copy; 2025–2026 Oxlate. All rights reserved. Built with architectural discipline.</p>
+          <p>&copy; 2025–2026 Oxlate. All rights reserved. Built with care &amp; precision.</p>
           <div className="font-mono text-[11px] text-[#A87445]">
-            [ DIRECT BUILDER COMMUNICATION ]
+            [ DIRECT FOUNDER CONSULTATION ]
           </div>
         </div>
       </footer>

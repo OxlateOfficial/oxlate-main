@@ -59,7 +59,7 @@ export function HeroContent() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
             className="block"
           >
-            Digital Architecture
+            We build websites & apps
           </motion.span>
         </span>
         <span className="block overflow-hidden py-0.5">
@@ -69,7 +69,7 @@ export function HeroContent() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.28 }}
             className="block"
           >
-            for the Modern Web.
+            that scale your business.
           </motion.span>
         </span>
       </h1>
@@ -107,7 +107,7 @@ export function HeroContent() {
           className="w-full sm:w-auto border border-[#D9D4CC] hover:border-[#111111] bg-transparent text-[#111111] hover:bg-[#FAF8F5] font-mono text-xs sm:text-sm uppercase tracking-wider px-6 py-6 rounded-[2px] transition-all duration-150 hover:-translate-y-[1px] inline-flex items-center justify-center gap-2 shadow-none"
         >
           <Link href="/work">
-            <span>Explore Work [03]</span>
+            <span>Explore Our Work</span>
           </Link>
         </Button>
       </motion.div>
@@ -122,9 +122,9 @@ export function HeroContent() {
         <div className="flex items-center justify-between font-mono text-[9.5px] uppercase tracking-widest text-[#8C8A84]">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-[#A87445] inline-block" />
-            DISCIPLINES // STACK
+            WHAT WE BUILD
           </span>
-          <span className="text-[#A87445]">DIRECT BUILDER</span>
+          <span className="text-[#A87445]">DIRECT BUILDERS</span>
         </div>
 
         <div className="grid grid-cols-3 gap-2">
@@ -153,10 +153,10 @@ export function HeroContent() {
               02 // MOBILE
             </span>
             <span className="font-sans text-[11px] font-bold text-[#111111] mt-1 leading-tight">
-              Native Apps
+              Mobile Apps
             </span>
             <span className="font-mono text-[8px] text-[#6C6B66] mt-1">
-              React Native
+              iOS &amp; Android
             </span>
           </Link>
 
@@ -166,13 +166,13 @@ export function HeroContent() {
             className="group p-2.5 bg-[#FAF8F5] border border-[#D9D4CC] rounded-[2px] transition-colors hover:border-[#A87445] flex flex-col justify-between"
           >
             <span className="font-mono text-[8.5px] font-bold text-[#A87445] tracking-wider">
-              03 // SYSTEMS
+              03 // TOOLS
             </span>
             <span className="font-sans text-[11px] font-bold text-[#111111] mt-1 leading-tight">
-              Custom Tools
+              Internal Tools
             </span>
             <span className="font-mono text-[8px] text-[#6C6B66] mt-1">
-              PostgreSQL
+              Dashboards
             </span>
           </Link>
         </div>
@@ -181,9 +181,9 @@ export function HeroContent() {
         <div className="flex items-center justify-between font-mono text-[9px] text-[#6C6B66] pt-1.5 border-t border-[#D9D4CC]/40">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#A87445]" />
-            FOUNDER-LED ENGINEERING
+            FOUNDER-LED STUDIO
           </span>
-          <span>NO BLOAT</span>
+          <span>100% CODE OWNERSHIP</span>
         </div>
       </motion.div>
     </motion.div>
